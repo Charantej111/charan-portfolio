@@ -25,14 +25,14 @@ const ResumeModal = ({ isOpen, onClose }: ResumeModalProps) => {
     return (
         <AnimatePresence>
             {isOpen && (
-                <>
+                <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
                     {/* Backdrop */}
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         onClick={onClose}
-                        className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] cursor-pointer"
+                        className="absolute inset-0 bg-black/60 backdrop-blur-sm cursor-pointer"
                     />
 
                     {/* Modal */}
@@ -40,7 +40,7 @@ const ResumeModal = ({ isOpen, onClose }: ResumeModalProps) => {
                         initial={{ opacity: 0, scale: 0.95, y: 20 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                        className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-md bg-[#12121A] border border-white/10 rounded-2xl p-6 shadow-2xl z-[101]"
+                        className="relative w-full max-w-md bg-[#12121A] border border-white/10 rounded-2xl p-6 shadow-2xl z-10"
                     >
                         <div className="flex items-center justify-between mb-6">
                             <h3 className="font-display text-xl font-bold text-white">Select Resume Version</h3>
@@ -90,7 +90,7 @@ const ResumeModal = ({ isOpen, onClose }: ResumeModalProps) => {
                             Files will open in Google Docs
                         </p>
                     </motion.div>
-                </>
+                </div>
             )}
         </AnimatePresence>
     );

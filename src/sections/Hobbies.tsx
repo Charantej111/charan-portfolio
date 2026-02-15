@@ -25,7 +25,25 @@ const Hobbies = () => {
 
     // Music Vibe State
     const [isPlaying, setIsPlaying] = useState(false);
+    const [isHovering, setIsHovering] = useState(false);
     const audioRef = useRef<HTMLAudioElement | null>(null);
+    const musicCardRef = useRef(null);
+    const isMusicInView = useInView(musicCardRef, { margin: "-40% 0px -40% 0px" });
+
+    useEffect(() => {
+        const checkMobileAndPlay = () => {
+            const isMobile = window.innerWidth < 768;
+            if (isHovering || (isMobile && isMusicInView)) {
+                setIsPlaying(true);
+            } else {
+                setIsPlaying(false);
+            }
+        };
+
+        checkMobileAndPlay();
+        window.addEventListener('resize', checkMobileAndPlay);
+        return () => window.removeEventListener('resize', checkMobileAndPlay);
+    }, [isHovering, isMusicInView]);
 
     useEffect(() => {
         // Initialize audio
@@ -153,10 +171,11 @@ const Hobbies = () => {
 
                     {/* 3. Music (Small) */}
                     <motion.div
+                        ref={musicCardRef}
                         variants={itemVariants}
                         className="md:col-span-1 md:row-span-1 group relative rounded-3xl overflow-hidden bg-[#12121A] border border-white/10 flex flex-col items-center justify-center p-6 text-center"
-                        onMouseEnter={() => setIsPlaying(true)}
-                        onMouseLeave={() => setIsPlaying(false)}
+                        onMouseEnter={() => setIsHovering(true)}
+                        onMouseLeave={() => setIsHovering(false)}
                     >
                         <div className={`w-32 h-32 rounded-full border-4 border-white/10 flex items-center justify-center mb-6 relative ${isPlaying ? 'animate-[spin_3s_linear_infinite]' : ''}`}>
                             <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-purple-500/20 to-blue-500/20 blur-xl" />
