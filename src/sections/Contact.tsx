@@ -78,16 +78,16 @@ const Contact = () => {
         >
           <div className="flex items-center justify-center gap-4 mb-6">
             <div className="w-12 h-px bg-gradient-to-r from-transparent to-[#FF6B6B]" />
-            <span className="font-mono text-sm text-white/60 uppercase tracking-widest">
+            <span className="font-mono text-sm text-foreground/60 uppercase tracking-widest">
               Contact
             </span>
             <div className="w-12 h-px bg-gradient-to-l from-transparent to-[#4ECDC4]" />
           </div>
-          <h2 className="font-display text-4xl lg:text-6xl font-bold text-white mb-6">
+          <h2 className="font-display text-4xl lg:text-6xl font-bold text-foreground mb-6">
             Let&apos;s create something{' '}
             <span className="gradient-text">amazing</span>
           </h2>
-          <p className="font-body text-lg text-white/60 max-w-2xl mx-auto">
+          <p className="font-body text-lg text-foreground/60 max-w-2xl mx-auto">
             Have a project in mind? I&apos;d love to hear about it. Let&apos;s discuss how
             we can work together.
           </p>
@@ -105,23 +105,23 @@ const Contact = () => {
             <div className="space-y-4">
               <a
                 href="mailto:career.charantej@gmail.com"
-                className="group flex items-center gap-4 p-5 rounded-2xl glass hover:bg-white/10 transition-all duration-300"
+                className="group flex items-center gap-4 p-5 rounded-2xl glass hover:bg-foreground/10 transition-all duration-300"
                 data-cursor-hover
               >
                 <div className="w-12 h-12 rounded-xl bg-[#FF6B6B]/20 flex items-center justify-center group-hover:scale-110 transition-transform">
                   <Mail size={22} className="text-[#FF6B6B]" />
                 </div>
                 <div>
-                  <span className="font-body text-sm text-white/50 block mb-0.5">
+                  <span className="font-body text-sm text-foreground/50 block mb-0.5">
                     Email
                   </span>
-                  <span className="font-body text-base text-white group-hover:text-[#FF6B6B] transition-colors">
+                  <span className="font-body text-base text-foreground group-hover:text-[#FF6B6B] transition-colors">
                     career.charantej@gmail.com
                   </span>
                 </div>
                 <ArrowUpRight
                   size={18}
-                  className="ml-auto text-white/30 opacity-0 group-hover:opacity-100 transition-opacity"
+                  className="ml-auto text-foreground/30 opacity-0 group-hover:opacity-100 transition-opacity"
                 />
               </a>
 
@@ -130,10 +130,10 @@ const Contact = () => {
                   <MapPin size={22} className="text-[#4ECDC4]" />
                 </div>
                 <div>
-                  <span className="font-body text-sm text-white/50 block mb-0.5">
+                  <span className="font-body text-sm text-foreground/50 block mb-0.5">
                     Location
                   </span>
-                  <span className="font-body text-base text-white">
+                  <span className="font-body text-base text-foreground">
                     Kakinada, India
                   </span>
                 </div>
@@ -142,7 +142,7 @@ const Contact = () => {
 
             {/* Social Links */}
             <div>
-              <h3 className="font-display text-sm font-semibold text-white/60 uppercase tracking-wider mb-4">
+              <h3 className="font-display text-sm font-semibold text-foreground/60 uppercase tracking-wider mb-4">
                 Connect With Me
               </h3>
               <div className="flex gap-3">
@@ -152,13 +152,13 @@ const Contact = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group w-12 h-12 rounded-xl glass flex items-center justify-center hover:bg-white/10 transition-all duration-300"
+                    className="group w-12 h-12 rounded-xl glass flex items-center justify-center hover:bg-foreground/10 transition-all duration-300"
                     style={{ '--hover-color': social.color } as React.CSSProperties}
                     data-cursor-hover
                   >
                     <social.icon
                       size={20}
-                      className="text-white/60 group-hover:text-white transition-colors"
+                      className="text-foreground/60 group-hover:text-foreground transition-colors"
                     />
                   </a>
                 ))}
@@ -167,15 +167,15 @@ const Contact = () => {
 
             {/* Resume CTA */}
             <div className="p-6 rounded-2xl glass">
-              <h3 className="font-display text-lg font-semibold text-white mb-2">
+              <h3 className="font-display text-lg font-semibold text-foreground mb-2">
                 Download My Resume
               </h3>
-              <p className="font-body text-sm text-white/50 mb-4">
+              <p className="font-body text-sm text-foreground/50 mb-4">
                 Get a detailed overview of my skills and experience.
               </p>
               <Button
                 variant="outline"
-                className="w-full border-white/20 text-white hover:bg-white/10 rounded-xl"
+                className="w-full border-foreground/20 text-foreground hover:bg-foreground/10 rounded-xl"
                 onClick={() => setIsResumeModalOpen(true)}
               >
                 <Download size={16} className="mr-2" />
@@ -197,7 +197,7 @@ const Contact = () => {
             >
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="font-body text-sm text-white/60 mb-2 block">
+                  <label className="font-body text-sm text-foreground/60 mb-2 block">
                     Your Name
                   </label>
                   <Input
@@ -206,12 +206,12 @@ const Contact = () => {
                     onChange={handleChange}
                     placeholder="John Doe"
                     required
-                    className="bg-white/5 border-white/10 text-white placeholder:text-white/30 focus:border-[#FF6B6B] rounded-xl h-12"
+                    className="bg-foreground/5 border-foreground/10 text-foreground placeholder:text-foreground/30 focus:border-[#FF6B6B] rounded-xl h-12"
                   />
                 </div>
 
                 <div>
-                  <label className="font-body text-sm text-white/60 mb-2 block">
+                  <label className="font-body text-sm text-foreground/60 mb-2 block">
                     Email Address
                   </label>
                   <Input
@@ -221,13 +221,13 @@ const Contact = () => {
                     onChange={handleChange}
                     placeholder="john@example.com"
                     required
-                    className="bg-white/5 border-white/10 text-white placeholder:text-white/30 focus:border-[#FF6B6B] rounded-xl h-12"
+                    className="bg-foreground/5 border-foreground/10 text-foreground placeholder:text-foreground/30 focus:border-[#FF6B6B] rounded-xl h-12"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="font-body text-sm text-white/60 mb-2 block">
+                <label className="font-body text-sm text-foreground/60 mb-2 block">
                   Project Budget
                 </label>
                 <Select
@@ -236,10 +236,10 @@ const Contact = () => {
                     setFormData((prev) => ({ ...prev, budget: value }))
                   }
                 >
-                  <SelectTrigger className="bg-white/5 border-white/10 text-white focus:border-[#FF6B6B] rounded-xl h-12">
+                  <SelectTrigger className="bg-foreground/5 border-foreground/10 text-foreground focus:border-[#FF6B6B] rounded-xl h-12">
                     <SelectValue placeholder="Select your budget range" />
                   </SelectTrigger>
-                  <SelectContent className="bg-[#12121A] border-white/10">
+                  <SelectContent className="bg-card border-border">
                     <SelectItem value="5k-10k">$1,000 - $5,000</SelectItem>
                     <SelectItem value="5k-15k">$5,000 - $15,000</SelectItem>
                     <SelectItem value="15k-30k">$15,000 - $30,000</SelectItem>
@@ -249,7 +249,7 @@ const Contact = () => {
               </div>
 
               <div>
-                <label className="font-body text-sm text-white/60 mb-2 block">
+                <label className="font-body text-sm text-foreground/60 mb-2 block">
                   Tell Me About Your Project
                 </label>
                 <Textarea
@@ -259,7 +259,7 @@ const Contact = () => {
                   placeholder="I'm looking for a designer to help me with..."
                   required
                   rows={5}
-                  className="bg-white/5 border-white/10 text-white placeholder:text-white/30 focus:border-[#FF6B6B] rounded-xl resize-none"
+                  className="bg-foreground/5 border-foreground/10 text-foreground placeholder:text-foreground/30 focus:border-[#FF6B6B] rounded-xl resize-none"
                 />
               </div>
 
@@ -293,14 +293,14 @@ const Contact = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mt-24 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4"
         >
-          <p className="font-body text-sm text-white/40">
+          <p className="font-body text-sm text-foreground/40">
             © {new Date().getFullYear()} Charan Teja Neelam. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <button className="font-body text-sm text-white/40 hover:text-white/80 transition-colors">
+            <button className="font-body text-sm text-foreground/40 hover:text-foreground/80 transition-colors">
               Privacy Policy
             </button>
-            <button className="font-body text-sm text-white/40 hover:text-white/80 transition-colors">
+            <button className="font-body text-sm text-foreground/40 hover:text-foreground/80 transition-colors">
               Terms of Service
             </button>
           </div>

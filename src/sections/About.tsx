@@ -74,11 +74,11 @@ const About = () => {
           <motion.div variants={itemVariants} className="mb-16 lg:mb-24">
             <div className="flex items-center gap-4 mb-6">
               <div className="w-12 h-px bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4]" />
-              <span className="font-mono text-sm text-white/60 uppercase tracking-widest">
+              <span className="font-mono text-sm text-foreground/60 uppercase tracking-widest">
                 About Me
               </span>
             </div>
-            <h2 className="font-display text-4xl lg:text-6xl font-bold text-white max-w-3xl leading-tight">
+            <h2 className="font-display text-4xl lg:text-6xl font-bold text-foreground max-w-3xl leading-tight">
               Designing experiences that{' '}
               <span className="gradient-text">matter</span>
             </h2>
@@ -88,7 +88,7 @@ const About = () => {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 mb-20">
             {/* Left - Story */}
             <motion.div variants={itemVariants} className="space-y-6">
-              <p className="font-body text-lg lg:text-xl text-white/80 leading-relaxed">
+              <p className="font-body text-lg lg:text-xl text-foreground/80 leading-relaxed">
                 I&apos;m <span className="text-[#FF6B6B] font-medium">Charan Teja Neelam</span>,
                 a UI/UX designer from Kakinada, India, with a unique edge—my background in{' '}
                 <span className="text-[#4ECDC4] font-medium">
@@ -96,12 +96,12 @@ const About = () => {
                 </span>
                 .
               </p>
-              <p className="font-body text-base lg:text-lg text-white/60 leading-relaxed">
+              <p className="font-body text-base lg:text-lg text-foreground/60 leading-relaxed">
                 This combination allows me to approach design problems with both creative
                 intuition and analytical rigor. I don&apos;t just make things look good; I make
                 them work beautifully for the people who use them.
               </p>
-              <p className="font-body text-base lg:text-lg text-white/60 leading-relaxed">
+              <p className="font-body text-base lg:text-lg text-foreground/60 leading-relaxed">
                 From conducting user research to shipping high-fidelity prototypes, I love the
                 entire design process. My goal is simple: create digital experiences that feel
                 so intuitive, users never have to think twice.
@@ -113,7 +113,7 @@ const About = () => {
                   (tag) => (
                     <span
                       key={tag}
-                      className="px-4 py-2 rounded-full bg-white/5 border border-white/10 font-body text-sm text-white/70 hover:border-[#FF6B6B]/50 hover:text-white transition-all duration-300"
+                      className="px-4 py-2 rounded-full bg-foreground/5 border border-foreground/10 font-body text-sm text-foreground/70 hover:border-[#FF6B6B]/50 hover:text-foreground transition-all duration-300"
                     >
                       {tag}
                     </span>
@@ -130,7 +130,7 @@ const About = () => {
                   initial={{ opacity: 0, x: 50 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ delay: 0.4 + index * 0.15, duration: 0.6 }}
-                  className="group p-6 rounded-2xl glass hover:bg-white/10 transition-all duration-300 cursor-pointer"
+                  className="group p-6 rounded-2xl glass hover:bg-foreground/10 transition-all duration-300 cursor-pointer"
                   data-cursor-hover
                 >
                   <div className="flex items-start gap-4">
@@ -141,10 +141,10 @@ const About = () => {
                       <item.icon size={24} style={{ color: item.color }} />
                     </div>
                     <div>
-                      <h3 className="font-display text-lg font-semibold text-white mb-2 group-hover:text-[#FF6B6B] transition-colors">
+                      <h3 className="font-display text-lg font-semibold text-foreground mb-2 group-hover:text-[#FF6B6B] transition-colors">
                         {item.title}
                       </h3>
-                      <p className="font-body text-sm text-white/60 leading-relaxed">
+                      <p className="font-body text-sm text-foreground/60 leading-relaxed">
                         {item.description}
                       </p>
                     </div>
@@ -180,7 +180,7 @@ const About = () => {
                 >
                   {stat.value}
                 </div>
-                <div className="font-body text-sm text-white/60">{stat.label}</div>
+                <div className="font-body text-sm text-foreground/60">{stat.label}</div>
               </motion.div>
             ))}
           </motion.div>

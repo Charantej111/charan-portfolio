@@ -48,9 +48,9 @@ const ExperienceCard = ({
         className="relative flex flex-col w-full max-w-4xl mx-auto -mt-12"
       >
         <div
-          className="relative p-8 md:p-12 rounded-3xl border border-white/10 backdrop-blur-md overflow-hidden"
+          className="relative p-8 md:p-12 rounded-3xl border border-foreground/10 backdrop-blur-md overflow-hidden"
           style={{
-            backgroundColor: '#12121A', // Solid background for stacking occlusion
+            backgroundColor: 'hsl(var(--card))', // Solid background for stacking occlusion
             transformOrigin: 'top center'
           }}
         >
@@ -64,23 +64,23 @@ const ExperienceCard = ({
             {/* Left Column: Meta */}
             <div className="md:col-span-1 space-y-6">
               <div>
-                <h3 className="text-3xl font-display font-bold text-white mb-2">{data.company}</h3>
-                <div className="flex items-center gap-2 text-white/50 font-mono text-sm">
+                <h3 className="text-3xl font-display font-bold text-foreground mb-2">{data.company}</h3>
+                <div className="flex items-center gap-2 text-foreground/50 font-mono text-sm">
                   <MapPin size={14} /> {data.location}
                 </div>
               </div>
 
               <div className="flex flex-col gap-1">
-                <span className="text-white/40 text-sm uppercase tracking-wider font-semibold">Role</span>
-                <span className="text-white font-medium text-lg">{data.role}</span>
-                <span className="inline-flex items-center gap-1 text-xs px-2 py-1 rounded-md bg-white/5 w-fit mt-1 text-white/60 border border-white/5">
+                <span className="text-foreground/40 text-sm uppercase tracking-wider font-semibold">Role</span>
+                <span className="text-foreground font-medium text-lg">{data.role}</span>
+                <span className="inline-flex items-center gap-1 text-xs px-2 py-1 rounded-md bg-foreground/5 w-fit mt-1 text-foreground/60 border border-foreground/5">
                   {data.type}
                 </span>
               </div>
 
               <div className="flex flex-col gap-1">
-                <span className="text-white/40 text-sm uppercase tracking-wider font-semibold">Period</span>
-                <div className="flex items-center gap-2 text-white/80">
+                <span className="text-foreground/40 text-sm uppercase tracking-wider font-semibold">Period</span>
+                <div className="flex items-center gap-2 text-foreground/80">
                   <Calendar size={16} /> {data.period}
                 </div>
               </div>
@@ -88,16 +88,16 @@ const ExperienceCard = ({
 
             {/* Right Column: Details */}
             <div className="md:col-span-2 space-y-8">
-              <p className="text-lg text-white/80 leading-relaxed font-light">
+              <p className="text-lg text-foreground/80 leading-relaxed font-light">
                 {data.description}
               </p>
 
               <div>
-                <h4 className="text-white/40 text-sm uppercase tracking-wider font-semibold mb-4">Key Achievements</h4>
+                <h4 className="text-foreground/40 text-sm uppercase tracking-wider font-semibold mb-4">Key Achievements</h4>
                 <ul className="space-y-3">
                   {data.highlights.map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-3 text-white/70">
-                      <ArrowUpRight size={18} className="mt-0.5 text-white/30 flex-shrink-0" />
+                    <li key={idx} className="flex items-start gap-3 text-foreground/70">
+                      <ArrowUpRight size={18} className="mt-0.5 text-foreground/30 flex-shrink-0" />
                       <span className="font-body text-sm leading-relaxed">{item}</span>
                     </li>
                   ))}
@@ -109,7 +109,7 @@ const ExperienceCard = ({
                   {data.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1.5 rounded-full text-xs font-mono border border-white/10 bg-white/5 text-white/60 hover:text-white hover:border-white/30 transition-colors"
+                      className="px-3 py-1.5 rounded-full text-xs font-mono border border-foreground/10 bg-foreground/5 text-foreground/60 hover:text-foreground hover:border-foreground/30 transition-colors"
                     >
                       {tech}
                     </span>
@@ -183,9 +183,9 @@ const Experience = () => {
   ];
 
   return (
-    <section ref={containerRef} id="experience" className="relative bg-[#0A0A0F]">
+    <section ref={containerRef} id="experience" className="relative bg-background">
       {/* Intro Section - Normal Scroll */}
-      <div className="h-[50vh] flex items-center justify-center sticky top-0 bg-[#0A0A0F] z-0">
+      <div className="h-[50vh] flex items-center justify-center sticky top-0 bg-background z-0">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -194,13 +194,13 @@ const Experience = () => {
         >
           <div className="flex items-center justify-center gap-4 mb-6">
             <div className="w-12 h-px bg-gradient-to-r from-transparent to-[#FF6B6B]" />
-            <span className="font-mono text-sm text-white/50 uppercase tracking-widest">Experience</span>
+            <span className="font-mono text-sm text-foreground/50 uppercase tracking-widest">Experience</span>
             <div className="w-12 h-px bg-gradient-to-l from-transparent to-[#4ECDC4]" />
           </div>
-          <h2 className="font-display text-4xl lg:text-7xl font-bold text-white mb-6">
+          <h2 className="font-display text-4xl lg:text-7xl font-bold text-foreground mb-6">
             Career <span className="gradient-text">Experience</span>
           </h2>
-          <p className="text-white/60 max-w-lg mx-auto">
+          <p className="text-foreground/60 max-w-lg mx-auto">
             Scroll down to explore my professional journey through the years.
           </p>
         </motion.div>

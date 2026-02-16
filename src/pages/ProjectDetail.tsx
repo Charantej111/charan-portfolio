@@ -14,7 +14,7 @@ const ProjectDetail = () => {
 
     if (!project) {
         return (
-            <div className="min-h-screen flex items-center justify-center text-white">
+            <div className="min-h-screen flex items-center justify-center text-foreground">
                 <div className="text-center">
                     <h1 className="text-4xl font-bold mb-4">Project Not Found</h1>
                     <Link to="/" className="text-[#FF6B6B] hover:underline">
@@ -43,7 +43,7 @@ const ProjectDetail = () => {
     return (
         <div className="min-h-screen pt-24 pb-12 px-6 lg:px-12 max-w-7xl mx-auto">
             {/* Back Link */}
-            <Link to="/" className="inline-flex items-center gap-2 text-white/60 hover:text-white mb-8 transition-colors group">
+            <Link to="/" className="inline-flex items-center gap-2 text-foreground/60 hover:text-foreground mb-8 transition-colors group">
                 <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
                 Back to Portfolio
             </Link>
@@ -59,15 +59,15 @@ const ProjectDetail = () => {
                     <span className="px-3 py-1 rounded-full text-xs font-medium" style={{ backgroundColor: `${project.color}20`, color: project.color }}>
                         {project.category}
                     </span>
-                    <span className="text-white/40">|</span>
-                    <span className="text-white/60 font-mono text-sm">2024</span>
+                    <span className="text-foreground/40">|</span>
+                    <span className="text-foreground/60 font-mono text-sm">2024</span>
                 </motion.div>
 
-                <motion.h1 variants={fadeIn} className="font-display text-4xl lg:text-6xl font-bold text-white mb-6">
+                <motion.h1 variants={fadeIn} className="font-display text-4xl lg:text-6xl font-bold text-foreground mb-6">
                     {project.title}
                 </motion.h1>
 
-                <motion.p variants={fadeIn} className="font-body text-xl text-white/70 max-w-3xl leading-relaxed">
+                <motion.p variants={fadeIn} className="font-body text-xl text-foreground/70 max-w-3xl leading-relaxed">
                     {project.overview}
                 </motion.p>
             </motion.div>
@@ -84,7 +84,7 @@ const ProjectDetail = () => {
                     alt={project.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0F]/80 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
             </motion.div>
 
             <div className="grid lg:grid-cols-3 gap-12 lg:gap-24">
@@ -100,21 +100,21 @@ const ProjectDetail = () => {
                         className="space-y-12"
                     >
                         <motion.div variants={fadeIn}>
-                            <h2 className="font-display text-2xl font-bold text-white mb-4 flex items-center gap-3">
+                            <h2 className="font-display text-2xl font-bold text-foreground mb-4 flex items-center gap-3">
                                 <span className="p-2 rounded-lg bg-red-500/10 text-red-500"><ExternalLink size={20} /></span>
                                 The Challenge
                             </h2>
-                            <p className="text-white/70 leading-relaxed font-body text-lg">
+                            <p className="text-foreground/70 leading-relaxed font-body text-lg">
                                 {project.problem}
                             </p>
                         </motion.div>
 
                         <motion.div variants={fadeIn}>
-                            <h2 className="font-display text-2xl font-bold text-white mb-4 flex items-center gap-3">
+                            <h2 className="font-display text-2xl font-bold text-foreground mb-4 flex items-center gap-3">
                                 <span className="p-2 rounded-lg bg-green-500/10 text-green-500"><CheckCircle size={20} /></span>
                                 The Solution
                             </h2>
-                            <p className="text-white/70 leading-relaxed font-body text-lg">
+                            <p className="text-foreground/70 leading-relaxed font-body text-lg">
                                 {project.solution}
                             </p>
                         </motion.div>
@@ -127,7 +127,7 @@ const ProjectDetail = () => {
                         viewport={{ once: true }}
                         variants={staggerContainer}
                     >
-                        <h2 className="font-display text-2xl font-bold text-white mb-8 flex items-center gap-3">
+                        <h2 className="font-display text-2xl font-bold text-foreground mb-8 flex items-center gap-3">
                             <span className="p-2 rounded-lg bg-blue-500/10 text-blue-500"><Layers size={20} /></span>
                             Key Features
                         </h2>
@@ -136,11 +136,11 @@ const ProjectDetail = () => {
                                 <motion.div
                                     key={idx}
                                     variants={fadeIn}
-                                    className="glass p-4 rounded-xl border border-white/5 hover:border-white/10 transition-colors"
+                                    className="glass p-4 rounded-xl border border-foreground/5 hover:border-foreground/10 transition-colors"
                                 >
                                     <div className="flex items-start gap-3">
                                         <div className="mt-1 w-2 h-2 rounded-full" style={{ backgroundColor: project.color }} />
-                                        <span className="text-white/80 font-body">{feature}</span>
+                                        <span className="text-foreground/80 font-body">{feature}</span>
                                     </div>
                                 </motion.div>
                             ))}
@@ -153,10 +153,10 @@ const ProjectDetail = () => {
                         whileInView="visible"
                         viewport={{ once: true }}
                         variants={fadeIn}
-                        className="glass p-8 rounded-3xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent"
+                        className="glass p-8 rounded-3xl border border-foreground/10 bg-gradient-to-br from-foreground/5 to-transparent"
                     >
-                        <h2 className="font-display text-2xl font-bold text-white mb-4">Results & Impact</h2>
-                        <p className="text-white/80 leading-relaxed font-body text-lg">
+                        <h2 className="font-display text-2xl font-bold text-foreground mb-4">Results & Impact</h2>
+                        <p className="text-foreground/80 leading-relaxed font-body text-lg">
                             {project.results}
                         </p>
                     </motion.section>
@@ -173,13 +173,13 @@ const ProjectDetail = () => {
                         transition={{ delay: 0.2 }}
                         className="glass p-6 rounded-2xl"
                     >
-                        <h3 className="font-display text-lg font-bold text-white mb-6 flex items-center gap-2">
-                            <Code2 size={18} className="text-white/60" />
+                        <h3 className="font-display text-lg font-bold text-foreground mb-6 flex items-center gap-2">
+                            <Code2 size={18} className="text-foreground/60" />
                             Tools & Tech
                         </h3>
                         <div className="flex flex-wrap gap-2">
                             {project.tools?.map((tool) => (
-                                <span key={tool} className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-white/70 text-sm font-body">
+                                <span key={tool} className="px-3 py-1.5 rounded-lg bg-foreground/5 border border-foreground/10 text-foreground/70 text-sm font-body">
                                     {tool}
                                 </span>
                             ))}
@@ -195,28 +195,28 @@ const ProjectDetail = () => {
                         className="glass p-6 rounded-2xl space-y-4"
                     >
                         <div>
-                            <label className="text-sm text-white/40 font-mono block mb-1">Role</label>
-                            <div className="text-white font-body">Lead Designer</div>
+                            <label className="text-sm text-foreground/40 font-mono block mb-1">Role</label>
+                            <div className="text-foreground font-body">Lead Designer</div>
                         </div>
                         <div>
-                            <label className="text-sm text-white/40 font-mono block mb-1">Timeline</label>
-                            <div className="text-white font-body flex items-center gap-2">
+                            <label className="text-sm text-foreground/40 font-mono block mb-1">Timeline</label>
+                            <div className="text-foreground font-body flex items-center gap-2">
                                 <Calendar size={14} />
                                 4 Weeks
                             </div>
                         </div>
-                        <div className="pt-4 border-t border-white/10">
+                        <div className="pt-4 border-t border-foreground/10">
                             {project.link ? (
                                 <a
                                     href={project.link}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="w-full py-3 rounded-xl bg-white text-black font-bold hover:bg-white/90 transition-colors flex items-center justify-center gap-2"
+                                    className="w-full py-3 rounded-xl bg-foreground text-background font-bold hover:bg-foreground/90 transition-colors flex items-center justify-center gap-2"
                                 >
                                     View Live Site <ExternalLink size={16} />
                                 </a>
                             ) : (
-                                <button className="w-full py-3 rounded-xl bg-white/5 text-white/20 font-bold cursor-not-allowed flex items-center justify-center gap-2">
+                                <button className="w-full py-3 rounded-xl bg-foreground/5 text-foreground/20 font-bold cursor-not-allowed flex items-center justify-center gap-2">
                                     Live Site Coming Soon
                                 </button>
                             )}

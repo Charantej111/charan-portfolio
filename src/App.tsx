@@ -29,7 +29,7 @@ function App() {
   }, [pathname]);
 
   return (
-    <div ref={mainRef} className="relative bg-[#0A0A0F] min-h-screen">
+    <div ref={mainRef} className="relative bg-background min-h-screen">
       {/* Noise Overlay */}
       <div className="noise-overlay" aria-hidden="true" />
 

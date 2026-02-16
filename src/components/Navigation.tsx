@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import { ModeToggle } from './mode-toggle';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -62,7 +63,7 @@ const Navigation = () => {
             {/* Logo */}
             <button
               onClick={() => scrollToSection('hero')}
-              className="font-display text-xl font-bold text-white hover:text-[#FF6B6B] transition-colors"
+              className="font-display text-xl font-bold text-foreground hover:text-[#FF6B6B] transition-colors"
             >
               CN.
             </button>
@@ -73,11 +74,10 @@ const Navigation = () => {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`relative font-body text-sm transition-colors ${
-                    activeSection === item.id
-                      ? 'text-white'
-                      : 'text-white/60 hover:text-white'
-                  }`}
+                  className={`relative font-body text-sm transition-colors ${activeSection === item.id
+                    ? 'text-foreground'
+                    : 'text-foreground/60 hover:text-foreground'
+                    }`}
                 >
                   {item.label}
                   {activeSection === item.id && (
@@ -91,33 +91,38 @@ const Navigation = () => {
               ))}
             </div>
 
-            {/* CTA */}
-            <button
-              onClick={() => scrollToSection('contact')}
-              className="px-5 py-2.5 bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4] rounded-full font-body text-sm text-white font-medium hover:shadow-lg hover:shadow-[#FF6B6B]/25 transition-all duration-300"
-            >
-              Let&apos;s Talk
-            </button>
+            <div className="flex items-center gap-4">
+              <button
+                onClick={() => scrollToSection('contact')}
+                className="px-5 py-2.5 bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4] rounded-full font-body text-sm text-white font-medium hover:shadow-lg hover:shadow-[#FF6B6B]/25 transition-all duration-300"
+              >
+                Let&apos;s Talk
+              </button>
+              <ModeToggle />
+            </div>
           </div>
         </div>
       </motion.nav>
 
       {/* Mobile Navigation */}
       <div className="fixed top-0 left-0 right-0 z-50 lg:hidden">
-        <div className="flex items-center justify-between px-6 py-4 bg-[#0A0A0F]/80 backdrop-blur-xl">
+        <div className="flex items-center justify-between px-6 py-4 bg-background/80 backdrop-blur-xl">
           <button
             onClick={() => scrollToSection('hero')}
-            className="font-display text-xl font-bold text-white"
+            className="font-display text-xl font-bold text-foreground"
           >
             CN.
           </button>
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="p-2 text-white"
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="flex items-center gap-4">
+            <ModeToggle />
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="p-2 text-foreground"
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
@@ -128,14 +133,14 @@ const Navigation = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3 }}
-              className="absolute top-full left-0 right-0 bg-[#0A0A0F]/95 backdrop-blur-xl border-t border-white/10"
+              className="absolute top-full left-0 right-0 bg-background/95 backdrop-blur-xl border-t border-border"
             >
               <div className="flex flex-col p-6 gap-4">
                 {navItems.map((item) => (
                   <button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
-                    className="font-display text-2xl font-medium text-white text-left py-2"
+                    className="font-display text-2xl font-medium text-foreground text-left py-2"
                   >
                     {item.label}
                   </button>

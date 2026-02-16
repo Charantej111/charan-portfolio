@@ -61,11 +61,11 @@ const Education = () => {
         >
           <div className="flex items-center gap-4 mb-6">
             <div className="w-12 h-px bg-gradient-to-r from-[#FFE66D] to-[#FF6B6B]" />
-            <span className="font-mono text-sm text-white/60 uppercase tracking-widest">
+            <span className="font-mono text-sm text-foreground/60 uppercase tracking-widest">
               Education
             </span>
           </div>
-          <h2 className="font-display text-4xl lg:text-6xl font-bold text-white">
+          <h2 className="font-display text-4xl lg:text-6xl font-bold text-foreground">
             Building a <span className="gradient-text">foundation</span>
           </h2>
         </motion.div>
@@ -89,28 +89,28 @@ const Education = () => {
                   <GraduationCap size={28} className="text-white" />
                 </div>
                 <div>
-                  <h3 className="font-display text-lg font-semibold text-white">
+                  <h3 className="font-display text-lg font-semibold text-foreground">
                     Education
                   </h3>
-                  <span className="font-body text-sm text-white/50">
+                  <span className="font-body text-sm text-foreground/50">
                     Academic Background
                   </span>
                 </div>
               </div>
 
               <div className="space-y-4">
-                <h4 className="font-display text-xl lg:text-2xl font-bold text-white leading-tight">
+                <h4 className="font-display text-xl lg:text-2xl font-bold text-foreground leading-tight">
                   {education.degree}
                 </h4>
 
-                <div className="flex flex-wrap items-center gap-3 text-white/60">
+                <div className="flex flex-wrap items-center gap-3 text-foreground/60">
                   <span className="font-body text-sm">{education.institution}</span>
-                  <span className="w-1 h-1 rounded-full bg-white/40" />
+                  <span className="w-1 h-1 rounded-full bg-foreground/40" />
                   <span className="font-body text-sm">{education.location}</span>
                 </div>
 
                 <div className="flex items-center gap-4">
-                  <span className="px-4 py-1.5 rounded-full bg-white/10 font-mono text-sm text-white/80">
+                  <span className="px-4 py-1.5 rounded-full bg-foreground/10 font-mono text-sm text-foreground/80">
                     {education.period}
                   </span>
                   <span className="flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#4ECDC4]/20 font-mono text-sm text-[#4ECDC4]">
@@ -119,7 +119,7 @@ const Education = () => {
                   </span>
                 </div>
 
-                <p className="font-body text-sm text-white/50 leading-relaxed pt-2">
+                <p className="font-body text-sm text-foreground/50 leading-relaxed pt-2">
                   {education.description}
                 </p>
               </div>
@@ -138,10 +138,10 @@ const Education = () => {
                 <Award size={24} className="text-white" />
               </div>
               <div>
-                <h3 className="font-display text-lg font-semibold text-white">
+                <h3 className="font-display text-lg font-semibold text-foreground">
                   Certifications
                 </h3>
-                <span className="font-body text-sm text-white/50">
+                <span className="font-body text-sm text-foreground/50">
                   Professional Credentials
                 </span>
               </div>
@@ -153,7 +153,7 @@ const Education = () => {
                 initial={{ opacity: 0, x: 30 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                className="group relative p-5 rounded-2xl glass hover:bg-white/10 transition-all duration-300 cursor-pointer"
+                className="group relative p-5 rounded-2xl glass hover:bg-foreground/10 transition-all duration-300 cursor-pointer"
                 data-cursor-hover
               >
                 <div className="flex items-start gap-4">
@@ -164,26 +164,26 @@ const Education = () => {
                     <cert.icon size={20} style={{ color: cert.color }} />
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-display text-base font-semibold text-white mb-1 group-hover:text-[#FF6B6B] transition-colors">
+                    <h4 className="font-display text-base font-semibold text-foreground mb-1 group-hover:text-[#FF6B6B] transition-colors">
                       {cert.name}
                     </h4>
-                    <div className="flex items-center gap-2 text-white/50">
+                    <div className="flex items-center gap-2 text-foreground/50">
                       <span className="font-body text-xs">{cert.issuer}</span>
-                      <span className="w-1 h-1 rounded-full bg-white/40" />
+                      <span className="w-1 h-1 rounded-full bg-foreground/40" />
                       <span className="font-body text-xs">{cert.year}</span>
                     </div>
                   </div>
                   <ExternalLink
                     size={16}
-                    className="text-white/30 opacity-0 group-hover:opacity-100 transition-opacity"
+                    className="text-foreground/30 opacity-0 group-hover:opacity-100 transition-opacity"
                   />
                 </div>
               </motion.div>
             ))}
 
             {/* Add Certification Placeholder */}
-            <div className="p-4 rounded-2xl border border-dashed border-white/20 text-center">
-              <span className="font-body text-sm text-white/40">
+            <div className="p-4 rounded-2xl border border-dashed border-foreground/20 text-center">
+              <span className="font-body text-sm text-foreground/40">
                 More certifications coming soon...
               </span>
             </div>
@@ -202,10 +202,10 @@ const Education = () => {
                   <Star size={24} className="text-white" />
                 </div>
                 <div>
-                  <h3 className="font-display text-lg font-semibold text-white">
+                  <h3 className="font-display text-lg font-semibold text-foreground">
                     Achievements
                   </h3>
-                  <span className="font-body text-sm text-white/50">
+                  <span className="font-body text-sm text-foreground/50">
                     Milestones & Recognition
                   </span>
                 </div>
@@ -218,12 +218,12 @@ const Education = () => {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={isInView ? { opacity: 1, scale: 1 } : {}}
                     transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
-                    className="flex items-center gap-3 p-4 rounded-xl bg-white/5"
+                    className="flex items-center gap-3 p-4 rounded-xl bg-foreground/5"
                   >
                     <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#FF6B6B] to-[#4ECDC4] flex items-center justify-center flex-shrink-0">
                       <Star size={14} className="text-white" />
                     </div>
-                    <span className="font-body text-sm text-white/80">
+                    <span className="font-body text-sm text-foreground/80">
                       {achievement}
                     </span>
                   </motion.div>

@@ -78,7 +78,7 @@ const Skills = () => {
     <section
       ref={sectionRef}
       id="skills"
-      className="relative py-24 lg:py-32 overflow-hidden bg-[#0A0A0F]"
+      className="relative py-24 lg:py-32 overflow-hidden bg-background"
     >
       {/* Background Glows */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-gradient-to-r from-[#FF6B6B]/10 via-[#4ECDC4]/10 to-[#FFE66D]/10 blur-[100px] rounded-full" />
@@ -90,14 +90,14 @@ const Skills = () => {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-foreground/5 border border-foreground/10 mb-6">
             <span className="w-2 h-2 rounded-full bg-[#4ECDC4] animate-pulse" />
-            <span className="text-xs font-mono text-white/60 uppercase tracking-widest">Tech Stack</span>
+            <span className="text-xs font-mono text-foreground/60 uppercase tracking-widest">Tech Stack</span>
           </div>
-          <h2 className="font-display text-4xl lg:text-6xl font-bold text-white mb-6">
+          <h2 className="font-display text-4xl lg:text-6xl font-bold text-foreground mb-6">
             My Creative <span className="gradient-text">Arsenal</span>
           </h2>
-          <p className="font-body text-lg text-white/60 max-w-2xl mx-auto">
+          <p className="font-body text-lg text-foreground/60 max-w-2xl mx-auto">
             A curated collection of tools and technologies I use to bring ideas to life.
           </p>
         </motion.div>
@@ -106,8 +106,8 @@ const Skills = () => {
       {/* Marquee Rows */}
       <div className="relative w-full space-y-12">
         {/* Gradient Masks for Fade Effect */}
-        <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#0A0A0F] to-transparent z-20 pointer-events-none" />
-        <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[#0A0A0F] to-transparent z-20 pointer-events-none" />
+        <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-background to-transparent z-20 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-background to-transparent z-20 pointer-events-none" />
 
         {skillRows.map((row, rowIndex) => (
           <div key={rowIndex} className="relative flex overflow-hidden">
@@ -126,15 +126,15 @@ const Skills = () => {
               {[...row.skills, ...row.skills].map((skill, index) => (
                 <div
                   key={`${rowIndex}-${index}`}
-                  className="group relative flex items-center gap-3 px-6 py-3 rounded-2xl bg-white/5 border border-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-white/20 transition-all duration-300 min-w-[200px] cursor-default"
+                  className="group relative flex items-center gap-3 px-6 py-3 rounded-2xl bg-foreground/5 border border-foreground/5 backdrop-blur-sm hover:bg-foreground/10 hover:border-foreground/20 transition-all duration-300 min-w-[200px] cursor-default"
                 >
                   <div
-                    className="w-10 h-10 rounded-xl flex items-center justify-center transition-colors duration-300 group-hover:bg-white/10"
+                    className="w-10 h-10 rounded-xl flex items-center justify-center transition-colors duration-300 group-hover:bg-foreground/10"
                     style={{ color: skill.color }}
                   >
                     <skill.icon size={20} />
                   </div>
-                  <span className="font-display font-medium text-white/60 group-hover:text-white transition-colors">
+                  <span className="font-display font-medium text-foreground/60 group-hover:text-foreground transition-colors">
                     {skill.name}
                   </span>
 

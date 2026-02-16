@@ -40,13 +40,13 @@ const ResumeModal = ({ isOpen, onClose }: ResumeModalProps) => {
                         initial={{ opacity: 0, scale: 0.95, y: 20 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                        className="relative w-full max-w-md bg-[#12121A] border border-white/10 rounded-2xl p-6 shadow-2xl z-10"
+                        className="relative w-full max-w-md bg-card border border-foreground/10 rounded-2xl p-6 shadow-2xl z-10"
                     >
                         <div className="flex items-center justify-between mb-6">
-                            <h3 className="font-display text-xl font-bold text-white">Select Resume Version</h3>
+                            <h3 className="font-display text-xl font-bold text-foreground">Select Resume Version</h3>
                             <button
                                 onClick={onClose}
-                                className="p-2 rounded-full hover:bg-white/10 text-white/60 hover:text-white transition-colors"
+                                className="p-2 rounded-full hover:bg-foreground/10 text-foreground/60 hover:text-foreground transition-colors"
                             >
                                 <X size={20} />
                             </button>
@@ -59,11 +59,11 @@ const ResumeModal = ({ isOpen, onClose }: ResumeModalProps) => {
                                     href={resume.link}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="group relative p-4 rounded-xl border border-white/10 hover:border-white/20 bg-white/5 hover:bg-white/10 transition-all duration-300 flex items-center gap-4"
+                                    className="group relative p-4 rounded-xl border border-foreground/10 hover:border-foreground/20 bg-foreground/5 hover:bg-foreground/10 transition-all duration-300 flex items-center gap-4"
                                     onClick={onClose}
                                 >
                                     <div
-                                        className="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-lg"
+                                        className="w-12 h-12 rounded-full flex items-center justify-center text-foreground font-bold text-lg"
                                         style={{ backgroundColor: `${resume.color}20` }}
                                     >
                                         <span style={{ color: resume.color }}>
@@ -73,20 +73,20 @@ const ResumeModal = ({ isOpen, onClose }: ResumeModalProps) => {
 
                                     <div className="flex-1">
                                         <div className="flex items-center gap-2 mb-1">
-                                            <h4 className="font-bold text-white">{resume.country} Resume</h4>
-                                            <MapPin size={14} className="text-white/40" />
+                                            <h4 className="font-bold text-foreground">{resume.country} Resume</h4>
+                                            <MapPin size={14} className="text-foreground/40" />
                                         </div>
-                                        <p className="text-sm text-white/50">{resume.description}</p>
+                                        <p className="text-sm text-foreground/50">{resume.description}</p>
                                     </div>
 
-                                    <div className="p-2 rounded-lg bg-white/5 group-hover:bg-white/10 text-white/40 group-hover:text-white transition-colors">
+                                    <div className="p-2 rounded-lg bg-foreground/5 group-hover:bg-foreground/10 text-foreground/40 group-hover:text-foreground transition-colors">
                                         <Download size={20} />
                                     </div>
                                 </a>
                             ))}
                         </div>
 
-                        <p className="mt-6 text-center text-xs text-white/30">
+                        <p className="mt-6 text-center text-xs text-foreground/30">
                             Files will open in Google Docs
                         </p>
                     </motion.div>

@@ -33,6 +33,7 @@ const Hobbies = () => {
     useEffect(() => {
         const checkMobileAndPlay = () => {
             const isMobile = window.innerWidth < 768;
+            // Only update if state actually changes to avoid effect loops
             if (isHovering || (isMobile && isMusicInView)) {
                 setIsPlaying(true);
             } else {
@@ -60,15 +61,28 @@ const Hobbies = () => {
     }, []);
 
     useEffect(() => {
-        if (isPlaying) {
-            audioRef.current?.play().catch(error => {
-                console.error("Audio play failed:", error);
-            });
-        } else {
-            if (audioRef.current) {
-                audioRef.current.pause();
-                audioRef.current.currentTime = 0;
+        const audio = audioRef.current;
+        if (!audio) return;
+
+        const playAudio = async () => {
+            try {
+                if (audio.paused) {
+                    await audio.play();
+                }
+            } catch (error) {
+                // Ignore AbortError (interrupted by pause) and NotAllowedError (autoplay blocked)
+                const e = error as Error;
+                if (e.name !== 'AbortError' && e.name !== 'NotAllowedError') {
+                    console.error("Audio playback error:", error);
+                }
             }
+        };
+
+        if (isPlaying) {
+            playAudio();
+        } else {
+            audio.pause();
+            audio.currentTime = 0;
         }
     }, [isPlaying]);
 
@@ -93,7 +107,7 @@ const Hobbies = () => {
         <section
             ref={sectionRef}
             id="hobbies"
-            className="relative py-24 lg:py-32 overflow-hidden bg-[#0A0A0F]"
+            className="relative py-24 lg:py-32 overflow-hidden bg-background"
         >
             {/* Background Elements */}
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-500/5 rounded-full blur-[128px]" />
@@ -106,11 +120,11 @@ const Hobbies = () => {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-16"
                 >
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 mb-6">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-foreground/5 border border-foreground/10 mb-6">
                         <span className="w-2 h-2 rounded-full bg-pink-400 animate-pulse" />
-                        <span className="text-xs font-mono text-white/60 uppercase tracking-widest">Personal Life</span>
+                        <span className="text-xs font-mono text-foreground/60 uppercase tracking-widest">Personal Life</span>
                     </div>
-                    <h2 className="font-display text-4xl lg:text-6xl font-bold text-white">
+                    <h2 className="font-display text-4xl lg:text-6xl font-bold text-foreground">
                         Beyond the <span className="gradient-text">Keyboard</span>
                     </h2>
                 </motion.div>
@@ -173,13 +187,13 @@ const Hobbies = () => {
                     <motion.div
                         ref={musicCardRef}
                         variants={itemVariants}
-                        className="md:col-span-1 md:row-span-1 group relative rounded-3xl overflow-hidden bg-[#12121A] border border-white/10 flex flex-col items-center justify-center p-6 text-center"
+                        className="md:col-span-1 md:row-span-1 group relative rounded-3xl overflow-hidden bg-card border border-foreground/10 flex flex-col items-center justify-center p-6 text-center"
                         onMouseEnter={() => setIsHovering(true)}
                         onMouseLeave={() => setIsHovering(false)}
                     >
-                        <div className={`w-32 h-32 rounded-full border-4 border-white/10 flex items-center justify-center mb-6 relative ${isPlaying ? 'animate-[spin_3s_linear_infinite]' : ''}`}>
+                        <div className={`w-32 h-32 rounded-full border-4 border-foreground/10 flex items-center justify-center mb-6 relative ${isPlaying ? 'animate-[spin_3s_linear_infinite]' : ''}`}>
                             <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-purple-500/20 to-blue-500/20 blur-xl" />
-                            <Disc size={64} className="text-white/80" />
+                            <Disc size={64} className="text-foreground/80" />
                         </div>
 
                         {/* Visualizer Bars */}
@@ -194,7 +208,7 @@ const Hobbies = () => {
                             ))}
                         </div>
 
-                        <div className="flex items-center gap-2 text-white/40 text-sm">
+                        <div className="flex items-center gap-2 text-foreground/40 text-sm">
                             <Music size={14} />
                             <span>Vibing to Lo-Fi</span>
                         </div>
@@ -203,7 +217,7 @@ const Hobbies = () => {
                     {/* 4. Badminton (Large) */}
                     <motion.div
                         variants={itemVariants}
-                        className="md:col-span-2 md:row-span-1 group relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#FF6B6B]/10 to-[#4ECDC4]/10 border border-white/10"
+                        className="md:col-span-2 md:row-span-1 group relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#FF6B6B]/10 to-[#4ECDC4]/10 border border-foreground/10"
                     >
                         <div className="absolute inset-0 grid-pattern opacity-30" />
 
@@ -212,7 +226,7 @@ const Hobbies = () => {
                                 animate={{ y: [-10, 10, -10] }}
                                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                             >
-                                <Activity size={120} className="text-white/5" />
+                                <Activity size={120} className="text-foreground/5" />
                             </motion.div>
                         </div>
 
@@ -223,13 +237,13 @@ const Hobbies = () => {
                                         <Zap size={18} />
                                         <span className="font-mono text-xs uppercase tracking-wider">Active Lifestyle</span>
                                     </div>
-                                    <h3 className="text-2xl font-bold text-white mb-2">Badminton Player</h3>
-                                    <p className="text-white/60 max-w-sm">
+                                    <h3 className="text-2xl font-bold text-foreground mb-2">Badminton Player</h3>
+                                    <p className="text-foreground/60 max-w-sm">
                                         Speed, agility, and strategy. The court is where I recharge my energy.
                                     </p>
                                 </div>
 
-                                <button className="w-12 h-12 rounded-full glass flex items-center justify-center group-hover:bg-white text-white group-hover:text-black transition-all">
+                                <button className="w-12 h-12 rounded-full glass flex items-center justify-center group-hover:bg-foreground group-hover:text-background text-foreground transition-all">
                                     <Map size={20} />
                                 </button>
                             </div>

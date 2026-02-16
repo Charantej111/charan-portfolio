@@ -94,7 +94,7 @@ const Hero = () => {
           <motion.div variants={itemVariants} className="flex mb-8">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass">
               <Sparkles size={16} className="text-[#FFE66D]" />
-              <span className="font-body text-sm text-white/80">
+              <span className="font-body text-sm text-foreground/80">
                 Available for freelance work
               </span>
             </div>
@@ -112,11 +112,11 @@ const Hero = () => {
             >
               <span className="gradient-text">CHARAN</span>
               <br />
-              <span className="text-white/90">NEELAM</span>
+              <span className="text-foreground/90">NEELAM</span>
             </motion.h1>
             <motion.p
               variants={itemVariants}
-              className="font-body text-lg lg:text-xl text-white/60 max-w-lg leading-relaxed"
+              className="font-body text-lg lg:text-xl text-foreground/60 max-w-lg leading-relaxed"
             >
               Crafting digital experiences where design meets intelligence.
               Specializing in UI/UX and Front-end Development.
@@ -130,12 +130,12 @@ const Hero = () => {
           >
             <div className="flex items-center gap-3">
               <div className="w-2 h-2 rounded-full bg-[#4ECDC4] animate-pulse" />
-              <span className="font-mono text-base lg:text-lg text-white/80">
+              <span className="font-mono text-base lg:text-lg text-foreground/80">
                 UI/UX Designer
               </span>
             </div>
-            <div className="hidden sm:block w-px h-6 bg-white/20" />
-            <div className="flex items-center gap-2 text-white/60">
+            <div className="hidden sm:block w-px h-6 bg-foreground/20" />
+            <div className="flex items-center gap-2 text-foreground/60">
               <MapPin size={18} />
               <span className="font-body">Kakinada, India</span>
             </div>
@@ -193,13 +193,13 @@ const Hero = () => {
             {/* Floating Card 1 */}
             <div className="absolute top-10 right-10 glass p-4 rounded-2xl z-20 animate-float">
               <div className="font-mono text-3xl font-bold text-[#FF6B6B]">10+</div>
-              <div className="font-body text-xs text-white/60">Projects</div>
+              <div className="font-body text-xs text-foreground/60">Projects</div>
             </div>
 
             {/* Floating Card 2 */}
             <div className="absolute bottom-10 left-10 glass p-4 rounded-2xl z-20 animate-float-delayed">
               <div className="font-mono text-3xl font-bold text-[#4ECDC4]">1+</div>
-              <div className="font-body text-xs text-white/60">Year Exp.</div>
+              <div className="font-body text-xs text-foreground/60">Year Exp.</div>
             </div>
           </motion.div>
 
@@ -218,7 +218,7 @@ const Hero = () => {
       >
         <button
           onClick={scrollToAbout}
-          className="flex flex-col items-center gap-2 text-white/40 hover:text-white/80 transition-colors"
+          className="flex flex-col items-center gap-2 text-foreground/40 hover:text-foreground/80 transition-colors"
           data-cursor-hover
         >
           <span className="font-body text-xs uppercase tracking-widest">Scroll</span>

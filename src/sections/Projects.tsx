@@ -146,11 +146,11 @@ const Projects = () => {
           <div>
             <div className="flex items-center gap-4 mb-6">
               <div className="w-12 h-px bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4]" />
-              <span className="font-mono text-sm text-white/60 uppercase tracking-widest">
+              <span className="font-mono text-sm text-foreground/60 uppercase tracking-widest">
                 Selected Work
               </span>
             </div>
-            <h2 className="font-display text-4xl lg:text-6xl font-bold text-white">
+            <h2 className="font-display text-4xl lg:text-6xl font-bold text-foreground">
               Projects that <span className="gradient-text">deliver</span>
             </h2>
           </div>
@@ -159,14 +159,14 @@ const Projects = () => {
           <div className="flex gap-3 mt-6 lg:mt-0">
             <button
               onClick={scrollLeft}
-              className="w-12 h-12 rounded-full glass flex items-center justify-center text-white/60 hover:text-white hover:bg-white/10 transition-all"
+              className="w-12 h-12 rounded-full glass flex items-center justify-center text-foreground/60 hover:text-foreground hover:bg-foreground/10 transition-all"
               data-cursor-hover
             >
               <ArrowRight size={20} className="rotate-180" />
             </button>
             <button
               onClick={scrollRight}
-              className="w-12 h-12 rounded-full glass flex items-center justify-center text-white/60 hover:text-white hover:bg-white/10 transition-all"
+              className="w-12 h-12 rounded-full glass flex items-center justify-center text-foreground/60 hover:text-foreground hover:bg-foreground/10 transition-all"
               data-cursor-hover
             >
               <ArrowRight size={20} />
@@ -200,10 +200,10 @@ const Projects = () => {
             <div className="w-16 h-16 rounded-full bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4] flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
               <ExternalLink size={24} className="text-white" />
             </div>
-            <h3 className="font-display text-2xl font-bold text-white mb-2">
+            <h3 className="font-display text-2xl font-bold text-foreground mb-2">
               View All Projects
             </h3>
-            <p className="font-body text-white/60">
+            <p className="font-body text-foreground/60">
               Explore my complete portfolio on Dribbble
             </p>
           </div>
@@ -216,11 +216,11 @@ const Projects = () => {
       {/* Scroll Indicator */}
       <div className="max-w-7xl mx-auto px-6 lg:px-12 mt-8">
         <div className="flex items-center gap-4">
-          <div className="flex-1 h-px bg-white/10" />
-          <span className="font-body text-sm text-white/40">
+          <div className="flex-1 h-px bg-foreground/10" />
+          <span className="font-body text-sm text-foreground/40">
             Scroll to explore
           </span>
-          <div className="flex-1 h-px bg-white/10" />
+          <div className="flex-1 h-px bg-foreground/10" />
         </div>
       </div>
     </section>
