@@ -3,36 +3,61 @@ import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ArrowDown, MapPin, Sparkles } from 'lucide-react';
 
-const Hero = () => {
+const Hero = ({ isLoading }: { isLoading: boolean }) => {
   const nameRef = useRef<HTMLHeadingElement>(null);
+  const portraitRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Mouse move effect for name
+    // Mouse move effect for name and portrait
     const container = containerRef.current;
     const name = nameRef.current;
-    if (!container || !name) return;
+    const portrait = portraitRef.current;
+    if (!container) return;
 
     const handleMouseMove = (e: MouseEvent) => {
       const rect = container.getBoundingClientRect();
-      const x = (e.clientX - rect.left - rect.width / 2) / rect.width;
-      const y = (e.clientY - rect.top - rect.height / 2) / rect.height;
+      const x = (e.clientX - rect.left - rect.width / 2) / (rect.width / 2);
+      const y = (e.clientY - rect.top - rect.height / 2) / (rect.height / 2);
 
-      gsap.to(name, {
-        rotateY: x * 5,
-        rotateX: -y * 5,
-        duration: 0.5,
-        ease: 'power2.out',
-      });
+      if (name) {
+        gsap.to(name, {
+          rotateY: x * 8,
+          rotateX: -y * 8,
+          duration: 0.8,
+          ease: 'power2.out',
+        });
+      }
+
+      if (portrait) {
+        gsap.to(portrait, {
+          rotateY: x * 5,
+          rotateX: -y * 5,
+          scale: 1.02,
+          duration: 0.8,
+          ease: 'power2.out',
+        });
+      }
     };
 
     const handleMouseLeave = () => {
-      gsap.to(name, {
-        rotateY: 0,
-        rotateX: 0,
-        duration: 0.5,
-        ease: 'power2.out',
-      });
+      if (name) {
+        gsap.to(name, {
+          rotateY: 0,
+          rotateX: 0,
+          duration: 0.8,
+          ease: 'power2.out',
+        });
+      }
+      if (portrait) {
+        gsap.to(portrait, {
+          rotateY: 0,
+          rotateX: 0,
+          scale: 1,
+          duration: 0.8,
+          ease: 'power2.out',
+        });
+      }
     };
 
     container.addEventListener('mousemove', handleMouseMove);
@@ -53,19 +78,26 @@ const Hero = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.3,
+        staggerChildren: 0.15,
+        delayChildren: 0.4,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: {
+      opacity: 0,
+      y: 40,
+      filter: 'blur(10px)',
+      scale: 0.95
+    },
     visible: {
       opacity: 1,
       y: 0,
+      filter: 'blur(0px)',
+      scale: 1,
       transition: {
-        duration: 0.8,
+        duration: 1.2,
         ease: [0.16, 1, 0.3, 1] as const,
       },
     },
@@ -84,12 +116,12 @@ const Hero = () => {
         ref={containerRef}
         variants={containerVariants}
         initial="hidden"
-        animate="visible"
+        animate={!isLoading ? "visible" : "hidden"}
         className="relative z-10 w-full px-6 lg:px-12 grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto"
-        style={{ perspective: '1000px' }}
+        style={{ perspective: '1200px' }}
       >
         {/* Left Content */}
-        <div>
+        <div style={{ transformStyle: 'preserve-3d' }}>
           {/* Top Badge */}
           <motion.div variants={itemVariants} className="flex mb-8">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass">
@@ -104,9 +136,7 @@ const Hero = () => {
           <div className="mb-8" style={{ transformStyle: 'preserve-3d' }}>
             <motion.h1
               ref={nameRef}
-              initial={{ filter: 'blur(20px)', opacity: 0, y: 50 }}
-              animate={{ filter: 'blur(0px)', opacity: 1, y: 0 }}
-              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+              variants={itemVariants}
               className="font-display font-bold text-[12vw] lg:text-[6vw] leading-none tracking-tighter mb-2"
               style={{ transformStyle: 'preserve-3d' }}
             >
@@ -173,21 +203,43 @@ const Hero = () => {
         <motion.div
           variants={itemVariants}
           className="relative hidden lg:block"
+          style={{ transformStyle: 'preserve-3d' }}
         >
           <motion.div
-            initial={{ clipPath: 'polygon(0 0, 0 0, 0 100%, 0% 100%)' }}
-            animate={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)' }}
-            transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-            className="relative rounded-[2rem] overflow-hidden aspect-[4/5] max-h-[80vh] w-full group"
+            ref={portraitRef}
+            variants={{
+              hidden: {
+                clipPath: 'polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)',
+                x: -20,
+                opacity: 0
+              },
+              visible: {
+                clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
+                x: 0,
+                opacity: 1,
+                transition: {
+                  clipPath: { duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 0.6 },
+                  x: { duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.6 },
+                  opacity: { duration: 0.8, delay: 0.6 }
+                }
+              }
+            }}
+            className="relative rounded-[2rem] overflow-hidden aspect-[4/5] max-h-[80vh] w-full group shadow-2xl"
+            style={{ transformStyle: 'preserve-3d' }}
           >
             <div className="absolute inset-0 bg-gradient-to-tr from-[#FF6B6B]/20 to-[#4ECDC4]/20 mix-blend-overlay z-10" />
             <motion.img
-              initial={{ scale: 1.4 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 1.8, ease: "easeOut" }}
+              variants={{
+                hidden: { scale: 1.4, filter: 'blur(10px)' },
+                visible: {
+                  scale: 1,
+                  filter: 'blur(0px)',
+                  transition: { duration: 2, ease: "easeOut", delay: 0.6 }
+                }
+              }}
               src="/hero_portrait.jpg"
               alt="Charan Neelam"
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              className="w-full h-full object-cover"
             />
 
             {/* Floating Card 1 */}

@@ -7,10 +7,10 @@ import Education from '../sections/Education';
 import Hobbies from '../sections/Hobbies';
 import Contact from '../sections/Contact';
 
-const Home = () => {
+const Home = ({ isLoading }: { isLoading: boolean }) => {
     return (
         <>
-            <Hero />
+            <Hero isLoading={isLoading} />
             <About />
             <Skills />
             <Projects />
