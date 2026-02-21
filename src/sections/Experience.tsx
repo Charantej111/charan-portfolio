@@ -210,13 +210,14 @@ const Experience = () => {
       <div className="relative z-10 w-full px-4 lg:px-8">
         {experiences.map((exp, index) => {
           const targetScale = 1 - (experiences.length - index) * 0.05;
+          const step = 1 / experiences.length;
           return (
             <ExperienceCard
               key={index}
               index={index}
               data={exp}
               progress={scrollYProgress}
-              range={[index * 0.25, 1]}
+              range={[index * step, 1]}
               targetScale={targetScale}
             />
           );

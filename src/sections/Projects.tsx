@@ -100,6 +100,30 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
             </div>
           </div>
 
+          {/* Glossy Shine — cursor-tracked radial highlight */}
+          <div
+            className="absolute inset-0 rounded-3xl pointer-events-none transition-opacity duration-300"
+            style={{
+              opacity: isHovered ? 1 : 0,
+              background: isHovered
+                ? `radial-gradient(circle at ${50 + mousePosition.x * 100}% ${50 + mousePosition.y * 100}%, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.06) 40%, transparent 70%)`
+                : 'none',
+            }}
+          />
+
+          {/* Gloss Sweep — diagonal shimmer stripe on hover */}
+          <div
+            className="absolute inset-0 rounded-3xl pointer-events-none overflow-hidden"
+          >
+            <div
+              className="absolute inset-0 transition-all duration-700"
+              style={{
+                background: 'linear-gradient(105deg, transparent 30%, rgba(255,255,255,0.12) 50%, transparent 70%)',
+                transform: isHovered ? 'translateX(100%)' : 'translateX(-100%)',
+              }}
+            />
+          </div>
+
           {/* Glow Border */}
           <div
             className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"

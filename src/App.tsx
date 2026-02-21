@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Routes, Route, useLocation } from 'react-router-dom';
@@ -7,12 +7,16 @@ import ProjectDetail from './pages/ProjectDetail';
 import Navigation from './components/Navigation';
 import Cursor from './components/Cursor';
 import FloatingOrbs from './components/FloatingOrbs';
+import CursorCompanion from './components/CursorCompanion';
+import LoadingScreen from './components/LoadingScreen';
+import GamesHub from './components/GamesHub';
 
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   const mainRef = useRef<HTMLDivElement>(null);
   const { pathname } = useLocation();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     // Initialize ScrollTrigger
@@ -29,27 +33,37 @@ function App() {
   }, [pathname]);
 
   return (
-    <div ref={mainRef} className="relative bg-background min-h-screen">
-      {/* Noise Overlay */}
-      <div className="noise-overlay" aria-hidden="true" />
+    <>
+      {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
 
-      {/* Custom Cursor */}
-      <Cursor />
+      <div ref={mainRef} className="relative bg-background min-h-screen">
+        {/* Noise Overlay */}
+        <div className="noise-overlay" aria-hidden="true" />
 
-      {/* Floating Gradient Orbs */}
-      <FloatingOrbs />
+        {/* Custom Cursor */}
+        <Cursor />
 
-      {/* Navigation */}
-      <Navigation />
+        {/* Cursor Companion */}
+        <CursorCompanion />
 
-      {/* Main Content */}
-      <main className="relative z-10">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/project/:id" element={<ProjectDetail />} />
-        </Routes>
-      </main>
-    </div>
+        {/* Mini Games Hub */}
+        <GamesHub />
+
+        {/* Floating Gradient Orbs */}
+        <FloatingOrbs />
+
+        {/* Navigation */}
+        <Navigation />
+
+        {/* Main Content */}
+        <main className="relative z-10">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/project/:id" element={<ProjectDetail />} />
+          </Routes>
+        </main>
+      </div>
+    </>
   );
 }
 

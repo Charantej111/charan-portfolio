@@ -133,7 +133,7 @@ const Hobbies = () => {
                     variants={containerVariants}
                     initial="hidden"
                     animate={isInView ? "visible" : "hidden"}
-                    className="grid grid-cols-1 md:grid-cols-3 grid-rows-2 gap-6 h-[800px] md:h-[600px]"
+                    className="grid grid-cols-1 md:grid-cols-3 grid-rows-2 gap-6 min-h-[800px] md:min-h-[600px]"
                 >
                     {/* 1. Coding (Large) */}
                     <motion.div
