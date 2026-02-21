@@ -34,7 +34,6 @@ const SCREAMS = [
 
 const ContrastGame = ({ onClose }: { onClose: () => void }) => {
     const [phase, setPhase] = useState<'intro' | 'playing' | 'result'>('intro');
-    const [selected, setSelected] = useState<number | null>(null);
     const [score, setScore] = useState(0);
     const [round, setRound] = useState(0);
     const [screaming, setScreaming] = useState(false);
@@ -54,7 +53,7 @@ const ContrastGame = ({ onClose }: { onClose: () => void }) => {
         }, 1400);
     };
 
-    const start = () => { setPhase('playing'); setRound(0); setScore(0); setSelected(null); };
+    const start = () => { setPhase('playing'); setRound(0); setScore(0); };
 
     return (
         <div className="relative w-full" style={{ height: 500 }}>
@@ -138,7 +137,8 @@ const ContrastGame = ({ onClose }: { onClose: () => void }) => {
             {phase === 'result' && (
                 <div className="h-full flex flex-col p-5 overflow-auto">
                     <h3 className="font-display text-xl font-bold text-white mb-1 text-center">Now meet WCAG 😌</h3>
-                    <p className="text-white/40 text-xs text-center mb-4">Accessible colour pairs that actually work.</p>
+                    <p className="text-white/40 text-xs text-center mb-1">Accessible colour pairs that actually work.</p>
+                    <p className="text-[#FFE66D] text-[10px] font-bold text-center mb-4 uppercase tracking-widest">You were brave enough to pick {score} bad combos</p>
 
                     <div className="space-y-2 flex-1">
                         {WCAG_PALETTE.map((p, i) => (
