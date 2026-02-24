@@ -16,7 +16,7 @@ const ResumeModal = ({ isOpen, onClose }: ResumeModalProps) => {
         },
         {
             country: 'UAE',
-            link: 'https://docs.google.com/document/d/1wmFQ9dzbE-roBKbmXYu-XhRVG3bsBMuCJfMWi6MWv-8/edit?usp=sharing',
+            link: 'https://drive.google.com/file/d/1nd-zlnPwjErExQ6dKBQUB3hiDyEegkI-/view?usp=sharing',
             color: '#00732F', // Greenish
             description: 'Tailored for UAE region'
         }
