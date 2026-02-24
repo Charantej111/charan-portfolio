@@ -1,54 +1,14 @@
 import { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Mail, MapPin, Linkedin, Send, Download, ArrowUpRight, Github, Twitter } from 'lucide-react';
+import { Mail, MapPin, Linkedin, Download, ArrowUpRight, Github, Twitter, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select';
 import ResumeModal from '@/components/ResumeModal';
 
 const Contact = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
 
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    budget: '',
-    message: '',
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
   const [isResumeModalOpen, setIsResumeModalOpen] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    setFormData({ name: '', email: '', budget: '', message: '' });
-
-    setTimeout(() => setIsSubmitted(false), 5000);
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
-  };
 
   const socialLinks = [
     { icon: Linkedin, label: 'LinkedIn', href: 'https://linkedin.com/in/charan-tej-neelam-bb0a9a302', color: '#FF6B6B' },
@@ -184,105 +144,88 @@ const Contact = () => {
             </div>
           </motion.div>
 
-          {/* Right - Form */}
+          {/* Right - Creative Visual Card */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] as const }}
-            className="lg:col-span-3"
+            className="lg:col-span-3 h-full"
           >
-            <form
-              onSubmit={handleSubmit}
-              className="p-8 lg:p-10 rounded-3xl glass space-y-6"
-            >
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label className="font-body text-sm text-foreground/60 mb-2 block">
-                    Your Name
-                  </label>
-                  <Input
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder="John Doe"
-                    required
-                    className="bg-foreground/5 border-foreground/10 text-foreground placeholder:text-foreground/30 focus:border-[#FF6B6B] rounded-xl h-12"
+            <div className="relative h-full min-h-[400px] rounded-3xl overflow-hidden glass p-1 lg:p-2 group">
+              {/* Inner Artistic Content */}
+              <div className="relative h-full w-full rounded-[1.4rem] bg-[#0A0A0F]/50 overflow-hidden flex flex-col items-center justify-center p-8 text-center border border-white/5">
+
+                {/* Background Animation (Magnetic/Fluid) */}
+                <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+                  <motion.div
+                    animate={{
+                      scale: [1, 1.2, 1],
+                      rotate: [0, 90, 180, 270, 360],
+                    }}
+                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                    className="absolute -top-1/2 -left-1/2 w-full h-full bg-gradient-to-br from-[#FF6B6B]/10 to-transparent blur-[80px]"
+                  />
+                  <motion.div
+                    animate={{
+                      scale: [1.2, 1, 1.2],
+                      rotate: [360, 270, 180, 90, 0],
+                    }}
+                    transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                    className="absolute -bottom-1/2 -right-1/2 w-full h-full bg-gradient-to-tl from-[#4ECDC4]/10 to-transparent blur-[80px]"
                   />
                 </div>
 
-                <div>
-                  <label className="font-body text-sm text-foreground/60 mb-2 block">
-                    Email Address
-                  </label>
-                  <Input
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="john@example.com"
-                    required
-                    className="bg-foreground/5 border-foreground/10 text-foreground placeholder:text-foreground/30 focus:border-[#FF6B6B] rounded-xl h-12"
-                  />
+                {/* Content */}
+                <div className="relative z-10 max-w-md">
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8 border border-white/10">
+                    <Sparkles size={16} className="text-[#FFE66D]" />
+                    <span className="font-body text-xs text-foreground/60 uppercase tracking-widest">Open for collaborations</span>
+                  </div>
+
+                  <h3 className="font-display text-3xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
+                    Got a <span className="gradient-text">vision</span>?<br />
+                    Let&apos;s talk.
+                  </h3>
+
+                  <p className="font-body text-base lg:text-lg text-foreground/50 mb-10 leading-relaxed">
+                    I&apos;m currently taking on new projects and would love to hear how I can help bring your ideas to life through design.
+                  </p>
+
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a
+                      href="mailto:career.charantej@gmail.com"
+                      className="group relative px-10 py-5 bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4] rounded-2xl font-body text-lg font-bold text-white overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-[#FF6B6B]/40 hover:-translate-y-1"
+                      data-cursor-hover
+                    >
+                      <span className="relative z-10 flex items-center gap-3">
+                        Start a Project
+                        <ArrowUpRight size={20} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                      </span>
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#4ECDC4] to-[#FF6B6B] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    </a>
+                  </div>
+
+                  <div className="mt-12 flex items-center justify-center gap-8">
+                    <div className="flex flex-col items-center gap-2 group cursor-pointer" onClick={() => window.open('https://linkedin.com/in/charan-tej-neelam-bb0a9a302', '_blank')}>
+                      <div className="w-10 h-10 rounded-full glass flex items-center justify-center group-hover:bg-[#FF6B6B]/20 transition-colors">
+                        <Linkedin size={18} className="text-foreground/40 group-hover:text-[#FF6B6B]" />
+                      </div>
+                    </div>
+                    <div className="flex flex-col items-center gap-2 group cursor-pointer" onClick={() => window.open('career.charantej@gmail.com', '_self')}>
+                      <div className="w-10 h-10 rounded-full glass flex items-center justify-center group-hover:bg-[#4ECDC4]/20 transition-colors">
+                        <Mail size={18} className="text-foreground/40 group-hover:text-[#4ECDC4]" />
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
 
-              <div>
-                <label className="font-body text-sm text-foreground/60 mb-2 block">
-                  Project Budget
-                </label>
-                <Select
-                  value={formData.budget}
-                  onValueChange={(value) =>
-                    setFormData((prev) => ({ ...prev, budget: value }))
-                  }
-                >
-                  <SelectTrigger className="bg-foreground/5 border-foreground/10 text-foreground focus:border-[#FF6B6B] rounded-xl h-12">
-                    <SelectValue placeholder="Select your budget range" />
-                  </SelectTrigger>
-                  <SelectContent className="bg-card border-border">
-                    <SelectItem value="5k-10k">$1,000 - $5,000</SelectItem>
-                    <SelectItem value="5k-15k">$5,000 - $15,000</SelectItem>
-                    <SelectItem value="15k-30k">$15,000 - $30,000</SelectItem>
-                    <SelectItem value="30k+">$30,000+</SelectItem>
-                  </SelectContent>
-                </Select>
+                {/* Corner Accents */}
+                <div className="absolute top-6 left-6 w-8 h-8 border-t-2 border-l-2 border-white/10 rounded-tl-xl" />
+                <div className="absolute top-6 right-6 w-8 h-8 border-t-2 border-r-2 border-white/10 rounded-tr-xl" />
+                <div className="absolute bottom-6 left-6 w-8 h-8 border-b-2 border-l-2 border-white/10 rounded-bl-xl" />
+                <div className="absolute bottom-6 right-6 w-8 h-8 border-b-2 border-r-2 border-white/10 rounded-br-xl" />
               </div>
-
-              <div>
-                <label className="font-body text-sm text-foreground/60 mb-2 block">
-                  Tell Me About Your Project
-                </label>
-                <Textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  placeholder="I'm looking for a designer to help me with..."
-                  required
-                  rows={5}
-                  className="bg-foreground/5 border-foreground/10 text-foreground placeholder:text-foreground/30 focus:border-[#FF6B6B] rounded-xl resize-none"
-                />
-              </div>
-
-              <Button
-                type="submit"
-                disabled={isSubmitting || isSubmitted}
-                className={`w-full h-12 rounded-xl font-body text-base font-medium transition-all duration-300 ${isSubmitted
-                  ? 'bg-green-500 text-white'
-                  : 'bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4] text-white hover:shadow-lg hover:shadow-[#FF6B6B]/30'
-                  }`}
-              >
-                {isSubmitting ? (
-                  'Sending...'
-                ) : isSubmitted ? (
-                  'Message Sent Successfully!'
-                ) : (
-                  <>
-                    Send Message
-                    <Send size={18} className="ml-2" />
-                  </>
-                )}
-              </Button>
-            </form>
+            </div>
           </motion.div>
         </div>
 

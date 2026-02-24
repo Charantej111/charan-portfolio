@@ -149,7 +149,7 @@ const Hero = ({ isLoading }: { isLoading: boolean }) => {
               className="font-body text-lg lg:text-xl text-foreground/60 max-w-lg leading-relaxed"
             >
               Crafting digital experiences where design meets intelligence.
-              Specializing in UI/UX and Front-end Development.
+              Specializing in UI/UX and Product Design.
             </motion.p>
           </div>
 
@@ -161,7 +161,7 @@ const Hero = ({ isLoading }: { isLoading: boolean }) => {
             <div className="flex items-center gap-3">
               <div className="w-2 h-2 rounded-full bg-[#4ECDC4] animate-pulse" />
               <span className="font-mono text-base lg:text-lg text-foreground/80">
-                UI/UX Designer
+                Product Designer
               </span>
             </div>
             <div className="hidden sm:block w-px h-6 bg-foreground/20" />

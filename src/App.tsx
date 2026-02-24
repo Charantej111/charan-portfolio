@@ -27,13 +27,20 @@ function App() {
     };
   }, []);
 
+  const isFirstMount = useRef(true);
+
   // Handle scrolling on route change
   useEffect(() => {
+    if (isFirstMount.current) {
+      isFirstMount.current = false;
+      window.scrollTo(0, 0);
+      return;
+    }
+
     if (hash) {
       const id = hash.replace('#', '');
       const element = document.getElementById(id);
       if (element) {
-        // Small delay to ensure content is rendered
         setTimeout(() => {
           element.scrollIntoView({ behavior: 'smooth' });
         }, 100);

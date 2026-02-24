@@ -16,9 +16,9 @@ const About = () => {
   const highlights = [
     {
       icon: Sparkles,
-      title: 'AI + Design Fusion',
+      title: 'Intelligence-Driven Design',
       description:
-        'Combining my AI/ML background with design thinking to create intelligent, data-driven user experiences.',
+        'Leveraging my AI/ML background to build cognitive experiences that are as smart as they are beautiful.',
       color: '#FF6B6B',
     },
     {
@@ -107,9 +107,8 @@ const About = () => {
                 so intuitive, users never have to think twice.
               </p>
 
-              {/* Quick Tags */}
               <div className="flex flex-wrap gap-3 pt-4">
-                {['Figma', 'User Research', 'Prototyping', 'Design Systems', 'HTML/CSS'].map(
+                {['Figma', 'User Research', 'Prototyping', 'Design Systems', 'Interaction Design'].map(
                   (tag) => (
                     <span
                       key={tag}

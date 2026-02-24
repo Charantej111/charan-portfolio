@@ -32,12 +32,12 @@ export const projects: Project[] = [
         overview: 'Ofzen required a digital presence that reflected their innovative approach to wellness. The goal was to build a site that felt organic yet modern.',
         problem: 'The previous website was outdated, non-responsive, and failed to communicate the brand values effectively, leading to high bounce rates.',
         solution: 'We designed a fluid, nature-inspired interface with bio-morphic shapes and smooth scroll animations to evoke a sense of calm and flow.',
-        tools: ['Figma', 'React', 'Tailwind CSS', 'Framer Motion'],
+        tools: ['Figma', 'UX Research', 'Hi-Fi Prototyping', 'Design Systems'],
         features: [
-            'Custom scroll animations',
-            'Interactive service cards',
-            'Mobile-first responsive layout',
-            'Fast loading performance'
+            'Visual storytelling flow',
+            'Interactive component design',
+            'Mobile-first grid system',
+            'Optimized user journeys'
         ],
         results: 'Increased user engagement by 40% and doubled the inquiry rate within the first month of launch.',
         link: 'https://ofzen.in/',
@@ -56,12 +56,12 @@ export const projects: Project[] = [
         overview: 'A niche food delivery app specializing in fresh meat delivery, prioritizing speed and freshness.',
         problem: 'Generic food delivery apps didn\'t cater to the specific needs of fresh meat buyers, such as cut selection and delivery timing.',
         solution: 'Designed a specialized interface allowing users to select cuts, weight, and precise delivery slots to ensure freshness.',
-        tools: ['React Native', 'Redux', 'Figma'],
+        tools: ['Figma', 'UX Research', 'User Flow Mapping', 'Prototyping'],
         features: [
-            'Custom cut selection UI',
-            'Live delivery tracking',
-            'Subscription for regular deliveries',
-            'Recipe suggestions'
+            'Intuitive cut selection UI',
+            'Visual delivery tracking',
+            'Subscription-based checkout',
+            'Personalized content feed'
         ],
         results: 'Achieved 10k+ downloads in the first 3 months with a 4.8-star average rating.'
     },
@@ -78,12 +78,12 @@ export const projects: Project[] = [
         overview: 'A digital booking platform for a premium catering service, focusing on visual appeal and ease of ordering.',
         problem: 'The manual booking process was prone to errors and time-consuming for both staff and customers.',
         solution: 'Developed an automated booking system with a visual menu builder, allowing customers to customize their orders and get instant quotes.',
-        tools: ['Vue.js', 'Firebase', 'Stripe'],
+        tools: ['Figma', 'Information Architecture', 'Visual Design', 'UX Design'],
         features: [
-            'Visual menu customization',
-            'Real-time price calculation',
-            'Secure payment integration',
-            'Order management admin panel'
+            'Visual menu builder UI',
+            'Seamless navigation flow',
+            'Trust-focused checkout design',
+            'Order tracking interface'
         ],
         results: 'Reduced booking errors by 90% and saved the admin team 20 hours per week.',
         link: 'https://www.skconline.in/',
@@ -102,12 +102,12 @@ export const projects: Project[] = [
         overview: 'An exam preparation assistant that helps students manage their study schedules and practice effectively.',
         problem: 'Students often feel overwhelmed by the volume of syllabus and lack a structured way to prepare for exams.',
         solution: 'Created a smart study planner that adapts to the student\'s pace and generates daily goals and revision reminders.',
-        tools: ['Flutter', 'Dart', 'Firebase'],
+        tools: ['Figma', 'Interaction Design', 'Usability Testing', 'Product Design'],
         features: [
-            'Adaptive study planner',
-            'Flashcards and quizzes',
-            'Focus timer (Pomodoro)',
-            'Performance analytics'
+            'Adaptive study planner UI',
+            'Gamified focus micro-interactions',
+            'Minimalist dashbord design',
+            'Goal-oriented interface'
         ],
         results: 'Helped 5000+ students improve their exam scores by an average of 20%.'
     },
@@ -124,12 +124,12 @@ export const projects: Project[] = [
         overview: 'A comprehensive dashboard for coding students to track their problem-solving streaks and skill progression.',
         problem: 'Students found it difficult to visualize their progress and identify weak areas due to scattered data across different platforms.',
         solution: 'Aggregated data into a central hub with intuitive charts, heatmaps, and streak indicators to gamify the learning experience.',
-        tools: ['React', 'Recharts', 'Node.js', 'MongoDB'],
+        tools: ['Figma', 'Dashboard Design', 'Data Visualization', 'UX Research'],
         features: [
-            'Real-time progress updates',
-            'Interactive skill heatmaps',
-            'Gamified streak tracking',
-            'Peer comparison metrics'
+            'Clean data visualization',
+            'Structured information hierarchy',
+            'Gamified performance UI',
+            'Insightful reporting screens'
         ],
         results: 'Daily active users improved by 25%, and course completion rates saw a 15% uplift.'
     },
@@ -146,12 +146,12 @@ export const projects: Project[] = [
         overview: 'A mobile tool for job seekers to organize their applications, interviews, and follow-ups in one place.',
         problem: 'Job hunting involves managing data across emails, spreadsheets, and portals, leading to missed opportunities.',
         solution: 'Built a Kanban-style application tracker with automated reminders and email integration to centralize the process.',
-        tools: ['Swift', 'SwiftUI', 'CoreData'],
+        tools: ['Figma', 'Mobile Interface Design', 'Task Analysis', 'Prototyping'],
         features: [
-            'Kanban board status tracking',
-            'Automated follow-up reminders',
-            'CV/Resume version management',
-            'Interview scheduling'
+            'Intuitive Kanban board UI',
+            'Action-focused Notification design',
+            'Centralized document management',
+            'Clean event scheduling flow'
         ],
         results: 'Users reported a 30% reduction in job search anxiety and better interview attendance rates.',
         screens: ['/applyq_screen1.jpg', '/applyq_screen2.jpg', '/applyq_screen3.jpg']
@@ -169,12 +169,12 @@ export const projects: Project[] = [
         overview: 'Koyya Enterprises needed a robust corporate site to showcase their diverse portfolio of services and establish market credibility.',
         problem: 'Their existing site lacked professional polish and content structure, making it hard for potential B2B clients to trust their expertise.',
         solution: 'Implemented a clean, grid-based layout with strong typography and a corporate color palette that conveys stability and trust.',
-        tools: ['Next.js', 'TypeScript', 'Sass'],
+        tools: ['Figma', 'Visual Design', 'Branding Strategy', 'Information Architecture'],
         features: [
-            'Service portfolio showcasing',
-            'Client testimonials slider',
-            'Lead generation forms',
-            'SEO optimized structure'
+            'Strategic content architecture',
+            'Trust-building visual components',
+            'Optimized lead capture journey',
+            'Brand-consistent design language'
         ],
         results: 'Generated 50+ quality B2B leads in the first quarter and significantly improved brand perception.',
         link: 'https://koyya.in/'
