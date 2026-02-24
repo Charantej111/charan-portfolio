@@ -78,8 +78,8 @@ const Hero = ({ isLoading }: { isLoading: boolean }) => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.4,
+        staggerChildren: 0.1,
+        delayChildren: 0.1,
       },
     },
   };
@@ -97,7 +97,7 @@ const Hero = ({ isLoading }: { isLoading: boolean }) => {
       filter: 'blur(0px)',
       scale: 1,
       transition: {
-        duration: 1.2,
+        duration: 0.8,
         ease: [0.16, 1, 0.3, 1] as const,
       },
     },
@@ -218,9 +218,9 @@ const Hero = ({ isLoading }: { isLoading: boolean }) => {
                 x: 0,
                 opacity: 1,
                 transition: {
-                  clipPath: { duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 0.6 },
-                  x: { duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.6 },
-                  opacity: { duration: 0.8, delay: 0.6 }
+                  clipPath: { duration: 1.0, ease: [0.16, 1, 0.3, 1], delay: 0.3 },
+                  x: { duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.3 },
+                  opacity: { duration: 0.5, delay: 0.3 }
                 }
               }
             }}
@@ -234,7 +234,7 @@ const Hero = ({ isLoading }: { isLoading: boolean }) => {
                 visible: {
                   scale: 1,
                   filter: 'blur(0px)',
-                  transition: { duration: 2, ease: "easeOut", delay: 0.6 }
+                  transition: { duration: 1.5, ease: "easeOut", delay: 0.3 }
                 }
               }}
               src="/hero_portrait.jpg"
@@ -265,7 +265,7 @@ const Hero = ({ isLoading }: { isLoading: boolean }) => {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.5, duration: 0.8 }}
+        transition={{ delay: 0.6, duration: 0.6 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20"
       >
         <button

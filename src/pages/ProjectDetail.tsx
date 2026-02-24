@@ -17,7 +17,7 @@ const ProjectDetail = () => {
             <div className="min-h-screen flex items-center justify-center text-foreground">
                 <div className="text-center">
                     <h1 className="text-4xl font-bold mb-4">Project Not Found</h1>
-                    <Link to="/" className="text-[#FF6B6B] hover:underline">
+                    <Link to="/#projects" className="text-[#FF6B6B] hover:underline">
                         Back to Home
                     </Link>
                 </div>
@@ -43,7 +43,7 @@ const ProjectDetail = () => {
     return (
         <div className="min-h-screen pt-24 pb-12 px-6 lg:px-12 max-w-7xl mx-auto">
             {/* Back Link */}
-            <Link to="/" className="inline-flex items-center gap-2 text-foreground/60 hover:text-foreground mb-8 transition-colors group">
+            <Link to="/#projects" className="inline-flex items-center gap-2 text-foreground/60 hover:text-foreground mb-8 transition-colors group">
                 <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
                 Back to Portfolio
             </Link>
@@ -87,7 +87,7 @@ const ProjectDetail = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
             </motion.div>
 
-            <div className="grid lg:grid-cols-3 gap-12 lg:gap-24">
+            <div className="grid lg:grid-cols-3 gap-12 lg:gap-24 mb-24">
                 {/* Main Content */}
                 <div className="lg:col-span-2 space-y-16">
 
@@ -224,6 +224,38 @@ const ProjectDetail = () => {
                     </motion.div>
                 </div>
             </div>
+
+            {/* Design Screens Gallery */}
+            {project.screens && project.screens.length > 0 && (
+                <section className="mb-24">
+                    <div className="flex items-center gap-4 mb-12">
+                        <h2 className="font-display text-3xl font-bold text-foreground">Design Screens</h2>
+                        <div className="flex-1 h-px bg-foreground/10" />
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {project.screens.map((screen, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: index * 0.1 }}
+                                className="group relative rounded-2xl overflow-hidden glass border border-foreground/5 aspect-[4/5] lg:aspect-[3/4]"
+                            >
+                                <img
+                                    src={screen}
+                                    alt={`${project.title} Screen ${index + 1}`}
+                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                                    <p className="text-white text-sm font-body">Screen {index + 1}</p>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+                </section>
+            )}
         </div>
     );
 };

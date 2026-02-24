@@ -15,6 +15,7 @@ export interface Project {
     features?: string[];
     results?: string;
     link?: string;
+    screens?: string[];
 }
 
 export const projects: Project[] = [
@@ -39,75 +40,8 @@ export const projects: Project[] = [
             'Fast loading performance'
         ],
         results: 'Increased user engagement by 40% and doubled the inquiry rate within the first month of launch.',
-        link: 'https://ofzen.in/'
-    },
-    {
-        id: 'coding',
-        title: 'Coding Platform',
-        subtitle: 'Tracker Dashboard',
-        category: 'Dashboard',
-        description:
-            'Progress tracking dashboard that turns complex learning data into clear, actionable insights.',
-        image: '/project_coding.jpg',
-        tags: ['UX Research', 'Dashboard', 'Data Viz'],
-        color: '#4ECDC4',
-        overview: 'A comprehensive dashboard for coding students to track their problem-solving streaks and skill progression.',
-        problem: 'Students found it difficult to visualize their progress and identify weak areas due to scattered data across different platforms.',
-        solution: 'Aggregated data into a central hub with intuitive charts, heatmaps, and streak indicators to gamify the learning experience.',
-        tools: ['React', 'Recharts', 'Node.js', 'MongoDB'],
-        features: [
-            'Real-time progress updates',
-            'Interactive skill heatmaps',
-            'Gamified streak tracking',
-            'Peer comparison metrics'
-        ],
-        results: 'Daily active users improved by 25%, and course completion rates saw a 15% uplift.'
-    },
-    {
-        id: 'koyya',
-        title: 'Koyya Enterprises',
-        subtitle: 'Corporate Website',
-        category: 'Web Design',
-        description:
-            'Professional corporate presence with structured content and confident visual language.',
-        image: '/project_koyya.jpg',
-        tags: ['Branding', 'Web Design', 'B2B'],
-        color: '#FFE66D',
-        overview: 'Koyya Enterprises needed a robust corporate site to showcase their diverse portfolio of services and establish market credibility.',
-        problem: 'Their existing site lacked professional polish and content structure, making it hard for potential B2B clients to trust their expertise.',
-        solution: 'Implemented a clean, grid-based layout with strong typography and a corporate color palette that conveys stability and trust.',
-        tools: ['Next.js', 'TypeScript', 'Sass'],
-        features: [
-            'Service portfolio showcasing',
-            'Client testimonials slider',
-            'Lead generation forms',
-            'SEO optimized structure'
-        ],
-        results: 'Generated 50+ quality B2B leads in the first quarter and significantly improved brand perception.',
-        link: 'https://koyya.in/'
-    },
-    {
-        id: 'catering',
-        title: 'Catering Service',
-        subtitle: 'Booking Platform',
-        category: 'Web Design',
-        description:
-            'Effortless booking experience with warm imagery, clear menus, and conversion-optimized flow.',
-        image: '/project_catering.jpg',
-        tags: ['E-commerce', 'UX Design', 'Booking'],
-        color: '#FF6B6B',
-        overview: 'A digital booking platform for a premium catering service, focusing on visual appeal and ease of ordering.',
-        problem: 'The manual booking process was prone to errors and time-consuming for both staff and customers.',
-        solution: 'Developed an automated booking system with a visual menu builder, allowing customers to customize their orders and get instant quotes.',
-        tools: ['Vue.js', 'Firebase', 'Stripe'],
-        features: [
-            'Visual menu customization',
-            'Real-time price calculation',
-            'Secure payment integration',
-            'Order management admin panel'
-        ],
-        results: 'Reduced booking errors by 90% and saved the admin team 20 hours per week.',
-        link: 'https://www.skconline.in/'
+        link: 'https://ofzen.in/',
+        screens: ['/ofzen_screen1.jpg', '/ofzen_screen2.jpg', '/ofzen_screen3.jpg']
     },
     {
         id: 'meatbox',
@@ -132,6 +66,30 @@ export const projects: Project[] = [
         results: 'Achieved 10k+ downloads in the first 3 months with a 4.8-star average rating.'
     },
     {
+        id: 'catering',
+        title: 'Catering Service',
+        subtitle: 'Booking Platform',
+        category: 'Web Design',
+        description:
+            'Effortless booking experience with warm imagery, clear menus, and conversion-optimized flow.',
+        image: '/project_catering.jpg',
+        tags: ['E-commerce', 'UX Design', 'Booking'],
+        color: '#FF6B6B',
+        overview: 'A digital booking platform for a premium catering service, focusing on visual appeal and ease of ordering.',
+        problem: 'The manual booking process was prone to errors and time-consuming for both staff and customers.',
+        solution: 'Developed an automated booking system with a visual menu builder, allowing customers to customize their orders and get instant quotes.',
+        tools: ['Vue.js', 'Firebase', 'Stripe'],
+        features: [
+            'Visual menu customization',
+            'Real-time price calculation',
+            'Secure payment integration',
+            'Order management admin panel'
+        ],
+        results: 'Reduced booking errors by 90% and saved the admin team 20 hours per week.',
+        link: 'https://www.skconline.in/',
+        screens: ['/catering_screen1.jpg', '/catering_screen2.jpg', '/catering_screen3.jpg']
+    },
+    {
         id: 'examate',
         title: 'Examate',
         subtitle: 'Study App',
@@ -154,6 +112,28 @@ export const projects: Project[] = [
         results: 'Helped 5000+ students improve their exam scores by an average of 20%.'
     },
     {
+        id: 'coding',
+        title: 'Coding Platform',
+        subtitle: 'Tracker Dashboard',
+        category: 'Dashboard',
+        description:
+            'Progress tracking dashboard that turns complex learning data into clear, actionable insights.',
+        image: '/project_coding.jpg',
+        tags: ['UX Research', 'Dashboard', 'Data Viz'],
+        color: '#4ECDC4',
+        overview: 'A comprehensive dashboard for coding students to track their problem-solving streaks and skill progression.',
+        problem: 'Students found it difficult to visualize their progress and identify weak areas due to scattered data across different platforms.',
+        solution: 'Aggregated data into a central hub with intuitive charts, heatmaps, and streak indicators to gamify the learning experience.',
+        tools: ['React', 'Recharts', 'Node.js', 'MongoDB'],
+        features: [
+            'Real-time progress updates',
+            'Interactive skill heatmaps',
+            'Gamified streak tracking',
+            'Peer comparison metrics'
+        ],
+        results: 'Daily active users improved by 25%, and course completion rates saw a 15% uplift.'
+    },
+    {
         id: 'applyq',
         title: 'ApplyQ',
         subtitle: 'Job Tracker App',
@@ -173,6 +153,30 @@ export const projects: Project[] = [
             'CV/Resume version management',
             'Interview scheduling'
         ],
-        results: 'Users reported a 30% reduction in job search anxiety and better interview attendance rates.'
+        results: 'Users reported a 30% reduction in job search anxiety and better interview attendance rates.',
+        screens: ['/applyq_screen1.jpg', '/applyq_screen2.jpg', '/applyq_screen3.jpg']
+    },
+    {
+        id: 'koyya',
+        title: 'Koyya Enterprises',
+        subtitle: 'Corporate Website',
+        category: 'Web Design',
+        description:
+            'Professional corporate presence with structured content and confident visual language.',
+        image: '/project_koyya.jpg',
+        tags: ['Branding', 'Web Design', 'B2B'],
+        color: '#FFE66D',
+        overview: 'Koyya Enterprises needed a robust corporate site to showcase their diverse portfolio of services and establish market credibility.',
+        problem: 'Their existing site lacked professional polish and content structure, making it hard for potential B2B clients to trust their expertise.',
+        solution: 'Implemented a clean, grid-based layout with strong typography and a corporate color palette that conveys stability and trust.',
+        tools: ['Next.js', 'TypeScript', 'Sass'],
+        features: [
+            'Service portfolio showcasing',
+            'Client testimonials slider',
+            'Lead generation forms',
+            'SEO optimized structure'
+        ],
+        results: 'Generated 50+ quality B2B leads in the first quarter and significantly improved brand perception.',
+        link: 'https://koyya.in/'
     }
 ];

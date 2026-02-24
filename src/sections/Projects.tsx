@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { ArrowRight, ArrowUpRight, ExternalLink } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ArrowUpRight, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { projects } from '../data/projects';
 import type { Project } from '../data/projects';
@@ -100,7 +100,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
             </div>
           </div>
 
-          {/* Glossy Shine — cursor-tracked radial highlight */}
+          {/* Glossy Shine */}
           <div
             className="absolute inset-0 rounded-3xl pointer-events-none transition-opacity duration-300"
             style={{
@@ -110,19 +110,6 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
                 : 'none',
             }}
           />
-
-          {/* Gloss Sweep — diagonal shimmer stripe on hover */}
-          <div
-            className="absolute inset-0 rounded-3xl pointer-events-none overflow-hidden"
-          >
-            <div
-              className="absolute inset-0 transition-all duration-700"
-              style={{
-                background: 'linear-gradient(105deg, transparent 30%, rgba(255,255,255,0.12) 50%, transparent 70%)',
-                transform: isHovered ? 'translateX(100%)' : 'translateX(-100%)',
-              }}
-            />
-          </div>
 
           {/* Glow Border */}
           <div
@@ -142,25 +129,26 @@ const Projects = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
 
-  const scrollLeft = () => {
-    scrollContainerRef.current?.scrollBy({ left: -400, behavior: 'smooth' });
-  };
+  const scroll = (direction: 'left' | 'right') => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
 
-  const scrollRight = () => {
-    scrollContainerRef.current?.scrollBy({ left: 400, behavior: 'smooth' });
+    const scrollAmount = window.innerWidth * 0.5;
+    container.scrollBy({
+      left: direction === 'left' ? -scrollAmount : scrollAmount,
+      behavior: 'smooth'
+    });
   };
 
   return (
     <section
       ref={sectionRef}
       id="projects"
-      className="relative py-24 lg:py-32 overflow-hidden"
+      className="relative py-24 lg:py-32 overflow-hidden bg-background"
     >
-      {/* Background */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-[#FF6B6B]/5 blur-[150px]" />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        {/* Section Header */}
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -182,14 +170,14 @@ const Projects = () => {
           {/* Navigation Arrows */}
           <div className="flex gap-3 mt-6 lg:mt-0">
             <button
-              onClick={scrollLeft}
+              onClick={() => scroll('left')}
               className="w-12 h-12 rounded-full glass flex items-center justify-center text-foreground/60 hover:text-foreground hover:bg-foreground/10 transition-all"
               data-cursor-hover
             >
-              <ArrowRight size={20} className="rotate-180" />
+              <ArrowLeft size={20} />
             </button>
             <button
-              onClick={scrollRight}
+              onClick={() => scroll('right')}
               className="w-12 h-12 rounded-full glass flex items-center justify-center text-foreground/60 hover:text-foreground hover:bg-foreground/10 transition-all"
               data-cursor-hover
             >
@@ -199,50 +187,45 @@ const Projects = () => {
         </motion.div>
       </div>
 
-      {/* Horizontal Scroll Gallery */}
-      <div
-        ref={scrollContainerRef}
-        className="flex gap-6 overflow-x-auto pb-8 px-6 lg:px-12 scrollbar-hide"
-        style={{ scrollSnapType: 'x mandatory' }}
-      >
-        {/* Spacer for alignment */}
-        <div className="flex-shrink-0 w-[calc((100vw-1280px)/2)] hidden xl:block" />
+      <div className="relative w-full">
+        <div className="absolute inset-y-0 left-0 w-24 md:w-48 bg-gradient-to-r from-background to-transparent z-20 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-24 md:w-48 bg-gradient-to-l from-background to-transparent z-20 pointer-events-none" />
 
-        {projects.map((project, index) => (
-          <ProjectCard key={project.id} project={project} index={index} />
-        ))}
-
-        {/* View All Card */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: projects.length * 0.1 }}
-          className="flex-shrink-0 w-[85vw] md:w-[60vw] lg:w-[45vw] flex items-center justify-center"
+        <div
+          ref={scrollContainerRef}
+          className="flex gap-6 overflow-x-auto pb-8 px-12 scrollbar-hide select-none cursor-grab active:cursor-grabbing snap-x snap-mandatory"
         >
-          <div className="glass rounded-3xl p-12 text-center group hover:bg-white/10 transition-all cursor-pointer" data-cursor-hover>
-            <div className="w-16 h-16 rounded-full bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4] flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-              <ExternalLink size={24} className="text-white" />
+          {projects.map((project, index) => (
+            <div key={project.id} className="snap-center">
+              <ProjectCard
+                project={project}
+                index={index}
+              />
             </div>
-            <h3 className="font-display text-2xl font-bold text-foreground mb-2">
-              View All Projects
-            </h3>
-            <p className="font-body text-foreground/60">
-              Explore my complete portfolio on Dribbble
-            </p>
-          </div>
-        </motion.div>
+          ))}
 
-        {/* Spacer */}
-        <div className="flex-shrink-0 w-6" />
+          {/* Final View All Card */}
+          <div className="flex-shrink-0 w-[85vw] md:w-[60vw] lg:w-[45vw] flex items-center justify-center snap-center">
+            <div className="glass rounded-3xl p-12 text-center group hover:bg-white/10 transition-all cursor-pointer w-full" data-cursor-hover>
+              <div className="w-16 h-16 rounded-full bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4] flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                <ExternalLink size={24} className="text-white" />
+              </div>
+              <h3 className="font-display text-2xl font-bold text-foreground mb-2">
+                View All Projects
+              </h3>
+              <p className="font-body text-foreground/60">
+                Explore my complete portfolio on Dribbble
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 mt-8">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 mt-12 relative z-10">
         <div className="flex items-center gap-4">
           <div className="flex-1 h-px bg-foreground/10" />
-          <span className="font-body text-sm text-foreground/40">
-            Scroll to explore
+          <span className="font-body text-sm text-foreground/40 italic">
+            Use arrows or hover to explore
           </span>
           <div className="flex-1 h-px bg-foreground/10" />
         </div>

@@ -27,12 +27,12 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
     // Progress bar — quirky: fast then slow then suddenly jumps to 100
     useEffect(() => {
         const steps = [
-            { target: 30, duration: 400 },
-            { target: 55, duration: 600 },
-            { target: 57, duration: 800 },   // fake stall
-            { target: 80, duration: 500 },
-            { target: 81, duration: 900 },   // another fake stall
-            { target: 100, duration: 300 },  // sudden jump!
+            { target: 30, duration: 200 },
+            { target: 55, duration: 300 },
+            { target: 57, duration: 400 },   // fake stall
+            { target: 80, duration: 250 },
+            { target: 81, duration: 450 },   // another fake stall
+            { target: 100, duration: 150 },  // sudden jump!
         ];
 
         let current = 0;
@@ -41,8 +41,8 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
                 // Done — wait a beat then exit
                 setTimeout(() => {
                     setLeaving(true);
-                    setTimeout(onComplete, 900);
-                }, 350);
+                    setTimeout(onComplete, 500);
+                }, 200);
                 return;
             }
             const { target, duration } = steps[i];
