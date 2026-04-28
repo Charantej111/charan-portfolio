@@ -237,7 +237,7 @@ const Hero = ({ isLoading }: { isLoading: boolean }) => {
                   transition: { duration: 1.5, ease: "easeOut", delay: 0.3 }
                 }
               }}
-              src="/hero_portrait.jpg"
+              src="/hero_portrait.jpeg"
               alt="Charan Neelam"
               className="w-full h-full object-cover"
             />

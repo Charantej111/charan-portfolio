@@ -65,8 +65,8 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
             </div>
           </div>
 
-          {/* Content */}
-          <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-8">
+          {/* Content layer with slight depth */}
+          <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-8 z-20" style={{ transform: 'translateZ(20px)' }}>
             <h3 className="font-display text-2xl lg:text-3xl font-bold text-white mb-1">
               {project.title}
             </h3>
@@ -100,22 +100,23 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
             </div>
           </div>
 
-          {/* Glossy Shine */}
+          {/* Glow Border */}
           <div
-            className="absolute inset-0 rounded-3xl pointer-events-none transition-opacity duration-300"
+            className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10"
             style={{
-              opacity: isHovered ? 1 : 0,
-              background: isHovered
-                ? `radial-gradient(circle at ${50 + mousePosition.x * 100}% ${50 + mousePosition.y * 100}%, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.06) 40%, transparent 70%)`
-                : 'none',
+              boxShadow: `inset 0 0 0 2px ${project.color}50, 0 0 30px ${project.color}20`,
+              transform: 'translateZ(10px)',
             }}
           />
 
-          {/* Glow Border */}
+          {/* Glossy Shine - MUST BE LAST AND ON TOP IN 3D SPACE */}
           <div
-            className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+            className="absolute inset-0 rounded-3xl pointer-events-none transition-opacity duration-300 z-50"
             style={{
-              boxShadow: `inset 0 0 0 2px ${project.color}50, 0 0 30px ${project.color}20`,
+              opacity: isHovered ? 1 : 0,
+              background: `radial-gradient(circle at ${50 + mousePosition.x * 100}% ${50 + mousePosition.y * 100}%, rgba(255, 255, 255, 0.6) 0%, transparent 60%)`,
+              transform: 'translateZ(50px)',
+              mixBlendMode: 'overlay',
             }}
           />
         </div>
