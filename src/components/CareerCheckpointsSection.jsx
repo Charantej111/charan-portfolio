@@ -5,6 +5,25 @@ const CHECKPOINTS = [
   {
     id: 1,
     number: '01',
+    period: '2025',
+    company: 'Aditya University',
+    role: 'Product Support & Validation Intern',
+    location: 'ANDHRA PRADESH, INDIA',
+    description: 'Worked on product testing, issue identification, validation, and communicating product problems to improve the product experience.',
+    borderColor: '#8427DE',
+    pinFill: '#8427DE',
+    rotate: -1,
+    logoUrl: '/logo-aditya.png',
+    logoSvg: (
+      <svg width="36" height="36" viewBox="0 0 40 40" fill="none">
+        <path d="M10 8h20L20 20H10V8z" fill="#8427DE" />
+        <path d="M10 20h10l10 12H10V20z" fill="#8427DE" opacity="0.85" />
+      </svg>
+    ),
+  },
+  {
+    id: 2,
+    number: '02',
     period: '2025 · Present',
     company: 'Ofzen',
     role: 'Co-Founder · Product Strategy',
@@ -12,7 +31,8 @@ const CHECKPOINTS = [
     description: 'Worked across product discovery, requirements, UX, operations, client communication, and execution within a student-led software startup.',
     borderColor: '#F04438',
     pinFill: '#F04438',
-    rotate: -1,
+    rotate: 2,
+    logoUrl: '/logo-ofzen.png',
     logoSvg: (
       <svg width="36" height="36" viewBox="0 0 40 40" fill="none">
         <path d="M20 6L34 32H6L20 6Z" fill="#F04438" />
@@ -21,8 +41,8 @@ const CHECKPOINTS = [
     ),
   },
   {
-    id: 2,
-    number: '02',
+    id: 3,
+    number: '03',
     period: '2026 - Present',
     company: 'Delizoo',
     role: 'Co-Founder · Product lead & Operations',
@@ -30,7 +50,8 @@ const CHECKPOINTS = [
     description: 'Worked across customer, restaurant, rider, operations, marketing, support, and product experiences for a live food delivery marketplace.',
     borderColor: '#2E90FA',
     pinFill: '#2E90FA',
-    rotate: 2,
+    rotate: -2,
+    logoUrl: '/logo-delizoo.png.jpeg',
     logoSvg: (
       <svg width="36" height="36" viewBox="0 0 40 40" fill="none">
         <circle cx="20" cy="20" r="14" stroke="#2E90FA" strokeWidth="2.5" strokeDasharray="3 3" />
@@ -39,24 +60,6 @@ const CHECKPOINTS = [
         <circle cx="20" cy="30" r="3" fill="#2E90FA" />
         <circle cx="10" cy="20" r="3" fill="#2E90FA" />
         <circle cx="30" cy="20" r="3" fill="#2E90FA" />
-      </svg>
-    ),
-  },
-  {
-    id: 3,
-    number: '03',
-    period: '2025',
-    company: 'Aditya University',
-    role: 'Product Support & Validation Intern',
-    location: 'ANDHRA PRADESH, INDIA',
-    description: 'Worked on product testing, issue identification, validation, and communicating product problems to improve the product experience.',
-    borderColor: '#8427DE',
-    pinFill: '#8427DE',
-    rotate: -2,
-    logoSvg: (
-      <svg width="36" height="36" viewBox="0 0 40 40" fill="none">
-        <path d="M10 8h20L20 20H10V8z" fill="#8427DE" />
-        <path d="M10 20h10l10 12H10V20z" fill="#8427DE" opacity="0.85" />
       </svg>
     ),
   },
@@ -171,8 +174,23 @@ export default function CareerCheckpointsSection() {
 
                 {/* Card Top: Logo & Date Badge */}
                 <div className="flex items-center justify-between">
-                  <div className="w-10 h-10 rounded-[8px] bg-neutral-50 border border-neutral-200/80 flex items-center justify-center p-1.5 shadow-xs">
-                    {item.logoSvg}
+                  <div className="w-12 h-12 rounded-[10px] bg-white border border-neutral-200/90 flex items-center justify-center p-0 overflow-hidden shadow-xs">
+                    {item.logoUrl ? (
+                      <img
+                        src={item.logoUrl}
+                        alt={`${item.company} logo`}
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          e.target.style.display = 'none';
+                          if (e.target.nextElementSibling) {
+                            e.target.nextElementSibling.style.display = 'block';
+                          }
+                        }}
+                      />
+                    ) : null}
+                    <div style={{ display: item.logoUrl ? 'none' : 'block' }}>
+                      {item.logoSvg}
+                    </div>
                   </div>
 
                   <span className="px-2.5 py-1 rounded-[3px] bg-neutral-100 text-neutral-600 text-[12px] font-mono font-medium">

@@ -154,13 +154,20 @@ export default function HeroCard() {
           }`}
         >
           {/* Image Container: Full square on mobile matching Framer card proportion, 45% side column on desktop */}
-          <div className="w-full sm:w-[45%] aspect-square sm:aspect-auto sm:h-[calc(100%-8px)] overflow-hidden rounded-[2px] bg-neutral-200 shrink-0">
+          <div className="relative w-full sm:w-[45%] aspect-square sm:aspect-auto sm:h-[calc(100%-8px)] overflow-hidden rounded-[2px] bg-neutral-200 shrink-0 group">
             <img
-              src={DAVID_SUMMER_PHOTO}
+              src="/profile-hero.jpg.jpg"
               alt="Charan Tej Portrait"
-              className="w-full h-full object-cover grayscale contrast-[1.05] brightness-[0.98] transition-transform duration-500 hover:scale-[1.02]"
-              style={{ objectPosition: '49.2% 38.4%' }}
+              className="w-full h-full object-cover grayscale contrast-[1.08] brightness-[0.98] transition-transform duration-500 hover:scale-[1.02]"
+              style={{ objectPosition: 'center 20%' }}
               loading="eager"
+            />
+            {/* Subtle vintage film grain overlay */}
+            <div
+              className="absolute inset-0 pointer-events-none mix-blend-overlay opacity-35"
+              style={{
+                backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+              }}
             />
           </div>
 

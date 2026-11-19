@@ -8,7 +8,7 @@ const CASE_STUDIES = {
     tag: 'Marketplace · Consumer · Product Operations · 0→1',
     title: 'Delizoo',
     subtitle: 'Building a food delivery marketplace where every side of the marketplace has to work.',
-    image: 'https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?auto=format&fit=crop&w=1600&q=80',
+    image: '/project-delizoo.jpg.png',
     meta: [
       { label: 'Role', value: 'Co-Founder · Product lead & Operations' },
       { label: 'Timeline', value: '2026 - Present' },
@@ -43,7 +43,7 @@ const CASE_STUDIES = {
     tag: 'AI Product · Voice UX · Adaptive Systems',
     title: 'InterviewPilot',
     subtitle: 'Building an AI interviewer that understands the candidate, role, and company.',
-    image: 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=1600&q=80',
+    image: '/project-interviewpilot.jpg.png',
     meta: [
       { label: 'Role', value: 'Product Lead' },
       { label: 'Timeline', value: '2026' },
@@ -78,7 +78,7 @@ const CASE_STUDIES = {
     tag: 'B2B · EdTech · Product Design',
     title: 'CodeTracker',
     subtitle: 'Turning fragmented coding activity into a university-wide product.',
-    image: 'https://images.unsplash.com/photo-1579412690850-bd41cd0af397?auto=format&fit=crop&w=1600&q=80',
+    image: '/project-codetracker.jpg.png',
     meta: [
       { label: 'Role', value: 'Product Design & Strategy' },
       { label: 'Timeline', value: '2025' },
@@ -113,7 +113,7 @@ const CASE_STUDIES = {
     tag: '0→1 · Productivity · AI',
     title: 'CareerOS',
     subtitle: 'Turning a fragmented career journey into one connected product.',
-    image: 'https://framerusercontent.com/images/DED09lWyYXoUEEUQjpK6dgT1Pl0.png?width=2312&height=1532',
+    image: '/project-careeros.jpg.png',
     meta: [
       { label: 'Role', value: '0→1 Product Manager' },
       { label: 'Timeline', value: '2026' },

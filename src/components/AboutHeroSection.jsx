@@ -6,21 +6,18 @@ import { PHOTO_2, PHOTO_3 } from './additionalPhotos';
 const PHOTOS = [
   {
     id: 1,
-    src: DAVID_SUMMER_PHOTO,
-    caption: 'Summer 2026',
-    alt: 'David in forest - Summer 2026',
+    src: '/about-photo-1.jpg.jpeg',
+    alt: 'Charan Tej',
   },
   {
     id: 2,
-    src: PHOTO_2,
-    caption: 'Hiking the Ridge 2026',
-    alt: 'Mountain landscape photography',
+    src: '/about-photo-2.jpg',
+    alt: 'Charan Tej',
   },
   {
     id: 3,
-    src: PHOTO_3,
-    caption: 'Design Studio 2026',
-    alt: 'David in workspace',
+    src: '/about-photo-3.jpg',
+    alt: 'Charan Tej',
   },
 ];
 
@@ -136,11 +133,8 @@ export default function AboutHeroSection() {
                   />
                 </div>
 
-                {/* Caption & Stack dots */}
-                <div className="pt-3 pb-1 flex items-center justify-between">
-                  <span className="text-[12px] font-mono text-neutral-600 font-medium tracking-tight">
-                    {photo.caption}
-                  </span>
+                {/* Stack index */}
+                <div className="pt-2.5 pb-0.5 flex items-center justify-end">
                   <span className="text-[10px] font-mono text-neutral-400">
                     {photoIdx + 1}/3
                   </span>
