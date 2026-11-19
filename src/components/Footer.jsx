@@ -13,7 +13,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative w-full bg-[#050505] text-white pt-20 sm:pt-32 pb-28 sm:pb-24 px-4 sm:px-8 overflow-hidden select-none z-10">
+    <footer className="relative w-full bg-[#050505] text-white pt-10 sm:pt-24 pb-28 sm:pb-24 px-4 sm:px-8 overflow-hidden select-none z-10">
 
       {/* Elegantly Animated Flowing White Ribbon Trails */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden z-0 opacity-80 md:opacity-45 transition-opacity duration-700">
@@ -115,7 +115,7 @@ export default function Footer() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="mt-4 text-[46px] xs:text-[56px] sm:text-[90px] md:text-[130px] font-bold text-white tracking-[-0.04em] leading-[0.98]"
+          className="mt-3 text-[42px] xs:text-[54px] sm:text-[90px] md:text-[130px] font-bold text-white tracking-[-0.04em] leading-[0.98]"
         >
           Let's talk
         </motion.h2>
@@ -126,7 +126,7 @@ export default function Footer() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="relative mt-12 sm:mt-16 md:mt-20 w-full max-w-[800px] rounded-[2px] border border-neutral-700/80 bg-neutral-900/60 backdrop-blur-md p-5 sm:p-8 md:p-10 shadow-[0_20px_60px_rgba(0,0,0,0.6)]"
+          className="relative mt-8 sm:mt-14 md:mt-20 w-full max-w-[800px] rounded-[2px] border border-neutral-700/80 bg-neutral-900/60 backdrop-blur-md p-4 xs:p-6 sm:p-8 md:p-10 shadow-[0_20px_60px_rgba(0,0,0,0.6)]"
         >
           {/* Framer Selection Corner Handles */}
           <div className="absolute -top-[4px] -left-[4px] w-[7px] h-[7px] bg-[#050505] border border-neutral-400 pointer-events-none" />

@@ -5,10 +5,10 @@ import SmoothRevealText from './SmoothRevealText';
 
 export default function AboutSection({ onReadStory }) {
   return (
-    <section className="relative w-full py-14 sm:py-20 md:py-28 px-4 sm:px-6 flex flex-col items-center justify-center select-none z-10">
+    <section className="relative w-full pt-4 pb-6 sm:py-16 md:py-24 px-4 sm:px-6 flex flex-col items-center justify-center select-none z-10">
       
       {/* Top Section Tag: "More about me_" with 4 corner anchor dots and solid green border */}
-      <div className="mb-6 sm:mb-10 flex items-center justify-center">
+      <div className="mb-4 sm:mb-10 flex items-center justify-center">
         <div className="relative px-3.5 py-1.5 rounded-[1px] border-[1.3px] border-[#039754] bg-white">
           {/* Tag corner handles */}
           <div className="absolute -top-[3px] -left-[3px] w-[5px] h-[5px] bg-white border-[1px] border-[#039754] pointer-events-none" />
@@ -22,7 +22,7 @@ export default function AboutSection({ onReadStory }) {
       </div>
 
       {/* Main Focus Card Frame: max-w-[700px], border: 1.2px solid #039754 */}
-      <div className="relative w-full max-w-[700px] bg-white rounded-[1px] border-[1.2px] border-[#039754] p-5 sm:p-10 md:p-[60px] shadow-[0_20px_50px_-15px_rgba(3,151,84,0.06)] overflow-visible">
+      <div className="relative w-full max-w-[700px] bg-white rounded-[1px] border-[1.2px] border-[#039754] p-4 xs:p-6 sm:p-10 md:p-[60px] shadow-[0_20px_50px_-15px_rgba(3,151,84,0.06)] overflow-visible">
         
         {/* 4 Corner Anchor Handles (exact Framer 9x9 #039754 border) */}
         <div className="absolute -top-[4px] -left-[4px] w-[8px] sm:w-[9px] h-[8px] sm:h-[9px] bg-white border-[1.3px] border-[#039754] z-20 pointer-events-none" />
@@ -56,7 +56,7 @@ export default function AboutSection({ onReadStory }) {
       </div>
 
       {/* "Read my full story ->" Button navigating to detailed About page */}
-      <div className="mt-10 sm:mt-12 flex items-center justify-center">
+      <div className="mt-6 sm:mt-10 flex items-center justify-center">
         <button
           onClick={onReadStory}
           type="button"

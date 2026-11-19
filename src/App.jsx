@@ -118,7 +118,7 @@ export default function App() {
           /* =================== HOME PAGE VIEW (Shows up to 3 Projects) =================== */
           <div className="relative w-full flex flex-col items-center">
             {/* 1. Hero Workspace */}
-            <div className="relative min-h-[calc(100vh-100px)] py-12 flex items-center justify-center px-4 sm:px-6 z-10 w-full max-w-7xl mx-auto">
+            <div className="relative pt-4 pb-20 sm:py-12 sm:min-h-[calc(100vh-100px)] flex items-center justify-center px-4 sm:px-6 z-10 w-full max-w-7xl mx-auto">
               <HeroCard />
             </div>
 

@@ -31,7 +31,7 @@ function RollingDigit({ digit, inView, delay = 0 }) {
   const targetIndex = parseInt(digit, 10) || 0;
 
   return (
-    <div className="relative inline-block h-[52px] sm:h-[76px] overflow-hidden leading-none">
+    <div className="relative inline-block h-[46px] xs:h-[54px] sm:h-[76px] overflow-hidden leading-none">
       <motion.div
         initial={{ y: '0%' }}
         animate={inView ? { y: `-${targetIndex * 10}%` } : { y: '0%' }}
@@ -46,7 +46,7 @@ function RollingDigit({ digit, inView, delay = 0 }) {
         {digits.map((d) => (
           <div
             key={d}
-            className="h-[52px] sm:h-[76px] flex items-center justify-center text-[46px] sm:text-[68px] font-semibold text-[#111111] tracking-[-0.04em]"
+            className="h-[46px] xs:h-[54px] sm:h-[76px] flex items-center justify-center text-[42px] xs:text-[48px] sm:text-[68px] font-semibold text-[#111111] tracking-[-0.04em]"
           >
             {d}
           </div>
@@ -64,7 +64,7 @@ function StatCard({ stat }) {
   return (
     <div
       ref={cardRef}
-      className="relative w-full max-w-[340px] sm:w-[280px] md:w-[310px] h-[190px] sm:h-[230px] rounded-[2px] border-[1.3px] border-[#8427DE] bg-white p-5 sm:p-7 flex flex-col justify-between shadow-[0_20px_50px_-20px_rgba(132,39,222,0.06)]"
+      className="relative w-full max-w-[340px] sm:w-[280px] md:w-[310px] h-[175px] xs:h-[190px] sm:h-[230px] rounded-[2px] border-[1.3px] border-[#8427DE] bg-white p-4 xs:p-5 sm:p-7 flex flex-col justify-between shadow-[0_20px_50px_-20px_rgba(132,39,222,0.06)]"
     >
       {/* 4 Corner Resize Anchor Handles */}
       <div className="absolute -top-[4px] -left-[4px] w-[7px] h-[7px] bg-white border-[1.3px] border-[#8427DE] pointer-events-none" />
@@ -91,7 +91,7 @@ function StatCard({ stat }) {
               delay={i * 0.18}
             />
           ))}
-          <span className="text-[46px] sm:text-[68px] font-semibold text-[#111111] tracking-[-0.04em] leading-none ml-0.5">
+          <span className="text-[42px] xs:text-[48px] sm:text-[68px] font-semibold text-[#111111] tracking-[-0.04em] leading-none ml-0.5">
             {stat.suffix}
           </span>
         </div>
@@ -109,10 +109,10 @@ function StatCard({ stat }) {
 
 export default function ByTheNumbersSection() {
   return (
-    <section className="relative w-full py-14 sm:py-20 md:py-28 px-4 sm:px-6 flex flex-col items-center select-none z-10">
+    <section className="relative w-full pt-4 pb-8 sm:py-16 md:py-24 px-4 sm:px-6 flex flex-col items-center select-none z-10">
       
       {/* Top Header Tag: "By the numbers_" with Purple Border */}
-      <div className="flex flex-col items-center gap-3 sm:gap-4 mb-10 sm:mb-16 md:mb-20 z-10">
+      <div className="flex flex-col items-center gap-2.5 sm:gap-4 mb-6 sm:mb-12 md:mb-18 z-10">
         
         {/* Header Badge */}
         <div className="relative flex items-center justify-center">
@@ -129,14 +129,14 @@ export default function ByTheNumbersSection() {
         </div>
 
         {/* Section Heading: "A snapshot of my journey" with Framer Pill */}
-        <h2 className="text-[26px] sm:text-[38px] md:text-[44px] font-semibold text-[#111111] tracking-[-0.03em] flex items-center gap-2 flex-wrap justify-center text-center">
+        <h2 className="text-[24px] sm:text-[38px] md:text-[44px] font-semibold text-[#111111] tracking-[-0.03em] flex items-center gap-2 flex-wrap justify-center text-center">
           <span>A snapshot</span>
           <span>of my journey</span>
         </h2>
       </div>
 
       {/* 3 Metric Cards: Flex Column on Mobile / Row on Desktop */}
-      <div className="w-full max-w-5xl flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-6 z-10">
+      <div className="w-full max-w-5xl flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 z-10">
         {STATS.map((stat) => (
           <StatCard key={stat.id} stat={stat} />
         ))}

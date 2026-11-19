@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 export default function RocketSticker() {
   return (
     <motion.div
-      className="absolute -bottom-[40px] sm:-bottom-[60px] md:-bottom-[75px] -left-[30px] sm:-left-[55px] md:-left-[75px] w-[85px] sm:w-[110px] md:w-[135px] z-20 select-none pointer-events-none cursor-default"
+      className="absolute -bottom-[28px] xs:-bottom-[36px] sm:-bottom-[60px] md:-bottom-[75px] -left-[14px] xs:-left-[24px] sm:-left-[55px] md:-left-[75px] w-[68px] xs:w-[84px] sm:w-[110px] md:w-[135px] z-20 select-none pointer-events-none cursor-default"
       initial={{ opacity: 0.001, scale: 0, x: 0, y: 0 }}
       animate={{
         opacity: 1,

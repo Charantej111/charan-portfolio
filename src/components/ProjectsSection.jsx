@@ -71,7 +71,7 @@ export default function ProjectsSection({
   };
 
   return (
-    <section id="projects" className="relative w-full py-14 sm:py-20 md:py-28 px-4 sm:px-6 flex flex-col items-center select-none z-10">
+    <section id="projects" className="relative w-full pt-4 pb-10 sm:py-16 md:py-24 px-4 sm:px-6 flex flex-col items-center select-none z-10">
       
       {/* Background Animated Fluid Ribbons */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
@@ -85,7 +85,7 @@ export default function ProjectsSection({
       </div>
 
       {/* Top Header Tag */}
-      <div className="flex flex-col items-center gap-3 sm:gap-4 mb-10 sm:mb-16 md:mb-20 z-10 text-center">
+      <div className="flex flex-col items-center gap-2.5 sm:gap-4 mb-6 sm:mb-12 md:mb-16 z-10 text-center">
         <div className="relative px-4 py-1.5 rounded-[2px] border-[1.3px] border-[#8427DE] bg-[#FFFCF4]">
           {/* Corner handle dots */}
           <div className="absolute -top-[3px] -left-[3px] w-[5px] h-[5px] bg-[#FFFCF4] border-[1.2px] border-[#8427DE] pointer-events-none" />
@@ -105,7 +105,7 @@ export default function ProjectsSection({
       </div>
 
       {/* Projects List */}
-      <div className="w-full max-w-[1000px] flex flex-col gap-12 sm:gap-16 md:gap-20 z-10">
+      <div className="w-full max-w-[1000px] flex flex-col gap-8 sm:gap-14 md:gap-20 z-10">
         {displayedProjects.map((project) => (
           <div key={project.id} className="relative w-full">
             
@@ -125,7 +125,7 @@ export default function ProjectsSection({
             </div>
 
             {/* Project Card Frame (Purple border #8427DE matching Framer) */}
-            <div className="relative w-full rounded-[2px] border-[1.3px] border-[#8427DE] bg-[#FFFCF4] p-5 sm:p-8 md:p-12 shadow-[0_20px_50px_-20px_rgba(132,39,222,0.05)] flex flex-col md:flex-row items-center gap-6 sm:gap-8 md:gap-10 justify-between">
+            <div className="relative w-full rounded-[2px] border-[1.3px] border-[#8427DE] bg-[#FFFCF4] p-4 sm:p-8 md:p-12 pb-5 sm:pb-8 shadow-[0_20px_50px_-20px_rgba(132,39,222,0.05)] flex flex-col md:flex-row items-center gap-5 sm:gap-8 md:gap-10 justify-between">
               
               {/* 4 Corner Anchor Handles (Framer Canvas Selection Handles) */}
               <div className="absolute -top-[4px] -left-[4px] w-[7px] h-[7px] bg-[#FFFCF4] border-[1.3px] border-[#8427DE] z-20 pointer-events-none" />
@@ -140,16 +140,16 @@ export default function ProjectsSection({
                     {project.subtitle}
                   </span>
 
-                  <h3 className="mt-2.5 sm:mt-4 text-[20px] sm:text-[28px] md:text-[32px] font-semibold text-[#111111] leading-[1.2] tracking-[-0.025em]">
+                  <h3 className="mt-2 sm:mt-4 text-[19px] xs:text-[21px] sm:text-[28px] md:text-[32px] font-semibold text-[#111111] leading-[1.2] tracking-[-0.025em]">
                     {project.title}
                   </h3>
 
-                  <p className="mt-2.5 sm:mt-4 text-[13px] sm:text-[15px] text-[#666666] leading-[1.6] max-w-[420px]">
+                  <p className="mt-2 sm:mt-4 text-[12.5px] xs:text-[13px] sm:text-[15px] text-[#666666] leading-[1.55] sm:leading-[1.6] max-w-[420px]">
                     {project.description}
                   </p>
                 </div>
 
-                <div className="mt-5 sm:mt-8 md:mt-10">
+                <div className="mt-4 sm:mt-8 md:mt-10">
                   <motion.button
                     onClick={() => handleCaseStudyClick(project.id)}
                     whileHover={{ scale: 1.05, x: 4 }}
@@ -168,7 +168,7 @@ export default function ProjectsSection({
                 whileHover={{ scale: 1.03 }}
                 transition={{ type: 'spring', stiffness: 350, damping: 25 }}
                 onClick={() => handleCaseStudyClick(project.id)}
-                className="w-full md:w-[460px] h-[200px] sm:h-[280px] md:h-[340px] shrink-0 overflow-hidden rounded-[2px] bg-neutral-100 flex items-center justify-center cursor-pointer shadow-inner"
+                className="w-full md:w-[460px] h-[190px] xs:h-[210px] sm:h-[280px] md:h-[340px] shrink-0 overflow-hidden rounded-[2px] bg-neutral-100 flex items-center justify-center cursor-pointer shadow-inner"
               >
                 <img
                   src={project.image}
@@ -186,7 +186,7 @@ export default function ProjectsSection({
 
       {/* On Homepage: "View all projects" button */}
       {!showAll && onViewAll && (
-        <div className="mt-14 sm:mt-16 flex items-center justify-center z-10">
+        <div className="mt-8 sm:mt-14 flex items-center justify-center z-10">
           <motion.button
             onClick={onViewAll}
             whileHover={{ scale: 1.04 }}

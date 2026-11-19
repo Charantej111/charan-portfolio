@@ -53,10 +53,10 @@ export default function WhatIOfferSection() {
   return (
     <section
       id="services"
-      className="relative w-full py-14 sm:py-24 md:py-32 px-4 sm:px-6 flex flex-col items-center select-none z-10 overflow-hidden"
+      className="relative w-full pt-4 pb-10 sm:py-20 md:py-28 px-4 sm:px-6 flex flex-col items-center select-none z-10 overflow-hidden"
     >
       {/* Top Header Tag: "What I offer_" */}
-      <div className="flex flex-col items-center gap-3 mb-10 sm:mb-16 md:mb-20 z-20">
+      <div className="flex flex-col items-center gap-2.5 sm:gap-3 mb-6 sm:mb-14 md:mb-20 z-20">
         <div className="relative px-4 py-1.5 rounded-[2px] border-[1.3px] border-[#D68D06] bg-[#FFFCF4]">
           {/* Corner handle dots */}
           <div className="absolute -top-[3px] -left-[3px] w-[5px] h-[5px] bg-[#FFFCF4] border-[1.2px] border-[#D68D06] pointer-events-none" />
@@ -69,7 +69,7 @@ export default function WhatIOfferSection() {
           </span>
         </div>
 
-        <h2 className="text-[26px] sm:text-[38px] md:text-[44px] font-semibold text-[#111111] tracking-[-0.03em] text-center">
+        <h2 className="text-[24px] sm:text-[38px] md:text-[44px] font-semibold text-[#111111] tracking-[-0.03em] text-center">
           How I can help
         </h2>
       </div>
@@ -148,7 +148,7 @@ export default function WhatIOfferSection() {
         MOBILE / TABLET PRESENTATION (< md):
         Responsive staggered cards scrolling into view cleanly with natural tilt
       */}
-      <div className="flex md:hidden flex-col sm:grid sm:grid-cols-2 gap-4 sm:gap-6 w-full max-w-sm sm:max-w-xl z-10">
+      <div className="flex md:hidden flex-col sm:grid sm:grid-cols-2 gap-3.5 sm:gap-6 w-full max-w-sm sm:max-w-xl z-10">
         {SERVICES.map((service, index) => (
           <motion.div
             key={service.id}
@@ -172,10 +172,10 @@ export default function WhatIOfferSection() {
             style={{
               backgroundColor: service.cardColor,
             }}
-            className="w-full h-[270px] sm:h-[320px] rounded-[18px] p-5 sm:p-6 flex flex-col items-center justify-between shadow-[0_16px_40px_-15px_rgba(0,0,0,0.2)] cursor-pointer"
+            className="w-full h-[250px] xs:h-[270px] sm:h-[320px] rounded-[18px] p-4 xs:p-5 sm:p-6 flex flex-col items-center justify-between shadow-[0_16px_40px_-15px_rgba(0,0,0,0.2)] cursor-pointer"
           >
             {/* Top 3D Isometric Illustration */}
-            <div className="w-full h-[140px] sm:h-[170px] overflow-hidden flex items-center justify-center">
+            <div className="w-full h-[130px] xs:h-[145px] sm:h-[170px] overflow-hidden flex items-center justify-center">
               <img
                 src={service.imageSrc}
                 alt={service.alt}
@@ -190,7 +190,7 @@ export default function WhatIOfferSection() {
                 <span
                   key={i}
                   style={{ color: service.textColor }}
-                  className="text-[19px] sm:text-[22px] font-semibold tracking-[-0.03em] leading-[1.12]"
+                  className="text-[18px] xs:text-[20px] sm:text-[22px] font-semibold tracking-[-0.03em] leading-[1.12]"
                 >
                   {line}
                 </span>

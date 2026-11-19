@@ -71,9 +71,9 @@ export default function AboutHeroSection() {
   const isSelected = stage !== 0;
 
   return (
-    <section className="relative w-full min-h-[85vh] py-12 sm:py-16 px-4 sm:px-8 flex items-center justify-center select-none z-10 overflow-hidden">
+    <section className="relative w-full min-h-0 sm:min-h-[85vh] pt-6 pb-12 sm:py-16 px-4 sm:px-8 flex items-center justify-center select-none z-10 overflow-hidden">
       
-      <div className="relative max-w-6xl w-full flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-16">
+      <div className="relative max-w-6xl w-full flex flex-col lg:flex-row items-center justify-center gap-8 sm:gap-12 lg:gap-16">
         
         {/* Left Column: Interactive 3-Card Stack with Time-delay & Click-to-send-back */}
         <div
