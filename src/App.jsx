@@ -72,7 +72,7 @@ export default function App() {
           <div className="absolute top-0 left-0 right-0 h-[100vh] pointer-events-none overflow-hidden z-0">
             <AnimatedRibbons
               lineCount={2}
-              strokeWidth={20}
+              strokeWidth={13}
               duration={4}
               startDelay={0.7}
               easing="easeInOut"

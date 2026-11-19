@@ -36,7 +36,7 @@ export default function AnimatedRibbons({
   line4Gradient = defaultGradients[3],
   line5Gradient = defaultGradients[4],
   line6Gradient = defaultGradients[5],
-  strokeWidth = 20,
+  strokeWidth = 13,
   lineCount = 2,
   redPlacement = { rotation: 0, scale: 1, x: 10, y: 180 },
   bluePlacement = { rotation: 90, scale: 0.85, x: -110, y: -150 },

@@ -77,7 +77,7 @@ export default function ProjectsSection({
       <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
         <AnimatedRibbons
           lineCount={2}
-          strokeWidth={24}
+          strokeWidth={14}
           animationTrigger="scroll"
           redPlacement={{ rotation: -40, scale: 1.1, x: -160, y: -180 }}
           bluePlacement={{ rotation: 110, scale: 1.0, x: 220, y: 100 }}
