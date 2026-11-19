@@ -41,8 +41,8 @@ const SERVICES = [
     title: ['Product', 'execution'],
     cardColor: '#039754',
     textColor: '#ffffff',
-    imageSrc: 'https://framerusercontent.com/images/NDCbcFqm7KpnEDqv5T17cjqzw.png?width=1536&height=1024',
-    alt: 'Product execution 3D torus ring illustration',
+    imageSrc: '/product-execution.png',
+    alt: 'Product execution illustration',
     // Desktop Framer Fan-out: rotate -3deg, x offset +350px
     desktopRotate: -3,
     desktopX: 350,

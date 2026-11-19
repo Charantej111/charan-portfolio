@@ -131,14 +131,15 @@ export default function App() {
               <AboutSection onReadStory={() => handleNavigate('about')} />
             </div>
 
-            {/* 3. Featured projects */}
+            {/* 3. Featured projects (3 on Home page, 4th visible when clicking View all or in Projects page) */}
             <div id="projects" className="w-full">
               <ProjectsSection
                 onOpenCaseStudy={handleOpenCaseStudy}
-                limit={4}
-                showAll={true}
+                limit={3}
+                showAll={false}
                 title="Products I've built and helped shape"
                 tag="Selected work"
+                onViewAll={() => handleNavigate('projects')}
               />
             </div>
 

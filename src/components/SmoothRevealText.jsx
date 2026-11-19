@@ -91,7 +91,7 @@ export default function SmoothRevealText({
   return (
     <div
       ref={containerRef}
-      className="w-full text-left font-neue font-medium leading-[1.28] sm:leading-[1.2] tracking-[-0.01em] text-[22px] xs:text-[26px] sm:text-[36px] md:text-[44px] select-none"
+      className="w-full text-left font-neue font-medium leading-[1.35] sm:leading-[1.3] tracking-[-0.01em] text-[18px] xs:text-[20px] sm:text-[26px] md:text-[30px] select-none"
       style={{
         whiteSpace: "pre-wrap",
         textWrap: "balance",

@@ -64,7 +64,7 @@ const SKILL_GROUPS = [
 
 export default function SkillsSection() {
   return (
-    <section className="relative w-full pt-4 pb-12 sm:py-16 md:py-24 px-4 sm:px-6 flex flex-col items-center select-none z-10">
+    <section className="hidden md:flex relative w-full pt-4 pb-12 sm:py-16 md:py-24 px-4 sm:px-6 flex-col items-center select-none z-10">
       
       {/* Top Header Tag */}
       <div className="flex flex-col items-center gap-2.5 sm:gap-4 mb-6 sm:mb-12 md:mb-16 z-10 text-center">

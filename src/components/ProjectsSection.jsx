@@ -138,12 +138,13 @@ export default function ProjectsSection({
                 whileHover={{ scale: 1.02 }}
                 transition={{ type: 'spring', stiffness: 350, damping: 25 }}
                 onClick={() => handleCaseStudyClick(project.id)}
-                className="w-full md:w-[460px] aspect-[4/3] xs:aspect-[16/10] sm:aspect-auto sm:h-[280px] md:h-[340px] md:order-2 shrink-0 overflow-hidden rounded-[2px] bg-neutral-100 flex items-center justify-center cursor-pointer shadow-inner"
+                className="w-full md:w-[480px] lg:w-[520px] aspect-[16/10] sm:aspect-auto sm:h-[280px] md:h-[310px] md:order-2 shrink-0 overflow-hidden rounded-[2px] bg-neutral-100 flex items-center justify-center cursor-pointer shadow-inner"
               >
                 <img
                   src={project.image}
                   alt={project.imageAlt}
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  style={{ objectPosition: 'left center' }}
                   loading="lazy"
                 />
               </motion.div>
@@ -200,7 +201,7 @@ export default function ProjectsSection({
             <div className="absolute -bottom-[3px] -left-[3px] w-[5px] h-[5px] bg-[#FFFCF4] border-[1.2px] border-[#8427DE] pointer-events-none group-hover:bg-[#8427DE]" />
             <div className="absolute -bottom-[3px] -right-[3px] w-[5px] h-[5px] bg-[#FFFCF4] border-[1.2px] border-[#8427DE] pointer-events-none group-hover:bg-[#8427DE]" />
 
-            <span>View all 4 projects</span>
+            <span>View all projects</span>
             <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
           </motion.button>
         </div>

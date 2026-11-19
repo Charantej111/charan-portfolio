@@ -41,7 +41,7 @@ export default function AboutSection({ onReadStory }) {
         </div>
 
         {/* Heading */}
-        <h3 className="text-[24px] sm:text-[32px] md:text-[36px] font-semibold text-[#111111] leading-[1.2] tracking-[-0.03em] mb-4 sm:mb-6">
+        <h3 className="text-[20px] sm:text-[26px] md:text-[28px] font-semibold text-[#111111] leading-[1.25] tracking-[-0.03em] mb-3 sm:mb-5">
           I like turning ideas into real products.
         </h3>
 
