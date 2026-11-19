@@ -4,7 +4,7 @@ import { Copy, Check } from 'lucide-react';
 
 export default function Footer() {
   const [copied, setCopied] = useState(false);
-  const emailAddress = 'charantej@gmail.com';
+  const emailAddress = 'career.charantej@gmail.com';
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(emailAddress);
