@@ -57,7 +57,7 @@ export default function HeroCard() {
   const isContentRevealed = stage >= 2;
 
   return (
-    <div className="relative mx-auto w-full max-w-[650px] min-h-[390px] xs:min-h-[410px] sm:min-h-[400px] select-none flex items-center justify-center">
+    <div className="relative mx-auto w-full max-w-[340px] xs:max-w-[380px] sm:max-w-[650px] min-h-[460px] xs:min-h-[490px] sm:min-h-[400px] select-none flex items-center justify-center">
       
       {/* ================= CORNER DECOR STICKERS ================= */}
       <motion.div
@@ -73,7 +73,7 @@ export default function HeroCard() {
 
       {/* ================= CANVAS FRAME THAT DRAGS OPEN ================= */}
       <motion.div
-        className="absolute top-0 left-0 border-[1.5px] border-[#008FF0] rounded-[1px] bg-white"
+        className="absolute top-0 left-0 border-[1.5px] border-[#008FF0] rounded-[1px] bg-white w-full h-full"
         initial={{
           width: '16px',
           height: '16px',
@@ -147,12 +147,12 @@ export default function HeroCard() {
 
         {/* ================= CARD INTERIOR CONTENT ================= */}
         <div
-          className={`relative w-full h-full flex flex-col sm:flex-row items-center justify-start sm:justify-between p-3.5 sm:p-4 pb-4 sm:pb-4 gap-2.5 sm:gap-0 transition-opacity duration-500 ${
+          className={`relative w-full h-full flex flex-col sm:flex-row items-center justify-between p-3.5 sm:p-4 pb-4 sm:pb-4 gap-3 sm:gap-0 transition-opacity duration-500 ${
             stage >= 2 ? 'opacity-100' : 'opacity-0'
           }`}
         >
-          {/* Left Column: Image Container */}
-          <div className="w-full sm:w-[45%] h-[165px] xs:h-[180px] sm:h-[calc(100%-8px)] overflow-hidden rounded-[2px] bg-neutral-200 shrink-0">
+          {/* Image Container: Full square on mobile (matching reference screenshot), 45% side column on desktop */}
+          <div className="w-full sm:w-[45%] aspect-square sm:aspect-auto sm:h-[calc(100%-8px)] overflow-hidden rounded-[2px] bg-neutral-200 shrink-0">
             <img
               src={DAVID_SUMMER_PHOTO}
               alt="Charan Tej Portrait"
@@ -162,17 +162,17 @@ export default function HeroCard() {
             />
           </div>
 
-          {/* Right Column: Heading + Description */}
+          {/* Heading + Description: Below image on mobile, right column on desktop */}
           <div className="w-full sm:w-[48%] flex flex-col justify-center gap-1.5 sm:gap-3 text-left px-1 sm:px-4 mt-0.5 sm:mt-0">
             {/* Heading */}
-            <h1 className="text-[#111111] font-medium text-[22px] xs:text-[26px] sm:text-[34px] md:text-[40px] leading-[1.12] tracking-[-0.035em]">
+            <h1 className="text-[#111111] font-medium text-[24px] xs:text-[26px] sm:text-[34px] md:text-[40px] leading-[1.12] tracking-[-0.035em]">
               Hey, I am
               <br />
               Charan Tej
             </h1>
 
             {/* Subcopy */}
-            <p className="text-[#666666] text-[12px] xs:text-[13px] sm:text-[14px] md:text-[15px] leading-[1.45] sm:leading-[1.5] font-normal tracking-[-0.01em]">
+            <p className="text-[#666666] text-[13px] xs:text-[13px] sm:text-[14px] md:text-[15px] leading-[1.45] sm:leading-[1.5] font-normal tracking-[-0.01em]">
               I deeply care about polish, craft and interface that make people feel something
             </p>
           </div>

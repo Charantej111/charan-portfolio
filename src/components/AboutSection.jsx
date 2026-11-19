@@ -22,7 +22,7 @@ export default function AboutSection({ onReadStory }) {
       </div>
 
       {/* Main Focus Card Frame: max-w-[700px], border: 1.2px solid #039754 */}
-      <div className="relative w-full max-w-[700px] bg-white rounded-[1px] border-[1.2px] border-[#039754] p-4 xs:p-6 sm:p-10 md:p-[60px] shadow-[0_20px_50px_-15px_rgba(3,151,84,0.06)] overflow-visible">
+      <div className="relative w-full max-w-[360px] xs:max-w-[420px] sm:max-w-[700px] bg-white rounded-[1px] border-[1.2px] border-[#039754] p-5 xs:p-6 sm:p-10 md:p-[60px] shadow-[0_20px_50px_-15px_rgba(3,151,84,0.06)] overflow-visible">
         
         {/* 4 Corner Anchor Handles (exact Framer 9x9 #039754 border) */}
         <div className="absolute -top-[4px] -left-[4px] w-[8px] sm:w-[9px] h-[8px] sm:h-[9px] bg-white border-[1.3px] border-[#039754] z-20 pointer-events-none" />
@@ -31,13 +31,13 @@ export default function AboutSection({ onReadStory }) {
         <div className="absolute -bottom-[4px] -right-[4px] w-[8px] sm:w-[9px] h-[8px] sm:h-[9px] bg-white border-[1.3px] border-[#039754] z-20 pointer-events-none" />
 
         {/* Top-Left Bulb Decor Sticker */}
-        <div className="hidden sm:block">
-          <BulbSticker />
+        <div className="block">
+          <BulbSticker className="absolute -top-[24px] -left-[24px] sm:-top-[54px] sm:-left-[54px] md:-top-[64px] md:-left-[64px] w-[56px] xs:w-[64px] sm:w-[125px] md:w-[150px] aspect-square z-20 select-none pointer-events-none cursor-default" />
         </div>
 
         {/* Bottom-Right Brain Decor Sticker */}
-        <div className="hidden sm:block">
-          <BrainSticker />
+        <div className="block">
+          <BrainSticker className="absolute -bottom-[24px] -right-[24px] sm:-bottom-[54px] sm:-right-[54px] md:-bottom-[64px] md:-right-[64px] w-[56px] xs:w-[64px] sm:w-[125px] md:w-[150px] aspect-square z-20 select-none pointer-events-none cursor-default" />
         </div>
 
         {/* High-Craft Progressive Character-by-Character Smooth Reveal Typography */}

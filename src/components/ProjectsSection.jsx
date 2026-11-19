@@ -105,27 +105,22 @@ export default function ProjectsSection({
       </div>
 
       {/* Projects List */}
-      <div className="w-full max-w-[1000px] flex flex-col gap-8 sm:gap-14 md:gap-20 z-10">
+      <div className="w-full max-w-[360px] xs:max-w-[420px] sm:max-w-[700px] md:max-w-[1000px] flex flex-col gap-8 sm:gap-14 md:gap-20 z-10">
         {displayedProjects.map((project) => (
           <div key={project.id} className="relative w-full flex flex-col items-start">
 
-            {/* Top-Left Tag: "Project X" with Purple Border, Corner Handles & Arrow */}
-            <div className="mb-2.5 sm:mb-3 z-20">
-              <div className="relative inline-flex items-center gap-1 px-2.5 py-0.5 rounded-[2px] border-[1.2px] border-[#8427DE] bg-[#FFFCF4] text-[12px] font-medium text-[#8427DE]">
-                <div className="absolute -top-[3px] -left-[3px] w-[4px] h-[4px] bg-[#FFFCF4] border-[1px] border-[#8427DE] pointer-events-none" />
-                <div className="absolute -top-[3px] -right-[3px] w-[4px] h-[4px] bg-[#FFFCF4] border-[1px] border-[#8427DE] pointer-events-none" />
-                <div className="absolute -bottom-[3px] -left-[3px] w-[4px] h-[4px] bg-[#FFFCF4] border-[1px] border-[#8427DE] pointer-events-none" />
-                <div className="absolute -bottom-[3px] -right-[3px] w-[4px] h-[4px] bg-[#FFFCF4] border-[1px] border-[#8427DE] pointer-events-none" />
-
-                <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M3 8h10M9 4l4 4-4 4" />
+            {/* Top-Left Tag: "Project X" */}
+            <div className="mb-2 sm:mb-3 z-20">
+              <div className="relative inline-flex items-center gap-1.5 px-2.5 py-1 rounded-[2px] bg-[#8427DE] text-[11px] xs:text-[12px] font-medium text-white shadow-xs">
+                <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor">
+                  <path d="M4.5 2a2.5 2.5 0 0 0-2.5 2.5v1a2.5 2.5 0 0 0 2.5 2.5h1A2.5 2.5 0 0 0 8 5.5v-1A2.5 2.5 0 0 0 5.5 2h-1zm7 0a2.5 2.5 0 0 0-2.5 2.5v1a2.5 2.5 0 0 0 2.5 2.5h1A2.5 2.5 0 0 0 14 5.5v-1A2.5 2.5 0 0 0 11.5 2h-1zm-7 7a2.5 2.5 0 0 0-2.5 2.5v1a2.5 2.5 0 0 0 2.5 2.5h1A2.5 2.5 0 0 0 8 12.5v-1A2.5 2.5 0 0 0 5.5 9h-1zm7 0a2.5 2.5 0 0 0-2.5 2.5v1a2.5 2.5 0 0 0 2.5 2.5h1a2.5 2.5 0 0 0 2.5-2.5v-1a2.5 2.5 0 0 0-2.5-2.5h-1z" />
                 </svg>
                 <span>{project.tag}</span>
               </div>
             </div>
 
             {/* Project Card Frame (Purple border #8427DE matching Framer) */}
-            <div className="relative w-full rounded-[2px] border-[1.3px] border-[#8427DE] bg-[#FFFCF4] p-4 sm:p-8 md:p-12 pb-5 sm:pb-8 shadow-[0_20px_50px_-20px_rgba(132,39,222,0.05)] flex flex-col md:flex-row items-center gap-5 sm:gap-8 md:gap-10 justify-between">
+            <div className="relative w-full rounded-[2px] border-[1.3px] border-[#8427DE] bg-[#FFFCF4] p-3.5 xs:p-4 sm:p-8 md:p-12 pb-4 sm:pb-8 shadow-[0_20px_50px_-20px_rgba(132,39,222,0.05)] flex flex-col md:flex-row items-center gap-4 sm:gap-8 md:gap-10 justify-between">
 
               {/* 4 Corner Anchor Handles (Framer Canvas Selection Handles) */}
               <div className="absolute -top-[4px] -left-[4px] w-[7px] h-[7px] bg-[#FFFCF4] border-[1.3px] border-[#8427DE] z-20 pointer-events-none" />
@@ -133,42 +128,12 @@ export default function ProjectsSection({
               <div className="absolute -bottom-[4px] -left-[4px] w-[7px] h-[7px] bg-[#FFFCF4] border-[1.3px] border-[#8427DE] z-20 pointer-events-none" />
               <div className="absolute -bottom-[4px] -right-[4px] w-[7px] h-[7px] bg-[#FFFCF4] border-[1.3px] border-[#8427DE] z-20 pointer-events-none" />
 
-              {/* Left Column: Details & CTA */}
-              <div className="flex-1 flex flex-col justify-between text-left h-full w-full">
-                <div>
-                  <span className="text-[12px] sm:text-[13px] font-medium text-[#777777]">
-                    {project.subtitle}
-                  </span>
-
-                  <h3 className="mt-2 sm:mt-4 text-[19px] xs:text-[21px] sm:text-[28px] md:text-[32px] font-semibold text-[#111111] leading-[1.2] tracking-[-0.025em]">
-                    {project.title}
-                  </h3>
-
-                  <p className="mt-2 sm:mt-4 text-[12.5px] xs:text-[13px] sm:text-[15px] text-[#666666] leading-[1.55] sm:leading-[1.6] max-w-[420px]">
-                    {project.description}
-                  </p>
-                </div>
-
-                <div className="mt-4 sm:mt-8 md:mt-10">
-                  <motion.button
-                    onClick={() => handleCaseStudyClick(project.id)}
-                    whileHover={{ scale: 1.05, x: 4 }}
-                    whileTap={{ scale: 0.95 }}
-                    transition={{ type: 'spring', stiffness: 400, damping: 25 }}
-                    type="button"
-                    className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-[3px] border border-neutral-300 hover:border-black text-[12px] sm:text-[13px] font-medium text-[#111111] transition-colors bg-white/70 cursor-pointer shadow-2xs"
-                  >
-                    <span>{project.linkText}</span>
-                  </motion.button>
-                </div>
-              </div>
-
-              {/* Right Column: Visual Device Frame / Image */}
+              {/* Mobile: Image first on top. Desktop: Image on right md:order-2 */}
               <motion.div
-                whileHover={{ scale: 1.03 }}
+                whileHover={{ scale: 1.02 }}
                 transition={{ type: 'spring', stiffness: 350, damping: 25 }}
                 onClick={() => handleCaseStudyClick(project.id)}
-                className="w-full md:w-[460px] h-[190px] xs:h-[210px] sm:h-[280px] md:h-[340px] shrink-0 overflow-hidden rounded-[2px] bg-neutral-100 flex items-center justify-center cursor-pointer shadow-inner"
+                className="w-full md:w-[460px] aspect-[4/3] xs:aspect-[16/10] sm:aspect-auto sm:h-[280px] md:h-[340px] md:order-2 shrink-0 overflow-hidden rounded-[2px] bg-neutral-100 flex items-center justify-center cursor-pointer shadow-inner"
               >
                 <img
                   src={project.image}
@@ -177,6 +142,37 @@ export default function ProjectsSection({
                   loading="lazy"
                 />
               </motion.div>
+
+              {/* Left Column / Mobile Bottom: Details & CTA */}
+              <div className="flex-1 flex flex-col justify-between text-left h-full w-full md:order-1 pt-1 md:pt-0">
+                <div>
+                  <span className="text-[12px] sm:text-[13px] font-medium text-[#777777] flex items-center gap-1.5">
+                    {project.subtitle}
+                  </span>
+
+                  <h3 className="mt-1.5 sm:mt-4 text-[22px] xs:text-[24px] sm:text-[28px] md:text-[32px] font-semibold text-[#111111] leading-[1.2] tracking-[-0.025em]">
+                    {project.title}
+                  </h3>
+
+                  <p className="mt-2 sm:mt-4 text-[13.5px] xs:text-[14px] sm:text-[15px] text-[#666666] leading-[1.55] sm:leading-[1.6] max-w-[420px]">
+                    {project.description}
+                  </p>
+                </div>
+
+                <div className="mt-4 sm:mt-8 md:mt-10">
+                  <motion.button
+                    onClick={() => handleCaseStudyClick(project.id)}
+                    whileHover={{ scale: 1.03, x: 2 }}
+                    whileTap={{ scale: 0.96 }}
+                    transition={{ type: 'spring', stiffness: 400, damping: 25 }}
+                    type="button"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2 rounded-[2px] border border-[#8427DE] hover:bg-[#8427DE] hover:text-white text-[13px] font-medium text-[#111111] transition-colors bg-white cursor-pointer shadow-xs"
+                  >
+                    <span>View case study</span>
+                    <span>→</span>
+                  </motion.button>
+                </div>
+              </div>
 
             </div>
 
