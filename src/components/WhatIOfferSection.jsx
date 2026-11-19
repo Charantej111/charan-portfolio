@@ -146,66 +146,66 @@ export default function WhatIOfferSection() {
 
       {/* 
         MOBILE / TABLET PRESENTATION (< md):
-        Mobile stacked fan-out cards matching Framer reference screenshot
+        Sticky Stacking / Staggered Scroll-Reveal Cards:
+        As the user scrolls down, each card arrives one after another,
+        stacking with a natural tilt angle and resting into view cleanly.
       */}
-      <div className="flex md:hidden relative w-full max-w-[320px] xs:max-w-[350px] sm:max-w-xl h-[400px] xs:h-[420px] sm:h-[400px] items-center justify-center z-10 my-6">
+      <div className="flex md:hidden flex-col items-center w-full max-w-[320px] xs:max-w-[340px] sm:max-w-md z-10 my-4 pb-12 gap-8">
         {SERVICES.map((service, index) => {
-          // Framer mobile stack layout:
-          // Card 0 (Interaction design - Yellow): back/top, slight tilt -2deg
-          // Card 1 (User research - Blue): tilt 3deg, offset down
-          // Card 2 (AI prototyping - Purple): tilt -1deg, offset further down
-          // Card 3 (Motion design - Green): front/bottom, tilt 2deg
-          const mobileRotates = [-3, 3, -2, 2];
-          const mobileY = [-40, -10, 20, 50];
-          const mobileX = [-6, 6, -4, 4];
+          const mobileRotates = [-2.5, 2.5, -2, 2];
 
           return (
-            <motion.div
+            <div
               key={service.id}
-              initial={{ opacity: 0, y: 30, scale: 0.95 }}
-              whileInView={{
-                opacity: 1,
-                y: mobileY[index],
-                x: mobileX[index],
-                rotate: mobileRotates[index],
-                scale: 1,
-                transition: {
-                  duration: 0.5,
-                  delay: index * 0.08,
-                  ease: [0.16, 1, 0.3, 1],
-                },
-              }}
-              viewport={{ once: true, amount: 0.2 }}
-              whileTap={{ scale: 1.03 }}
+              className="sticky w-full flex justify-center"
               style={{
-                backgroundColor: service.cardColor,
+                top: `${100 + index * 18}px`,
                 zIndex: index + 1,
               }}
-              className="absolute w-[240px] xs:w-[260px] h-[280px] xs:h-[300px] rounded-[3px] p-4 flex flex-col items-center justify-between shadow-[0_16px_36px_-10px_rgba(0,0,0,0.3)] cursor-pointer select-none"
             >
-              {/* Top 3D Isometric Illustration */}
-              <div className="w-full h-[140px] xs:h-[155px] overflow-hidden flex items-center justify-center">
-                <img
-                  src={service.imageSrc}
-                  alt={service.alt}
-                  className="w-full h-full object-contain filter-none drop-shadow-sm pointer-events-none"
-                  loading="lazy"
-                />
-              </div>
+              <motion.div
+                initial={{ opacity: 0, y: 50, scale: 0.92 }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                  rotate: mobileRotates[index],
+                  scale: 1,
+                }}
+                viewport={{ once: false, amount: 0.4 }}
+                transition={{
+                  duration: 0.6,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
+                whileTap={{ scale: 1.03 }}
+                style={{
+                  backgroundColor: service.cardColor,
+                }}
+                className="w-full h-[290px] xs:h-[310px] rounded-[3px] p-5 flex flex-col items-center justify-between shadow-[0_20px_45px_-12px_rgba(0,0,0,0.35)] cursor-pointer select-none border border-black/10"
+              >
+                {/* Top 3D Isometric Illustration */}
+                <div className="w-full h-[150px] xs:h-[165px] overflow-hidden flex items-center justify-center">
+                  <img
+                    src={service.imageSrc}
+                    alt={service.alt}
+                    className="w-full h-full object-contain filter-none drop-shadow-sm pointer-events-none"
+                    loading="lazy"
+                  />
+                </div>
 
-              {/* Bottom Stacked Typography */}
-              <div className="w-full flex flex-col items-center text-center mt-1">
-                {service.title.map((line, i) => (
-                  <span
-                    key={i}
-                    style={{ color: service.textColor }}
-                    className="text-[19px] xs:text-[21px] font-semibold tracking-[-0.03em] leading-[1.12]"
-                  >
-                    {line}
-                  </span>
-                ))}
-              </div>
-            </motion.div>
+                {/* Bottom Stacked Typography */}
+                <div className="w-full flex flex-col items-center text-center mt-1">
+                  {service.title.map((line, i) => (
+                    <span
+                      key={i}
+                      style={{ color: service.textColor }}
+                      className="text-[20px] xs:text-[22px] font-semibold tracking-[-0.03em] leading-[1.12]"
+                    >
+                      {line}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
           );
         })}
       </div>
