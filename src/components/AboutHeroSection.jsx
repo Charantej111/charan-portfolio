@@ -157,26 +157,6 @@ export default function AboutHeroSection() {
             </span>
           </div>
 
-          {/* Canvas Dimension Tag (width × height) */}
-          <div className="absolute -top-6 right-0 flex items-center gap-2 pointer-events-none z-20">
-            <motion.div
-              animate={{
-                opacity: isSelected ? 1 : 0.6,
-                y: isGrabbing ? -2 : 0,
-              }}
-              transition={{ duration: 0.2 }}
-              className="px-2 py-0.5 rounded bg-neutral-900/90 text-white text-[10px] sm:text-[11px] font-mono tracking-tight shadow-sm flex items-center gap-1.5"
-            >
-              <span className="text-neutral-300 font-sans">W:</span>
-              <span>560</span>
-              <span className="text-neutral-500">|</span>
-              <span className="text-neutral-300 font-sans">H:</span>
-              <span className="text-[#008ff0] font-bold">
-                {isFitted ? '280 (Fit)' : '420 (Auto)'}
-              </span>
-            </motion.div>
-          </div>
-
           {/* Statement Frame */}
           <motion.div
             layout

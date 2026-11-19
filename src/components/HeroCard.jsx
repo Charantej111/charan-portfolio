@@ -21,20 +21,20 @@ export default function HeroCard() {
   const cursorParallaxY = useSpring(0, springConfig);
 
   useEffect(() => {
-    // Stage 1: Cursor lands on the handle
+    // Stage 1: Cursor softly glides to the initial handle
     const t1 = setTimeout(() => {
       setStage(1);
-    }, 200);
+    }, 400);
 
-    // Stage 2: Drag diagonally to reveal card
+    // Stage 2: Cursor smoothly drags open the frame
     const t2 = setTimeout(() => {
       setStage(2);
-    }, 600);
+    }, 1000);
 
-    // Stage 3: Frame fully open, content clearly revealed
+    // Stage 3: Frame fully open, content softly settles
     const t3 = setTimeout(() => {
       setStage(3);
-    }, 1500);
+    }, 2400);
 
     const handleMouseMove = (e) => {
       if (window.innerWidth < 640) return;
@@ -96,14 +96,14 @@ export default function HeroCard() {
         }
         transition={{
           width: {
-            duration: 0.95,
-            ease: [0.16, 1, 0.3, 1],
+            duration: 1.35,
+            ease: [0.22, 1, 0.36, 1],
           },
           height: {
-            duration: 0.95,
-            ease: [0.16, 1, 0.3, 1],
+            duration: 1.35,
+            ease: [0.22, 1, 0.36, 1],
           },
-          opacity: { duration: 0.15 },
+          opacity: { duration: 0.35, ease: 'easeOut' },
         }}
         style={{
           boxShadow: isContentRevealed ? '0 20px 45px -12px rgba(0,0,0,0.06)' : 'none',
@@ -148,45 +148,89 @@ export default function HeroCard() {
         )}
 
         {/* ================= CARD INTERIOR CONTENT ================= */}
-        <div
-          className={`relative w-full h-full flex flex-col sm:flex-row items-center justify-between p-3.5 sm:p-4 pb-4 sm:pb-4 gap-3 sm:gap-0 transition-opacity duration-500 ${
-            stage >= 2 ? 'opacity-100' : 'opacity-0'
-          }`}
-        >
+        <div className="relative w-full h-full flex flex-col sm:flex-row items-center justify-between p-3.5 sm:p-4 pb-4 sm:pb-4 gap-3 sm:gap-0">
           {/* Image Container: Full square on mobile matching Framer card proportion, 45% side column on desktop */}
-          <div className="relative w-full sm:w-[45%] aspect-square sm:aspect-auto sm:h-[calc(100%-8px)] overflow-hidden rounded-[2px] bg-neutral-200 shrink-0 group">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={{
+              opacity: stage >= 2 ? 1 : 0,
+              scale: stage >= 2 ? 1 : 0.96,
+            }}
+            transition={{
+              duration: 0.9,
+              delay: stage >= 2 ? 0.2 : 0,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            className="relative w-full sm:w-[45%] aspect-square sm:aspect-auto sm:h-[calc(100%-8px)] overflow-hidden rounded-[2px] bg-neutral-200 shrink-0 group"
+          >
             <img
               src="/profile-hero.jpg.jpg"
               alt="Charan Tej Portrait"
-              className="w-full h-full object-cover grayscale contrast-[1.08] brightness-[0.98] transition-transform duration-500 hover:scale-[1.02]"
+              className="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.02]"
               style={{ objectPosition: 'center 20%' }}
               loading="eager"
             />
             {/* Subtle vintage film grain overlay */}
             <div
-              className="absolute inset-0 pointer-events-none mix-blend-overlay opacity-35"
+              className="absolute inset-0 pointer-events-none mix-blend-overlay opacity-25"
               style={{
                 backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
               }}
             />
-          </div>
+          </motion.div>
 
           {/* Heading + Description: Below image on mobile, right column on desktop */}
           <div className="w-full sm:w-[48%] flex flex-col justify-center gap-1.5 sm:gap-2 text-left px-1 sm:px-4 mt-1 sm:mt-0">
             {/* Title 1 */}
-            <h1 className="text-[#111111] font-semibold text-[20px] xs:text-[22px] sm:text-[28px] md:text-[32px] leading-[1.15] tracking-[-0.03em]">
+            <motion.h1
+              initial={{ opacity: 0, y: 10 }}
+              animate={{
+                opacity: stage >= 2 ? 1 : 0,
+                y: stage >= 2 ? 0 : 10,
+              }}
+              transition={{
+                duration: 0.8,
+                delay: stage >= 2 ? 0.35 : 0,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className="text-[#111111] font-semibold text-[20px] xs:text-[22px] sm:text-[28px] md:text-[32px] leading-[1.15] tracking-[-0.03em]"
+            >
               Hey, I am Charan
-            </h1>
+            </motion.h1>
 
             {/* Title 2 */}
-            <h2 className="text-[#111111] font-medium text-[14px] xs:text-[15px] sm:text-[18px] md:text-[20px] leading-[1.25] tracking-[-0.02em] text-neutral-800">
+            <motion.h2
+              initial={{ opacity: 0, y: 10 }}
+              animate={{
+                opacity: stage >= 2 ? 1 : 0,
+                y: stage >= 2 ? 0 : 10,
+              }}
+              transition={{
+                duration: 0.8,
+                delay: stage >= 2 ? 0.48 : 0,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className="text-[#111111] font-medium text-[14px] xs:text-[15px] sm:text-[18px] md:text-[20px] leading-[1.25] tracking-[-0.02em] text-neutral-800"
+            >
               I build products from ideas into real experiences.
-            </h2>
+            </motion.h2>
 
             {/* Content */}
-            <p className="text-[#666666] text-[12px] xs:text-[12.5px] sm:text-[13px] md:text-[13.5px] leading-[1.42] sm:leading-[1.5] font-normal tracking-[-0.01em]">
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              animate={{
+                opacity: stage >= 2 ? 1 : 0,
+                y: stage >= 2 ? 0 : 10,
+              }}
+              transition={{
+                duration: 0.8,
+                delay: stage >= 2 ? 0.6 : 0,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className="text-[#666666] text-[12px] xs:text-[12.5px] sm:text-[13px] md:text-[13.5px] leading-[1.42] sm:leading-[1.5] font-normal tracking-[-0.01em]"
+            >
               I work across product, UX, technology, business, and operations to understand problems, shape solutions, and help turn them into products people actually use.
-            </p>
+            </motion.p>
           </div>
         </div>
       </motion.div>
@@ -235,13 +279,13 @@ export default function HeroCard() {
         transition={
           stage === 2
             ? {
-                top: { duration: 0.95, ease: [0.16, 1, 0.3, 1] },
-                left: { duration: 0.95, ease: [0.16, 1, 0.3, 1] },
-                scale: { duration: 0.2 },
+                top: { duration: 1.35, ease: [0.22, 1, 0.36, 1] },
+                left: { duration: 1.35, ease: [0.22, 1, 0.36, 1] },
+                scale: { duration: 0.3, ease: 'easeOut' },
               }
             : {
-                duration: 0.3,
-                ease: 'easeOut',
+                duration: 0.45,
+                ease: [0.22, 1, 0.36, 1],
               }
         }
       >
