@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'PP Neue Montreal';
+  src: url('https://framerusercontent.com/assets/6uIfYl8bnz9kOy3KOuV7PxhFPhA.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Neue Montreal';
+  src: url('https://framerusercontent.com/assets/wa1QQCb6cXOn2xBXS059rEsCfsc.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Neue Montreal';
+  src: url('https://framerusercontent.com/assets/CnGvKXkXJFhnnbpqfxZ8IE1CrU.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #FFFCF4;
+    color: #111111;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+.font-neue {
+  font-family: 'PP Neue Montreal', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.font-signature {
+  font-family: 'Caveat', cursive;
+}
+
+/* Design Grid Pattern */
+.bg-canvas-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(234, 226, 212, 0.45) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(234, 226, 212, 0.45) 1px, transparent 1px);
+}
