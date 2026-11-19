@@ -116,7 +116,7 @@ export default function WhatIOfferSection() {
             style={{
               backgroundColor: service.cardColor,
             }}
-            className="absolute w-[260px] lg:w-[280px] h-[360px] rounded-[24px] p-6 flex flex-col items-center justify-between shadow-[0_20px_50px_-15px_rgba(0,0,0,0.22)] cursor-pointer select-none origin-bottom"
+            className="absolute w-[260px] lg:w-[280px] h-[360px] rounded-[2px] p-6 flex flex-col items-center justify-between shadow-[0_20px_50px_-15px_rgba(0,0,0,0.22)] cursor-pointer select-none origin-bottom"
           >
             {/* Top 3D Isometric Illustration */}
             <div className="w-full h-[186px] overflow-hidden flex items-center justify-center">
@@ -172,7 +172,7 @@ export default function WhatIOfferSection() {
             style={{
               backgroundColor: service.cardColor,
             }}
-            className="w-full h-[250px] xs:h-[270px] sm:h-[320px] rounded-[18px] p-4 xs:p-5 sm:p-6 flex flex-col items-center justify-between shadow-[0_16px_40px_-15px_rgba(0,0,0,0.2)] cursor-pointer"
+            className="w-full h-[250px] xs:h-[270px] sm:h-[320px] rounded-[2px] p-4 xs:p-5 sm:p-6 flex flex-col items-center justify-between shadow-[0_16px_40px_-15px_rgba(0,0,0,0.2)] cursor-pointer"
           >
             {/* Top 3D Isometric Illustration */}
             <div className="w-full h-[130px] xs:h-[145px] sm:h-[170px] overflow-hidden flex items-center justify-center">
