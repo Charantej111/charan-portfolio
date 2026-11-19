@@ -7,14 +7,14 @@ export default function BulbSticker({
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0, scale: 0, rotate: 0 }}
-      whileInView={{ opacity: 1, scale: 1, rotate: [0, 10, 0] }}
+      initial={{ opacity: 0, scale: 0, rotate: -15 }}
+      whileInView={{ opacity: 1, scale: 1, rotate: [-15, -5, -15] }}
       viewport={{ once: true, amount: 0.5 }}
       transition={{
         opacity: { duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] },
         scale: { type: 'spring', damping: 30, stiffness: 400, mass: 2, delay: 0.2 },
         rotate: {
-          duration: 2,
+          duration: 2.4,
           repeat: Infinity,
           repeatType: 'mirror',
           ease: [0.44, 0, 0.56, 1],

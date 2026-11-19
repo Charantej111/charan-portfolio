@@ -68,7 +68,9 @@ export default function HeroCard() {
         <div className="hidden sm:block">
           <PenToolSticker />
         </div>
-        <RocketSticker />
+        <div className="hidden sm:block">
+          <RocketSticker />
+        </div>
       </motion.div>
 
       {/* ================= CANVAS FRAME THAT DRAGS OPEN ================= */}
