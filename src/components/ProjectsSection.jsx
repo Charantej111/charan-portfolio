@@ -107,10 +107,10 @@ export default function ProjectsSection({
       {/* Projects List */}
       <div className="w-full max-w-[1000px] flex flex-col gap-8 sm:gap-14 md:gap-20 z-10">
         {displayedProjects.map((project) => (
-          <div key={project.id} className="relative w-full">
+          <div key={project.id} className="relative w-full flex flex-col items-start">
             
             {/* Top-Left Tag: "Project X" with Purple Border, Corner Handles & Arrow */}
-            <div className="absolute -top-6 sm:-top-7 left-0 z-20">
+            <div className="mb-2.5 sm:mb-3 z-20">
               <div className="relative inline-flex items-center gap-1 px-2.5 py-0.5 rounded-[2px] border-[1.2px] border-[#8427DE] bg-[#FFFCF4] text-[12px] font-medium text-[#8427DE]">
                 <div className="absolute -top-[3px] -left-[3px] w-[4px] h-[4px] bg-[#FFFCF4] border-[1px] border-[#8427DE] pointer-events-none" />
                 <div className="absolute -top-[3px] -right-[3px] w-[4px] h-[4px] bg-[#FFFCF4] border-[1px] border-[#8427DE] pointer-events-none" />
