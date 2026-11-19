@@ -267,10 +267,8 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-wrap items-center gap-6 sm:gap-8 text-[13px] sm:text-[14px] font-medium text-neutral-300">
-            <span className="text-neutral-500 font-mono uppercase text-[11px] tracking-wider">Navigation:</span>
             <a href="#projects" className="hover:text-white transition-colors">Work</a>
             <a href="#about-snippet" className="hover:text-white transition-colors">About</a>
-            <span className="text-neutral-500 font-mono uppercase text-[11px] tracking-wider ml-2">Links:</span>
             <a href="https://www.linkedin.com/in/charan-tej-neelam-bb0a9a302" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a>
             <a href="https://github.com/Charantej111" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">GitHub</a>
             <a href={`mailto:${emailAddress}`} className="hover:text-white transition-colors">Email</a>

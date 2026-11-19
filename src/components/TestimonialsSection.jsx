@@ -5,21 +5,18 @@ const QUOTES = [
   {
     id: 1,
     quote: "Users don't care how elegant the system is. They care whether the problem gets solved.",
-    author: "Charan Teja",
     role: "Product & UX",
     borderColor: "#039754",
   },
   {
     id: 2,
     quote: "A marketplace isn't one product. It's several products that have to work together.",
-    author: "Charan Teja",
     role: "Product & Operations",
     borderColor: "#008ff0",
   },
   {
     id: 3,
     quote: "AI is easy to demo. Making AI feedback useful is the hard part.",
-    author: "Charan Teja",
     role: "AI Product",
     borderColor: "#8427de",
   },
@@ -97,10 +94,7 @@ export default function TestimonialsSection() {
 
             {/* Author Attribution */}
             <div className="mt-6 pt-4 border-t border-neutral-100 flex flex-col">
-              <span className="text-[14px] sm:text-[15px] font-bold text-[#111111]">
-                {item.author}
-              </span>
-              <span className="text-[12px] sm:text-[13px] font-mono text-neutral-500 mt-0.5">
+              <span className="text-[13px] sm:text-[14px] font-mono font-medium text-neutral-600">
                 {item.role}
               </span>
             </div>

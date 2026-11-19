@@ -57,7 +57,7 @@ export default function HeroCard() {
   const isContentRevealed = stage >= 2;
 
   return (
-    <div className="relative mx-auto w-full max-w-[340px] xs:max-w-[380px] sm:max-w-[650px] min-h-[460px] xs:min-h-[490px] sm:min-h-[400px] select-none flex items-center justify-center">
+    <div className="relative mx-auto w-full max-w-[340px] xs:max-w-[380px] sm:max-w-[650px] min-h-[500px] xs:min-h-[515px] sm:min-h-[400px] select-none flex items-center justify-center">
       
       {/* ================= CORNER DECOR STICKERS ================= */}
       <motion.div
@@ -116,7 +116,7 @@ export default function HeroCard() {
           animate={{ opacity: isContentRevealed ? 1 : 0, y: isContentRevealed ? 0 : 3 }}
           transition={{ duration: 0.35 }}
         >
-          <span className="text-[12px] sm:text-[14px] font-mono font-medium text-[#008FF0] tracking-tight uppercase">
+          <span className="text-[11px] sm:text-[14px] font-mono font-medium text-[#008FF0] tracking-tight uppercase">
             Early PRODUCT MANAGER
           </span>
         </motion.div>
@@ -153,7 +153,7 @@ export default function HeroCard() {
             stage >= 2 ? 'opacity-100' : 'opacity-0'
           }`}
         >
-          {/* Image Container: Full square on mobile (matching reference screenshot), 45% side column on desktop */}
+          {/* Image Container: Full square on mobile matching Framer card proportion, 45% side column on desktop */}
           <div className="w-full sm:w-[45%] aspect-square sm:aspect-auto sm:h-[calc(100%-8px)] overflow-hidden rounded-[2px] bg-neutral-200 shrink-0">
             <img
               src={DAVID_SUMMER_PHOTO}
@@ -165,14 +165,19 @@ export default function HeroCard() {
           </div>
 
           {/* Heading + Description: Below image on mobile, right column on desktop */}
-          <div className="w-full sm:w-[48%] flex flex-col justify-center gap-1.5 sm:gap-3 text-left px-1 sm:px-4 mt-0.5 sm:mt-0">
-            {/* Heading */}
-            <h1 className="text-[#111111] font-semibold text-[22px] xs:text-[24px] sm:text-[30px] md:text-[34px] leading-[1.15] tracking-[-0.03em]">
-              I build products from ideas into real experiences.
+          <div className="w-full sm:w-[48%] flex flex-col justify-center gap-1.5 sm:gap-2 text-left px-1 sm:px-4 mt-1 sm:mt-0">
+            {/* Title 1 */}
+            <h1 className="text-[#111111] font-semibold text-[20px] xs:text-[22px] sm:text-[28px] md:text-[32px] leading-[1.15] tracking-[-0.03em]">
+              Hey, I am Charan
             </h1>
 
-            {/* Subcopy */}
-            <p className="text-[#666666] text-[13px] xs:text-[13px] sm:text-[14px] md:text-[14px] leading-[1.45] sm:leading-[1.5] font-normal tracking-[-0.01em]">
+            {/* Title 2 */}
+            <h2 className="text-[#111111] font-medium text-[14px] xs:text-[15px] sm:text-[18px] md:text-[20px] leading-[1.25] tracking-[-0.02em] text-neutral-800">
+              I build products from ideas into real experiences.
+            </h2>
+
+            {/* Content */}
+            <p className="text-[#666666] text-[12px] xs:text-[12.5px] sm:text-[13px] md:text-[13.5px] leading-[1.42] sm:leading-[1.5] font-normal tracking-[-0.01em]">
               I work across product, UX, technology, business, and operations to understand problems, shape solutions, and help turn them into products people actually use.
             </p>
           </div>

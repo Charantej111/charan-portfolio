@@ -19,16 +19,6 @@ const ALL_PROJECTS = [
     linkText: "View project →",
   },
   {
-    id: 2,
-    tag: "AI Product · Voice UX · Adaptive Systems",
-    year: "2026",
-    title: "InterviewPilot",
-    description: "An AI interview platform that creates personalized interview experiences around the candidate, role, and company.",
-    image: PROJECT_2_IMG,
-    imageAlt: "InterviewPilot AI Platform",
-    linkText: "View project →",
-  },
-  {
     id: 3,
     tag: "B2B · EdTech · Product Design",
     year: "2025",
@@ -46,6 +36,16 @@ const ALL_PROJECTS = [
     description: "A career operating system connecting planning, learning, projects, skills, and job applications in one place.",
     image: PROJECT_4_IMG,
     imageAlt: "CareerOS Career System",
+    linkText: "View project →",
+  },
+  {
+    id: 2,
+    tag: "AI Product · Voice UX · Adaptive Systems",
+    year: "2026",
+    title: "InterviewPilot",
+    description: "An AI interview platform that creates personalized interview experiences around the candidate, role, and company.",
+    image: PROJECT_2_IMG,
+    imageAlt: "InterviewPilot AI Platform",
     linkText: "View project →",
   },
 ];

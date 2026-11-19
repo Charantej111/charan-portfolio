@@ -42,7 +42,7 @@ export default function AvailableForWorkBadge() {
       `}</style>
 
       {/* Location / Availability text */}
-      <span className="order-2 text-[12px] sm:text-[14px] font-medium text-[#060606]/75 tracking-[-0.01em] whitespace-nowrap leading-[1.4em]">
+      <span className="order-2 text-[10px] xs:text-[11px] sm:text-[14px] font-medium text-[#060606]/75 tracking-[-0.01em] whitespace-nowrap leading-[1.4em]">
         Dubai, UAE · Available immediately
       </span>
 
