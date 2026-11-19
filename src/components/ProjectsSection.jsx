@@ -72,7 +72,7 @@ export default function ProjectsSection({
 
   return (
     <section id="projects" className="relative w-full pt-4 pb-10 sm:py-16 md:py-24 px-4 sm:px-6 flex flex-col items-center select-none z-10">
-      
+
       {/* Background Animated Fluid Ribbons */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
         <AnimatedRibbons
@@ -108,7 +108,7 @@ export default function ProjectsSection({
       <div className="w-full max-w-[1000px] flex flex-col gap-8 sm:gap-14 md:gap-20 z-10">
         {displayedProjects.map((project) => (
           <div key={project.id} className="relative w-full flex flex-col items-start">
-            
+
             {/* Top-Left Tag: "Project X" with Purple Border, Corner Handles & Arrow */}
             <div className="mb-2.5 sm:mb-3 z-20">
               <div className="relative inline-flex items-center gap-1 px-2.5 py-0.5 rounded-[2px] border-[1.2px] border-[#8427DE] bg-[#FFFCF4] text-[12px] font-medium text-[#8427DE]">
@@ -126,7 +126,7 @@ export default function ProjectsSection({
 
             {/* Project Card Frame (Purple border #8427DE matching Framer) */}
             <div className="relative w-full rounded-[2px] border-[1.3px] border-[#8427DE] bg-[#FFFCF4] p-4 sm:p-8 md:p-12 pb-5 sm:pb-8 shadow-[0_20px_50px_-20px_rgba(132,39,222,0.05)] flex flex-col md:flex-row items-center gap-5 sm:gap-8 md:gap-10 justify-between">
-              
+
               {/* 4 Corner Anchor Handles (Framer Canvas Selection Handles) */}
               <div className="absolute -top-[4px] -left-[4px] w-[7px] h-[7px] bg-[#FFFCF4] border-[1.3px] border-[#8427DE] z-20 pointer-events-none" />
               <div className="absolute -top-[4px] -right-[4px] w-[7px] h-[7px] bg-[#FFFCF4] border-[1.3px] border-[#8427DE] z-20 pointer-events-none" />
