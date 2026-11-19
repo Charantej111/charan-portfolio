@@ -47,7 +47,7 @@ export default function AboutSection({ onReadStory }) {
 
         {/* High-Craft Progressive Character-by-Character Smooth Reveal Typography */}
         <SmoothRevealText
-          content="I'm Charan, an AI & Machine Learning graduate who moved from technology and UX into product. I've worked more than 1½ marketplaces, AI tools, and EdTech products, learning product by building, testing, and shipping real things."
+          content="I'm Charan, an AI & Machine Learning graduate who moved from technology and UX into product. I've worked more than 1½ years in marketplaces, AI tools, and EdTech products, learning product by building, testing, and shipping real things."
           accentOneText="AI & Machine Learning"
           accentTwoText="building, testing, and shipping"
           accentColor="#039754"
