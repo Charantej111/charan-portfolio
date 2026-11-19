@@ -45,12 +45,12 @@ export default function BottomDock({ currentView = 'home', onNavigate }) {
 
   return (
     <motion.nav
-      className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 select-none"
+      className="fixed bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-50 select-none"
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.6 }}
     >
-      <div className="bg-[#18181B]/95 backdrop-blur-xl border border-neutral-700/60 rounded-2xl p-1.5 flex items-center gap-1.5 shadow-[0_12px_36px_rgba(0,0,0,0.35)]">
+      <div className="bg-[#18181B]/95 backdrop-blur-xl border border-neutral-700/60 rounded-2xl p-1 sm:p-1.5 flex items-center gap-1 sm:gap-1.5 shadow-[0_12px_36px_rgba(0,0,0,0.35)]">
         {navItems.map((item) => {
           const Icon = item.icon;
           const isActive = currentView === item.id;
@@ -62,13 +62,13 @@ export default function BottomDock({ currentView = 'home', onNavigate }) {
               whileHover={{ scale: 1.08 }}
               whileTap={{ scale: 0.94 }}
               title={item.label}
-              className={`relative p-2.5 rounded-xl transition-colors duration-200 cursor-pointer ${
+              className={`relative p-2 sm:p-2.5 rounded-xl transition-colors duration-200 cursor-pointer ${
                 isActive
                   ? 'bg-[#2B2B30] text-emerald-400 shadow-inner'
                   : 'text-neutral-400 hover:text-white hover:bg-neutral-800/50'
               }`}
             >
-              <Icon size={19} strokeWidth={isActive ? 2.4 : 2} />
+              <Icon size={18} strokeWidth={isActive ? 2.4 : 2} className="sm:w-[19px] sm:h-[19px]" />
               
               {/* Active Dot Indicator */}
               {isActive && (

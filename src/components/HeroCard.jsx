@@ -57,7 +57,7 @@ export default function HeroCard() {
   const isContentRevealed = stage >= 2;
 
   return (
-    <div className="relative mx-auto w-full max-w-[650px] min-h-[460px] sm:min-h-[400px] select-none flex items-center justify-center">
+    <div className="relative mx-auto w-full max-w-[650px] min-h-[430px] sm:min-h-[400px] select-none flex items-center justify-center">
       
       {/* ================= CORNER DECOR STICKERS ================= */}
       <motion.div
@@ -107,19 +107,19 @@ export default function HeroCard() {
       >
         {/* --- Top Selection Labels --- */}
         <motion.div
-          className="absolute -top-[28px] left-0 flex items-center select-none pointer-events-none"
+          className="absolute -top-[25px] sm:-top-[28px] left-0 flex items-center select-none pointer-events-none"
           initial={{ opacity: 0, y: 3 }}
           animate={{ opacity: isContentRevealed ? 1 : 0, y: isContentRevealed ? 0 : 3 }}
           transition={{ duration: 0.35 }}
         >
-          <span className="text-[13px] sm:text-[14px] font-medium text-[#008FF0] tracking-[-0.01em]">
+          <span className="text-[12px] sm:text-[14px] font-medium text-[#008FF0] tracking-[-0.01em]">
             Intro
           </span>
         </motion.div>
 
         {/* "Available for work" badge at top-right */}
         <motion.div
-          className="absolute -top-[28px] right-0 flex items-center select-none pointer-events-none"
+          className="absolute -top-[25px] sm:-top-[28px] right-0 flex items-center select-none pointer-events-none"
           initial={{ opacity: 0, y: 3 }}
           animate={{ opacity: isContentRevealed ? 1 : 0, y: isContentRevealed ? 0 : 3 }}
           transition={{ duration: 0.35 }}
@@ -150,10 +150,10 @@ export default function HeroCard() {
           }`}
         >
           {/* Left Column: Image Container */}
-          <div className="w-full sm:w-[45%] h-[200px] sm:h-[calc(100%-8px)] overflow-hidden rounded-[2px] bg-neutral-200 shrink-0">
+          <div className="w-full sm:w-[45%] h-[180px] xs:h-[190px] sm:h-[calc(100%-8px)] overflow-hidden rounded-[2px] bg-neutral-200 shrink-0">
             <img
               src={DAVID_SUMMER_PHOTO}
-              alt="David Harley Portrait"
+              alt="Charan Tej Portrait"
               className="w-full h-full object-cover grayscale contrast-[1.05] brightness-[0.98] transition-transform duration-500 hover:scale-[1.02]"
               style={{ objectPosition: '49.2% 38.4%' }}
               loading="eager"
@@ -161,16 +161,16 @@ export default function HeroCard() {
           </div>
 
           {/* Right Column: Heading + Description */}
-          <div className="w-full sm:w-[48%] flex flex-col justify-center gap-3 text-left px-2 sm:px-4">
+          <div className="w-full sm:w-[48%] flex flex-col justify-center gap-2.5 sm:gap-3 text-left px-2 sm:px-4">
             {/* Heading */}
-            <h1 className="text-[#111111] font-medium text-[28px] sm:text-[34px] md:text-[40px] leading-[1.1] tracking-[-0.035em]">
+            <h1 className="text-[#111111] font-medium text-[24px] xs:text-[28px] sm:text-[34px] md:text-[40px] leading-[1.12] tracking-[-0.035em]">
               Hey, I am
               <br />
-              David Harley
+              Charan Tej
             </h1>
 
             {/* Subcopy */}
-            <p className="text-[#666666] text-[13px] sm:text-[14px] md:text-[15px] leading-[1.5] font-normal tracking-[-0.01em]">
+            <p className="text-[#666666] text-[12px] sm:text-[14px] md:text-[15px] leading-[1.45] sm:leading-[1.5] font-normal tracking-[-0.01em]">
               I deeply care about polish, craft and interface that make people feel something
             </p>
           </div>

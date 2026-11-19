@@ -64,10 +64,10 @@ const CHECKPOINTS = [
 
 export default function CareerCheckpointsSection() {
   return (
-    <section className="relative w-full py-20 sm:py-28 px-4 sm:px-6 flex flex-col items-center select-none z-10">
+    <section className="relative w-full py-14 sm:py-20 md:py-28 px-4 sm:px-6 flex flex-col items-center select-none z-10">
       
       {/* Top Tag: "Career checkpoints_" with Green Border */}
-      <div className="flex flex-col items-center gap-4 mb-14 sm:mb-20 z-10">
+      <div className="flex flex-col items-center gap-3 sm:gap-4 mb-10 sm:mb-14 md:mb-20 z-10">
         <div className="relative px-4 py-1.5 rounded-[2px] border-[1.3px] border-[#039855] bg-[#FFFCF4]">
           <div className="absolute -top-[3px] -left-[3px] w-[5px] h-[5px] bg-[#FFFCF4] border-[1.2px] border-[#039855] pointer-events-none" />
           <div className="absolute -top-[3px] -right-[3px] w-[5px] h-[5px] bg-[#FFFCF4] border-[1.2px] border-[#039855] pointer-events-none" />
@@ -79,7 +79,7 @@ export default function CareerCheckpointsSection() {
           </span>
         </div>
 
-        <h2 className="text-[30px] sm:text-[44px] font-semibold text-[#111111] tracking-[-0.03em] text-center">
+        <h2 className="text-[24px] sm:text-[38px] md:text-[44px] font-semibold text-[#111111] tracking-[-0.03em] text-center">
           A journey shaped by great teams.
         </h2>
       </div>
@@ -93,7 +93,7 @@ export default function CareerCheckpointsSection() {
         </div>
 
         {/* Timeline Items */}
-        <div className="relative w-full flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8 z-10">
+        <div className="relative w-full flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-8 z-10">
           {CHECKPOINTS.map((item, index) => (
             <div key={item.id} className="relative flex flex-col items-center w-full max-w-[360px] lg:max-w-none lg:w-[330px]">
               

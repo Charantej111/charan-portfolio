@@ -71,7 +71,7 @@ export default function ProjectsSection({
   };
 
   return (
-    <section id="projects" className="relative w-full py-20 sm:py-28 px-4 sm:px-6 flex flex-col items-center select-none z-10">
+    <section id="projects" className="relative w-full py-14 sm:py-20 md:py-28 px-4 sm:px-6 flex flex-col items-center select-none z-10">
       
       {/* Background Animated Fluid Ribbons */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
@@ -85,7 +85,7 @@ export default function ProjectsSection({
       </div>
 
       {/* Top Header Tag */}
-      <div className="flex flex-col items-center gap-4 mb-16 sm:mb-20 z-10 text-center">
+      <div className="flex flex-col items-center gap-3 sm:gap-4 mb-10 sm:mb-16 md:mb-20 z-10 text-center">
         <div className="relative px-4 py-1.5 rounded-[2px] border-[1.3px] border-[#8427DE] bg-[#FFFCF4]">
           {/* Corner handle dots */}
           <div className="absolute -top-[3px] -left-[3px] w-[5px] h-[5px] bg-[#FFFCF4] border-[1.2px] border-[#8427DE] pointer-events-none" />
@@ -99,18 +99,18 @@ export default function ProjectsSection({
         </div>
 
         {/* Section Heading */}
-        <h2 className="text-[32px] sm:text-[44px] font-semibold text-[#111111] tracking-[-0.03em]">
+        <h2 className="text-[26px] sm:text-[38px] md:text-[44px] font-semibold text-[#111111] tracking-[-0.03em]">
           {title}
         </h2>
       </div>
 
       {/* Projects List */}
-      <div className="w-full max-w-[1000px] flex flex-col gap-16 sm:gap-20 z-10">
+      <div className="w-full max-w-[1000px] flex flex-col gap-12 sm:gap-16 md:gap-20 z-10">
         {displayedProjects.map((project) => (
           <div key={project.id} className="relative w-full">
             
             {/* Top-Left Tag: "Project X" with Purple Border, Corner Handles & Arrow */}
-            <div className="absolute -top-7 left-0 z-20">
+            <div className="absolute -top-6 sm:-top-7 left-0 z-20">
               <div className="relative inline-flex items-center gap-1 px-2.5 py-0.5 rounded-[2px] border-[1.2px] border-[#8427DE] bg-[#FFFCF4] text-[12px] font-medium text-[#8427DE]">
                 <div className="absolute -top-[3px] -left-[3px] w-[4px] h-[4px] bg-[#FFFCF4] border-[1px] border-[#8427DE] pointer-events-none" />
                 <div className="absolute -top-[3px] -right-[3px] w-[4px] h-[4px] bg-[#FFFCF4] border-[1px] border-[#8427DE] pointer-events-none" />
@@ -125,7 +125,7 @@ export default function ProjectsSection({
             </div>
 
             {/* Project Card Frame (Purple border #8427DE matching Framer) */}
-            <div className="relative w-full rounded-[2px] border-[1.3px] border-[#8427DE] bg-[#FFFCF4] p-6 sm:p-10 md:p-12 shadow-[0_20px_50px_-20px_rgba(132,39,222,0.05)] flex flex-col md:flex-row items-center gap-8 md:gap-10 justify-between">
+            <div className="relative w-full rounded-[2px] border-[1.3px] border-[#8427DE] bg-[#FFFCF4] p-5 sm:p-8 md:p-12 shadow-[0_20px_50px_-20px_rgba(132,39,222,0.05)] flex flex-col md:flex-row items-center gap-6 sm:gap-8 md:gap-10 justify-between">
               
               {/* 4 Corner Anchor Handles (Framer Canvas Selection Handles) */}
               <div className="absolute -top-[4px] -left-[4px] w-[7px] h-[7px] bg-[#FFFCF4] border-[1.3px] border-[#8427DE] z-20 pointer-events-none" />
@@ -136,27 +136,27 @@ export default function ProjectsSection({
               {/* Left Column: Details & CTA */}
               <div className="flex-1 flex flex-col justify-between text-left h-full w-full">
                 <div>
-                  <span className="text-[13px] font-medium text-[#777777]">
+                  <span className="text-[12px] sm:text-[13px] font-medium text-[#777777]">
                     {project.subtitle}
                   </span>
 
-                  <h3 className="mt-3 sm:mt-4 text-[24px] sm:text-[32px] font-semibold text-[#111111] leading-[1.2] tracking-[-0.025em]">
+                  <h3 className="mt-2.5 sm:mt-4 text-[20px] sm:text-[28px] md:text-[32px] font-semibold text-[#111111] leading-[1.2] tracking-[-0.025em]">
                     {project.title}
                   </h3>
 
-                  <p className="mt-3 sm:mt-4 text-[14px] sm:text-[15px] text-[#666666] leading-[1.6] max-w-[420px]">
+                  <p className="mt-2.5 sm:mt-4 text-[13px] sm:text-[15px] text-[#666666] leading-[1.6] max-w-[420px]">
                     {project.description}
                   </p>
                 </div>
 
-                <div className="mt-6 sm:mt-10">
+                <div className="mt-5 sm:mt-8 md:mt-10">
                   <motion.button
                     onClick={() => handleCaseStudyClick(project.id)}
                     whileHover={{ scale: 1.05, x: 4 }}
                     whileTap={{ scale: 0.95 }}
                     transition={{ type: 'spring', stiffness: 400, damping: 25 }}
                     type="button"
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-[3px] border border-neutral-300 hover:border-black text-[13px] font-medium text-[#111111] transition-colors bg-white/70 cursor-pointer shadow-2xs"
+                    className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-[3px] border border-neutral-300 hover:border-black text-[12px] sm:text-[13px] font-medium text-[#111111] transition-colors bg-white/70 cursor-pointer shadow-2xs"
                   >
                     <span>{project.linkText}</span>
                   </motion.button>
@@ -168,7 +168,7 @@ export default function ProjectsSection({
                 whileHover={{ scale: 1.03 }}
                 transition={{ type: 'spring', stiffness: 350, damping: 25 }}
                 onClick={() => handleCaseStudyClick(project.id)}
-                className="w-full md:w-[460px] h-[260px] sm:h-[340px] shrink-0 overflow-hidden rounded-[2px] bg-neutral-100 flex items-center justify-center cursor-pointer shadow-inner"
+                className="w-full md:w-[460px] h-[200px] sm:h-[280px] md:h-[340px] shrink-0 overflow-hidden rounded-[2px] bg-neutral-100 flex items-center justify-center cursor-pointer shadow-inner"
               >
                 <img
                   src={project.image}

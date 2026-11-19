@@ -42,7 +42,7 @@ export default function AvailableForWorkBadge() {
       `}</style>
 
       {/* Available for work text (order 1 in desktop/final state) */}
-      <span className="order-2 text-[14px] font-medium text-[#060606]/60 tracking-[-0.01em] whitespace-nowrap leading-[1.4em]">
+      <span className="order-2 text-[12px] sm:text-[14px] font-medium text-[#060606]/60 tracking-[-0.01em] whitespace-nowrap leading-[1.4em]">
         Available for work
       </span>
 

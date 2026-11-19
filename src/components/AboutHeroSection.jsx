@@ -77,7 +77,7 @@ export default function AboutHeroSection() {
         
         {/* Left Column: Interactive 3-Card Stack with Time-delay & Click-to-send-back */}
         <div
-          className="relative w-[280px] sm:w-[340px] h-[380px] sm:h-[440px] flex items-center justify-center cursor-pointer shrink-0"
+          className="relative w-[260px] xs:w-[280px] sm:w-[340px] h-[340px] xs:h-[380px] sm:h-[440px] flex items-center justify-center cursor-pointer shrink-0"
           onClick={sendToBack}
           title="Click to cycle next photo"
         >
@@ -200,7 +200,7 @@ export default function AboutHeroSection() {
               damping: 22,
               mass: 0.95,
             }}
-            className="relative w-full rounded-[2px] border-[1.5px] bg-white/90 backdrop-blur-sm p-6 sm:p-10 md:p-12 transition-colors"
+            className="relative w-full rounded-[2px] border-[1.5px] bg-white/90 backdrop-blur-sm p-5 sm:p-10 md:p-12 transition-colors"
           >
             {/* 4 Framer Canvas Corner Anchors */}
             <div className="absolute -top-[4.5px] -left-[4.5px] w-[8px] h-[8px] bg-white border-[1.5px] border-[#008ff0] pointer-events-none" />
@@ -230,13 +230,13 @@ export default function AboutHeroSection() {
             />
 
             {/* Content Heading */}
-            <h1 className="text-[28px] sm:text-[38px] md:text-[44px] font-semibold text-[#111111] leading-[1.14] tracking-[-0.03em] relative z-10">
+            <h1 className="text-[24px] xs:text-[28px] sm:text-[38px] md:text-[44px] font-semibold text-[#111111] leading-[1.15] tracking-[-0.03em] relative z-10">
               I build the parts of a product that people never think about.
             </h1>
 
             {/* Content Body */}
-            <p className="mt-4 sm:mt-6 text-[14px] sm:text-[16px] text-neutral-600 leading-[1.6] relative z-10">
-              I’m David, a Product manager and Framer creator. Six years of research, interaction models and design systems - then building them for real.
+            <p className="mt-3 sm:mt-6 text-[13px] sm:text-[16px] text-neutral-600 leading-[1.6] relative z-10">
+              I’m Charan Tej, a Product manager and Framer creator. Six years of research, interaction models and design systems - then building them for real.
             </p>
 
             {/* Interactive "Auto-fit Content" Canvas Cursor (100% Transparent, No Box Container) */}

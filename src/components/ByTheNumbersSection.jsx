@@ -31,7 +31,7 @@ function RollingDigit({ digit, inView, delay = 0 }) {
   const targetIndex = parseInt(digit, 10) || 0;
 
   return (
-    <div className="relative inline-block h-[64px] sm:h-[76px] overflow-hidden leading-none">
+    <div className="relative inline-block h-[52px] sm:h-[76px] overflow-hidden leading-none">
       <motion.div
         initial={{ y: '0%' }}
         animate={inView ? { y: `-${targetIndex * 10}%` } : { y: '0%' }}
@@ -46,7 +46,7 @@ function RollingDigit({ digit, inView, delay = 0 }) {
         {digits.map((d) => (
           <div
             key={d}
-            className="h-[64px] sm:h-[76px] flex items-center justify-center text-[54px] sm:text-[68px] font-semibold text-[#111111] tracking-[-0.04em]"
+            className="h-[52px] sm:h-[76px] flex items-center justify-center text-[46px] sm:text-[68px] font-semibold text-[#111111] tracking-[-0.04em]"
           >
             {d}
           </div>
@@ -64,7 +64,7 @@ function StatCard({ stat }) {
   return (
     <div
       ref={cardRef}
-      className="relative w-full max-w-[340px] sm:w-[280px] md:w-[310px] h-[220px] sm:h-[230px] rounded-[2px] border-[1.3px] border-[#8427DE] bg-white p-7 flex flex-col justify-between shadow-[0_20px_50px_-20px_rgba(132,39,222,0.06)]"
+      className="relative w-full max-w-[340px] sm:w-[280px] md:w-[310px] h-[190px] sm:h-[230px] rounded-[2px] border-[1.3px] border-[#8427DE] bg-white p-5 sm:p-7 flex flex-col justify-between shadow-[0_20px_50px_-20px_rgba(132,39,222,0.06)]"
     >
       {/* 4 Corner Resize Anchor Handles */}
       <div className="absolute -top-[4px] -left-[4px] w-[7px] h-[7px] bg-white border-[1.3px] border-[#8427DE] pointer-events-none" />
@@ -74,7 +74,7 @@ function StatCard({ stat }) {
 
       {/* Top Header: ID number & Black block marker */}
       <div className="flex items-center justify-between w-full">
-        <span className="text-[13px] font-mono font-medium text-neutral-500">
+        <span className="text-[12px] sm:text-[13px] font-mono font-medium text-neutral-500">
           {stat.number}
         </span>
         <div className="w-2.5 h-2.5 bg-black" />
@@ -91,15 +91,15 @@ function StatCard({ stat }) {
               delay={i * 0.18}
             />
           ))}
-          <span className="text-[54px] sm:text-[68px] font-semibold text-[#111111] tracking-[-0.04em] leading-none ml-0.5">
+          <span className="text-[46px] sm:text-[68px] font-semibold text-[#111111] tracking-[-0.04em] leading-none ml-0.5">
             {stat.suffix}
           </span>
         </div>
       </div>
 
-      {/* Bottom Metric Label (Clean typography, bars removed per user request) */}
+      {/* Bottom Metric Label */}
       <div className="w-full">
-        <span className="text-[15px] sm:text-[16px] text-neutral-700 font-medium tracking-tight">
+        <span className="text-[14px] sm:text-[16px] text-neutral-700 font-medium tracking-tight">
           {stat.label}
         </span>
       </div>
@@ -109,10 +109,10 @@ function StatCard({ stat }) {
 
 export default function ByTheNumbersSection() {
   return (
-    <section className="relative w-full py-20 sm:py-28 px-4 sm:px-6 flex flex-col items-center select-none z-10">
+    <section className="relative w-full py-14 sm:py-20 md:py-28 px-4 sm:px-6 flex flex-col items-center select-none z-10">
       
       {/* Top Header Tag: "By the numbers_" with Purple Border */}
-      <div className="flex flex-col items-center gap-4 mb-14 sm:mb-20 z-10">
+      <div className="flex flex-col items-center gap-3 sm:gap-4 mb-10 sm:mb-16 md:mb-20 z-10">
         
         {/* Header Badge */}
         <div className="relative flex items-center justify-center">
@@ -129,7 +129,7 @@ export default function ByTheNumbersSection() {
         </div>
 
         {/* Section Heading: "A snapshot of my journey" with Framer Pill */}
-        <h2 className="text-[30px] sm:text-[44px] font-semibold text-[#111111] tracking-[-0.03em] flex items-center gap-2 flex-wrap justify-center text-center">
+        <h2 className="text-[26px] sm:text-[38px] md:text-[44px] font-semibold text-[#111111] tracking-[-0.03em] flex items-center gap-2 flex-wrap justify-center text-center">
           <span>A snapshot</span>
           <span>of my journey</span>
         </h2>
