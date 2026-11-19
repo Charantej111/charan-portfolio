@@ -72,10 +72,10 @@ export default function ProjectsSection({
   };
 
   return (
-    <section id="projects" className="relative w-full pt-4 pb-10 sm:py-16 md:py-24 px-4 sm:px-6 flex flex-col items-center select-none z-10">
+    <section id="projects" className="relative w-full pt-4 pb-20 sm:pb-16 md:pb-24 sm:py-16 md:py-24 px-3 xs:px-4 sm:px-6 flex flex-col items-center select-none z-10">
 
-      {/* Background Animated Fluid Ribbons */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
+      {/* Background Animated Fluid Ribbons (Desktop / Tablet only) */}
+      <div className="hidden sm:block absolute inset-0 pointer-events-none overflow-hidden z-0">
         <AnimatedRibbons
           lineCount={2}
           strokeWidth={14}
@@ -86,7 +86,7 @@ export default function ProjectsSection({
       </div>
 
       {/* Top Header Tag */}
-      <div className="flex flex-col items-center gap-2.5 sm:gap-4 mb-6 sm:mb-12 md:mb-16 z-10 text-center max-w-2xl mx-auto">
+      <div className="flex flex-col items-center gap-2.5 sm:gap-4 mb-6 sm:mb-12 md:mb-16 z-10 text-center max-w-2xl mx-auto px-2">
         <div className="relative px-4 py-1.5 rounded-[2px] border-[1.3px] border-[#8427DE] bg-[#FFFCF4]">
           {/* Corner handle dots */}
           <div className="absolute -top-[3px] -left-[3px] w-[5px] h-[5px] bg-[#FFFCF4] border-[1.2px] border-[#8427DE] pointer-events-none" />
@@ -94,38 +94,38 @@ export default function ProjectsSection({
           <div className="absolute -bottom-[3px] -left-[3px] w-[5px] h-[5px] bg-[#FFFCF4] border-[1.2px] border-[#8427DE] pointer-events-none" />
           <div className="absolute -bottom-[3px] -right-[3px] w-[5px] h-[5px] bg-[#FFFCF4] border-[1.2px] border-[#8427DE] pointer-events-none" />
 
-          <span className="text-[13px] font-mono font-medium text-[#111111] tracking-tight">
+          <span className="text-[12px] sm:text-[13px] font-mono font-medium text-[#111111] tracking-tight">
             {tag}
           </span>
         </div>
 
         {/* Section Heading */}
-        <h2 className="text-[26px] sm:text-[38px] md:text-[44px] font-semibold text-[#111111] tracking-[-0.03em] text-center">
+        <h2 className="text-[22px] xs:text-[24px] sm:text-[38px] md:text-[44px] font-semibold text-[#111111] tracking-[-0.03em] text-center leading-[1.2]">
           {title}
         </h2>
 
         {/* Supporting text */}
         {supportingText && (
-          <p className="text-[14px] sm:text-[16px] text-neutral-600 leading-[1.6] max-w-xl text-center">
+          <p className="text-[13px] xs:text-[13.5px] sm:text-[16px] text-neutral-600 leading-[1.55] sm:leading-[1.6] max-w-xl text-center">
             {supportingText}
           </p>
         )}
       </div>
 
       {/* Projects List */}
-      <div className="w-full max-w-[360px] xs:max-w-[420px] sm:max-w-[700px] md:max-w-[1000px] flex flex-col gap-8 sm:gap-14 md:gap-20 z-10">
+      <div className="w-full max-w-[340px] xs:max-w-[380px] sm:max-w-[700px] md:max-w-[1000px] flex flex-col gap-6 sm:gap-14 md:gap-20 z-10">
         {displayedProjects.map((project) => (
           <div key={project.id} className="relative w-full flex flex-col items-start">
 
             {/* Top-Left Tag: Category */}
             <div className="mb-2 sm:mb-3 z-20">
-              <div className="relative inline-flex items-center gap-1.5 px-2.5 py-1 rounded-[2px] bg-[#8427DE] text-[11px] xs:text-[12px] font-medium text-white shadow-xs">
+              <div className="relative inline-flex items-center gap-1.5 px-2.5 py-1 rounded-[2px] bg-[#8427DE] text-[10.5px] xs:text-[11.5px] sm:text-[12px] font-medium text-white shadow-xs">
                 <span>{project.tag}</span>
               </div>
             </div>
 
             {/* Project Card Frame (Purple border #8427DE matching Framer) */}
-            <div className="relative w-full rounded-[2px] border-[1.3px] border-[#8427DE] bg-[#FFFCF4] p-3.5 xs:p-4 sm:p-8 md:p-12 pb-4 sm:pb-8 shadow-[0_20px_50px_-20px_rgba(132,39,222,0.05)] flex flex-col md:flex-row items-center gap-4 sm:gap-8 md:gap-10 justify-between">
+            <div className="relative w-full rounded-[2px] border-[1.3px] border-[#8427DE] bg-[#FFFCF4] p-3 xs:p-4 sm:p-8 md:p-12 pb-5 sm:pb-8 shadow-[0_20px_50px_-20px_rgba(132,39,222,0.05)] flex flex-col md:flex-row items-center gap-4 sm:gap-8 md:gap-10 justify-between">
 
               {/* 4 Corner Anchor Handles (Framer Canvas Selection Handles) */}
               <div className="absolute -top-[4px] -left-[4px] w-[7px] h-[7px] bg-[#FFFCF4] border-[1.3px] border-[#8427DE] z-20 pointer-events-none" />
@@ -156,11 +156,11 @@ export default function ProjectsSection({
                     {project.year}
                   </span>
 
-                  <h3 className="mt-1.5 sm:mt-4 text-[22px] xs:text-[24px] sm:text-[28px] md:text-[32px] font-semibold text-[#111111] leading-[1.2] tracking-[-0.025em]">
+                  <h3 className="mt-1 sm:mt-4 text-[20px] xs:text-[22px] sm:text-[28px] md:text-[32px] font-semibold text-[#111111] leading-[1.2] tracking-[-0.025em]">
                     {project.title}
                   </h3>
 
-                  <p className="mt-2 sm:mt-4 text-[13.5px] xs:text-[14px] sm:text-[15px] text-[#666666] leading-[1.55] sm:leading-[1.6] max-w-[420px]">
+                  <p className="mt-1.5 sm:mt-4 text-[13px] xs:text-[13.5px] sm:text-[15px] text-[#666666] leading-[1.5] sm:leading-[1.6] max-w-[420px]">
                     {project.description}
                   </p>
                 </div>
