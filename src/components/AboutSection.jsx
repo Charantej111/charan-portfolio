@@ -9,13 +9,13 @@ export default function AboutSection({ onReadStory }) {
       
       {/* Top Section Tag: "More about me_" with 4 corner anchor dots and solid green border */}
       <div className="mb-4 sm:mb-10 flex items-center justify-center">
-        <div className="relative px-3.5 py-1.5 rounded-[1px] border-[1.3px] border-[#039754] bg-white">
+        <div className="relative px-4 py-1.5 rounded-[2px] border-[1.3px] border-[#039754] bg-[#FFFCF4]">
           {/* Tag corner handles */}
-          <div className="absolute -top-[3px] -left-[3px] w-[5px] h-[5px] bg-white border-[1px] border-[#039754] pointer-events-none" />
-          <div className="absolute -top-[3px] -right-[3px] w-[5px] h-[5px] bg-white border-[1px] border-[#039754] pointer-events-none" />
-          <div className="absolute -bottom-[3px] -left-[3px] w-[5px] h-[5px] bg-white border-[1px] border-[#039754] pointer-events-none" />
-          <div className="absolute -bottom-[3px] -right-[3px] w-[5px] h-[5px] bg-white border-[1px] border-[#039754] pointer-events-none" />
-          <span className="text-[13px] sm:text-[14px] font-normal text-[#111111] font-mono tracking-tight">
+          <div className="absolute -top-[3px] -left-[3px] w-[5px] h-[5px] bg-[#FFFCF4] border-[1.2px] border-[#039754] pointer-events-none" />
+          <div className="absolute -top-[3px] -right-[3px] w-[5px] h-[5px] bg-[#FFFCF4] border-[1.2px] border-[#039754] pointer-events-none" />
+          <div className="absolute -bottom-[3px] -left-[3px] w-[5px] h-[5px] bg-[#FFFCF4] border-[1.2px] border-[#039754] pointer-events-none" />
+          <div className="absolute -bottom-[3px] -right-[3px] w-[5px] h-[5px] bg-[#FFFCF4] border-[1.2px] border-[#039754] pointer-events-none" />
+          <span className="text-[13px] font-mono font-medium text-[#111111] tracking-tight">
             More about me_
           </span>
         </div>
@@ -60,10 +60,16 @@ export default function AboutSection({ onReadStory }) {
         <button
           onClick={onReadStory}
           type="button"
-          className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-[1px] border-[1.3px] border-[#8427DE] bg-white hover:bg-neutral-50 text-[13px] sm:text-[14px] font-medium text-[#111111] shadow-xs transition-all duration-200 cursor-pointer"
+          className="group relative inline-flex items-center gap-2 px-5 py-2 rounded-[2px] border-[1.3px] border-[#8427DE] bg-[#FFFCF4] hover:bg-[#8427DE] text-[13px] sm:text-[14px] font-mono font-medium text-[#111111] hover:text-white shadow-xs transition-colors duration-200 cursor-pointer"
         >
+          {/* Tag corner handles matching Framer design system */}
+          <div className="absolute -top-[3px] -left-[3px] w-[5px] h-[5px] bg-[#FFFCF4] border-[1.2px] border-[#8427DE] pointer-events-none group-hover:bg-[#8427DE]" />
+          <div className="absolute -top-[3px] -right-[3px] w-[5px] h-[5px] bg-[#FFFCF4] border-[1.2px] border-[#8427DE] pointer-events-none group-hover:bg-[#8427DE]" />
+          <div className="absolute -bottom-[3px] -left-[3px] w-[5px] h-[5px] bg-[#FFFCF4] border-[1.2px] border-[#8427DE] pointer-events-none group-hover:bg-[#8427DE]" />
+          <div className="absolute -bottom-[3px] -right-[3px] w-[5px] h-[5px] bg-[#FFFCF4] border-[1.2px] border-[#8427DE] pointer-events-none group-hover:bg-[#8427DE]" />
+
           <span>Read my full story</span>
-          <span className="transition-transform duration-200 group-hover:translate-x-1 text-[#8427DE]">→</span>
+          <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
         </button>
       </div>
 

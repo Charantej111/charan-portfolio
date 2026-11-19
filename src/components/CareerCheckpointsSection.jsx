@@ -79,8 +79,8 @@ export default function CareerCheckpointsSection() {
           </span>
         </div>
 
-        <h2 className="text-[22px] xs:text-[24px] sm:text-[38px] md:text-[44px] font-semibold text-[#111111] tracking-[-0.03em] text-center">
-          A journey shaped by great teams.
+        <h2 className="text-[26px] sm:text-[38px] md:text-[44px] font-semibold text-[#111111] tracking-[-0.03em] text-center">
+          A journey shaped by great teams
         </h2>
       </div>
 

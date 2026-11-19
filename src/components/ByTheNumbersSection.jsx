@@ -129,7 +129,7 @@ export default function ByTheNumbersSection() {
         </div>
 
         {/* Section Heading: "A snapshot of my journey" with Framer Pill */}
-        <h2 className="text-[24px] sm:text-[38px] md:text-[44px] font-semibold text-[#111111] tracking-[-0.03em] flex items-center gap-2 flex-wrap justify-center text-center">
+        <h2 className="text-[26px] sm:text-[38px] md:text-[44px] font-semibold text-[#111111] tracking-[-0.03em] flex items-center gap-2 flex-wrap justify-center text-center">
           <span>A snapshot</span>
           <span>of my journey</span>
         </h2>

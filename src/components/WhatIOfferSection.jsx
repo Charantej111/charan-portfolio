@@ -69,7 +69,7 @@ export default function WhatIOfferSection() {
           </span>
         </div>
 
-        <h2 className="text-[24px] sm:text-[38px] md:text-[44px] font-semibold text-[#111111] tracking-[-0.03em] text-center">
+        <h2 className="text-[26px] sm:text-[38px] md:text-[44px] font-semibold text-[#111111] tracking-[-0.03em] text-center">
           How I can help
         </h2>
       </div>

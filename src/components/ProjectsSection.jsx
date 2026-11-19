@@ -54,7 +54,7 @@ export default function ProjectsSection({
   onOpenCaseStudy,
   limit = 3,
   showAll = false,
-  title = "Work i am proud of",
+  title = "Work I am proud of",
   tag = "Featured projects_",
   onViewAll,
 }) {
@@ -99,7 +99,7 @@ export default function ProjectsSection({
         </div>
 
         {/* Section Heading */}
-        <h2 className="text-[26px] sm:text-[38px] md:text-[44px] font-semibold text-[#111111] tracking-[-0.03em]">
+        <h2 className="text-[26px] sm:text-[38px] md:text-[44px] font-semibold text-[#111111] tracking-[-0.03em] text-center">
           {title}
         </h2>
       </div>
@@ -192,8 +192,14 @@ export default function ProjectsSection({
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.96 }}
             type="button"
-            className="group inline-flex items-center gap-2 px-6 py-3 rounded-[2px] border-[1.3px] border-[#8427DE] bg-white hover:bg-[#8427DE] text-[14px] font-medium text-[#111111] hover:text-white shadow-xs transition-colors duration-200 cursor-pointer"
+            className="group relative inline-flex items-center gap-2 px-5 py-2 rounded-[2px] border-[1.3px] border-[#8427DE] bg-[#FFFCF4] hover:bg-[#8427DE] text-[13px] sm:text-[14px] font-mono font-medium text-[#111111] hover:text-white shadow-xs transition-colors duration-200 cursor-pointer"
           >
+            {/* Tag corner handles matching Framer design system */}
+            <div className="absolute -top-[3px] -left-[3px] w-[5px] h-[5px] bg-[#FFFCF4] border-[1.2px] border-[#8427DE] pointer-events-none group-hover:bg-[#8427DE]" />
+            <div className="absolute -top-[3px] -right-[3px] w-[5px] h-[5px] bg-[#FFFCF4] border-[1.2px] border-[#8427DE] pointer-events-none group-hover:bg-[#8427DE]" />
+            <div className="absolute -bottom-[3px] -left-[3px] w-[5px] h-[5px] bg-[#FFFCF4] border-[1.2px] border-[#8427DE] pointer-events-none group-hover:bg-[#8427DE]" />
+            <div className="absolute -bottom-[3px] -right-[3px] w-[5px] h-[5px] bg-[#FFFCF4] border-[1.2px] border-[#8427DE] pointer-events-none group-hover:bg-[#8427DE]" />
+
             <span>View all 4 projects</span>
             <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
           </motion.button>

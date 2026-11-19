@@ -98,16 +98,25 @@ export default function Footer() {
 
       <div className="relative max-w-5xl mx-auto flex flex-col items-center text-center z-10">
 
-        {/* Top Tag: "Ready for the work ?" */}
-        <motion.p
+        {/* Top Header Tag: "Ready for the work_" with corner anchor handles */}
+        <motion.div
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-[17px] sm:text-[20px] font-medium text-neutral-300 tracking-[-0.01em]"
+          className="relative mb-2 sm:mb-4"
         >
-          Ready for the work ?
-        </motion.p>
+          <div className="relative px-4 py-1.5 rounded-[2px] border-[1.3px] border-neutral-700 bg-neutral-900/90">
+            <div className="absolute -top-[3px] -left-[3px] w-[5px] h-[5px] bg-neutral-900 border-[1.2px] border-neutral-600 pointer-events-none" />
+            <div className="absolute -top-[3px] -right-[3px] w-[5px] h-[5px] bg-neutral-900 border-[1.2px] border-neutral-600 pointer-events-none" />
+            <div className="absolute -bottom-[3px] -left-[3px] w-[5px] h-[5px] bg-neutral-900 border-[1.2px] border-neutral-600 pointer-events-none" />
+            <div className="absolute -bottom-[3px] -right-[3px] w-[5px] h-[5px] bg-neutral-900 border-[1.2px] border-neutral-600 pointer-events-none" />
+
+            <span className="text-[13px] font-mono font-medium text-neutral-200 tracking-tight">
+              Ready for the work_
+            </span>
+          </div>
+        </motion.div>
 
         {/* Huge Hero Text: "Let's talk" */}
         <motion.h2
