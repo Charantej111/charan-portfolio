@@ -97,15 +97,28 @@ export default function AnimatedRibbons({
     linear: "linear",
   }[easing] || "cubic-bezier(0.65, 0, 0.35, 1)";
 
-  const colors = [red, blue, pink, line4Color, green, gold];
-  const gradientSettings = [
-    line1Gradient,
-    line2Gradient,
-    line3Gradient,
-    line4Gradient,
-    line5Gradient,
-    line6Gradient,
-  ];
+  const colors = React.useMemo(
+    () => [red, blue, pink, line4Color, green, gold],
+    [red, blue, pink, line4Color, green, gold]
+  );
+  const gradientSettings = React.useMemo(
+    () => [
+      line1Gradient,
+      line2Gradient,
+      line3Gradient,
+      line4Gradient,
+      line5Gradient,
+      line6Gradient,
+    ],
+    [
+      line1Gradient,
+      line2Gradient,
+      line3Gradient,
+      line4Gradient,
+      line5Gradient,
+      line6Gradient,
+    ]
+  );
   const placements = [
     redPlacement,
     bluePlacement,
@@ -114,14 +127,24 @@ export default function AnimatedRibbons({
     greenPlacement,
     goldPlacement,
   ];
-  const customLines = [
-    customLine1,
-    customLine2,
-    customLine3,
-    customLine4,
-    customLine5,
-    customLine6,
-  ];
+  const customLines = React.useMemo(
+    () => [
+      customLine1,
+      customLine2,
+      customLine3,
+      customLine4,
+      customLine5,
+      customLine6,
+    ],
+    [
+      customLine1,
+      customLine2,
+      customLine3,
+      customLine4,
+      customLine5,
+      customLine6,
+    ]
+  );
 
   const visibleCount = Math.max(1, Math.min(6, Math.round(lineCount)));
 
@@ -291,12 +314,14 @@ export default function AnimatedRibbons({
     window.addEventListener("scroll", requestUpdate, { passive: true });
     window.addEventListener("resize", requestUpdate);
 
+    const pathsToClean = presetPathRefs.current;
+
     return () => {
       if (frame) window.cancelAnimationFrame(frame);
       window.removeEventListener("scroll", requestUpdate);
       window.removeEventListener("resize", requestUpdate);
 
-      presetPathRefs.current.forEach((path) => {
+      pathsToClean.forEach((path) => {
         if (path) path.style.strokeDashoffset = "";
       });
     };
