@@ -10,10 +10,10 @@ export default function Header({ onHomeClick }) {
         initial={{ opacity: 0, y: -12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-        className="font-signature text-3xl sm:text-4xl text-neutral-800 tracking-wide hover:scale-105 transition-transform duration-200 cursor-pointer bg-transparent border-none outline-none"
+        className="text-2xl sm:text-3xl font-bold tracking-wider uppercase text-neutral-900 hover:scale-105 transition-transform duration-200 cursor-pointer bg-transparent border-none outline-none"
         title="Go to Home"
       >
-        Charan Tej
+        CHARAN TEJA
       </motion.button>
     </header>
   );

@@ -41,9 +41,9 @@ export default function AvailableForWorkBadge() {
         }
       `}</style>
 
-      {/* Available for work text (order 1 in desktop/final state) */}
-      <span className="order-2 text-[12px] sm:text-[14px] font-medium text-[#060606]/60 tracking-[-0.01em] whitespace-nowrap leading-[1.4em]">
-        Available for work
+      {/* Location / Availability text */}
+      <span className="order-2 text-[12px] sm:text-[14px] font-medium text-[#060606]/75 tracking-[-0.01em] whitespace-nowrap leading-[1.4em]">
+        Dubai, UAE · Available immediately
       </span>
 
       {/* 3x3 Animated Matrix Loader (order 0 in desktop/final state, 20x20 container) */}

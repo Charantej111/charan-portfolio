@@ -3,145 +3,150 @@ import { motion } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
 
 const CASE_STUDIES = {
-  2: {
-    id: 2,
-    tag: 'Project 2',
-    title: 'Wayfinder Logistics Command',
-    subtitle: 'A real-time operations center that gives logistics teams one calm view of routes, risks, capacity, and exceptions.',
-    image: 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=1600&q=80',
+  1: {
+    id: 1,
+    tag: 'Marketplace · Consumer · Product Operations · 0→1',
+    title: 'Delizoo',
+    subtitle: 'Building a food delivery marketplace where every side of the marketplace has to work.',
+    image: 'https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?auto=format&fit=crop&w=1600&q=80',
     meta: [
-      { label: 'Role', value: 'Product manager' },
-      { label: 'Timeline', value: '10 weeks' },
-      { label: 'Team', value: '3 Engineers, 1 PM, 1 Data Scientist, 1 Product manager' },
-      { label: 'Platform', value: 'Web' },
+      { label: 'Role', value: 'Co-Founder · Product lead & Operations' },
+      { label: 'Timeline', value: '2026 - Present' },
+      { label: 'Category', value: 'Marketplace · Consumer · Operations' },
+      { label: 'Stage', value: '0→1 Live Product' },
     ],
     sections: [
       {
         title: 'Overview',
         content:
-          'Wayfinder is a logistics command center for teams coordinating regional freight across carriers, warehouses, and customer delivery windows. The platform transforms live location data, route plans, capacity, weather, and service commitments into one operational picture. We redesigned the core experience to help dispatchers detect emerging risk earlier, coordinate a response, and communicate accurate updates without rebuilding the story across several tools.',
+          'Delizoo is a hyperlocal food delivery marketplace built around fairer economics for customers and restaurant partners. The product orchestrates real-time experiences across customer ordering, restaurant partner order management, rider fulfillment, and dispatch operations.',
       },
       {
         title: 'The challenge',
         content:
-          'The original dashboard was optimized for tracking individual shipments, but operators were responsible for networks. A delayed vehicle could affect a dock schedule, a connecting route, and multiple customer promises, yet those relationships were difficult to see. Alerts arrived as isolated events with equal visual weight, encouraging reactive work. The product needed to reveal consequences, support rapid reprioritization, and remain usable on large wall displays as well as standard operations laptops.',
+          'A marketplace is not one product—it is several interdependent systems that have to operate in lockstep. High platform commissions, poor operational visibility, and rider routing inefficiencies squeeze restaurant margins while creating unpredictable customer wait times. The core challenge was aligning customer value, merchant unit economics, and operational efficiency into a sustainable 0→1 marketplace model.',
       },
       {
-        title: 'Research and insight',
+        title: 'Product discovery & operations strategy',
         content:
-          'We shadowed dispatchers during routine shifts and disruption events, documenting the information they gathered before making a call. Experienced operators constantly built a mental model of dependencies and available recovery options. The design opportunity was not simply to add more alerts. It was to externalize that model by connecting every exception to affected loads, time sensitivity, service impact, and realistic actions, while preserving an audit trail for teams joining later.',
+          'We conducted field research with local restaurant partners, dispatch operators, and delivery riders. The insights revealed that transparent pricing and predictable turnaround times mattered far more to restaurant retention than discount promotions. We designed operational workflows that reduced order prep bottlenecks and balanced demand during peak meal windows.',
       },
       {
-        title: 'Product strategy',
+        title: 'Execution & impact',
         content:
-          'Wayfinder was reframed around network health, active exceptions, and recovery plans. The overview ranks issues by projected operational impact instead of event severity alone. An exception workspace brings evidence, dependencies, communication, and recommended actions together. Scenario comparison lets teams test rerouting, carrier reassignment, or schedule changes before committing. This structure creates a consistent path from awareness to analysis, decision, execution, and follow-up.',
-      },
-      {
-        title: 'Experience architecture',
-        content:
-          'We organized the system into three complementary layers: a high-density triage board for real-time monitoring, an inspection canvas for deep diagnostic dives, and an automated hand-off log for cross-shift alignment. Key interactions were optimized for rapid keyboard navigation, allowing dispatchers to process high-volume exceptions in seconds.',
+          'Shipped comprehensive apps and operational tools covering customer ordering, restaurant vendor portal, and rider tracking. Surpassed 2,000+ app downloads while establishing reliable unit economics and partner trust across the local ecosystem.',
       },
     ],
   },
-  1: {
-    id: 1,
-    tag: 'Project 1',
-    title: 'SignalFlow AI Workspace',
-    subtitle: 'A focused AI operations platform that turns complex automations into workflows teams can understand, supervise, and trust.',
-    image: 'https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?auto=format&fit=crop&w=1600&q=80',
+  2: {
+    id: 2,
+    tag: 'AI Product · Voice UX · Adaptive Systems',
+    title: 'InterviewPilot',
+    subtitle: 'Building an AI interviewer that understands the candidate, role, and company.',
+    image: 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=1600&q=80',
     meta: [
-      { label: 'Role', value: 'Lead Product manager' },
-      { label: 'Timeline', value: '14 weeks' },
-      { label: 'Team', value: '4 Engineers, 1 AI Researcher, 1 PM' },
-      { label: 'Platform', value: 'Desktop & Web' },
+      { label: 'Role', value: 'Product Lead' },
+      { label: 'Timeline', value: '2026' },
+      { label: 'Domain', value: 'AI Product · Voice UX · LLMs' },
+      { label: 'Focus', value: 'Adaptive Evaluation Systems' },
     ],
     sections: [
       {
         title: 'Overview',
         content:
-          'SignalFlow provides automated workflow observability and human-in-the-loop controls for generative AI pipelines. By visualizing multi-agent executions in real-time, engineering teams can debug hallucinations, latency bottlenecks, and governance constraints seamlessly.',
+          'InterviewPilot is an AI interview platform that creates personalized interview experiences around the candidate, role, and company. It combines voice interaction, adaptive questioning, and structured evaluation rubrics to assess technical and behavioral competence authentically.',
       },
       {
         title: 'The challenge',
         content:
-          'Complex AI agent architectures operate as black boxes. When multi-step chains fail, operators previously had to scour raw terminal logs without visual context of which agent stalled or which tool call errored.',
+          'Standard AI mock interviews are generic, rigid, and feel robotic. They ask boilerplate questions regardless of candidate responses and deliver superficial feedback. The hard problem in AI interviewing is not the voice generation—it is making AI evaluation genuinely useful, contextual, and responsive to candidate nuances in real-time.',
       },
       {
-        title: 'Product strategy & outcome',
+        title: 'AI product thinking & voice UX',
         content:
-          'We constructed an interactive node-graph visualizer with step-level rollback and fine-tuned confidence thresholds. Adoption grew by 240% across internal enterprise teams within 60 days.',
+          'Engineered an adaptive prompt system and evaluation pipeline that analyzes job descriptions, company cultural anchors, and candidate resume context. The voice UX was architected to allow natural conversational pauses, follow-up probe questions, and supportive candidate pacing.',
+      },
+      {
+        title: 'Evaluation & outcomes',
+        content:
+          'Built multidimensional feedback scorecards covering technical depth, communication clarity, and problem-solving framework. Candidates receive actionable development feedback rather than arbitrary score badges.',
       },
     ],
   },
   3: {
     id: 3,
-    tag: 'Project 3',
-    title: 'Pulse Clinical Intelligence',
-    subtitle: 'A clinical decision workspace that helps care teams prioritize patient risk, unblock care pathways, and track critical outcomes.',
+    tag: 'B2B · EdTech · Product Design',
+    title: 'CodeTracker',
+    subtitle: 'Turning fragmented coding activity into a university-wide product.',
     image: 'https://images.unsplash.com/photo-1579412690850-bd41cd0af397?auto=format&fit=crop&w=1600&q=80',
     meta: [
-      { label: 'Role', value: 'Product manager & UX Lead' },
-      { label: 'Timeline', value: '12 weeks' },
-      { label: 'Team', value: '3 Clinicians, 2 Engineers, 1 PM' },
-      { label: 'Platform', value: 'Clinical Tablet & Web' },
+      { label: 'Role', value: 'Product Design & Strategy' },
+      { label: 'Timeline', value: '2025' },
+      { label: 'Users', value: '8,000+ Students' },
+      { label: 'Type', value: 'B2B · EdTech Platform' },
     ],
     sections: [
       {
         title: 'Overview',
         content:
-          'Pulse transforms fragmented EHR metrics into actionable care-pathway visualizations. Designed to alleviate clinician cognitive fatigue in high-throughput acute care environments.',
+          'CodeTracker is a university platform that aggregates competitive programming activity from multiple platforms (LeetCode, CodeChef, HackerRank, and GitHub) into a single unified tracking and learning system for students, faculty, and placement teams.',
       },
       {
-        title: 'Clinical workflow insight',
+        title: 'The challenge',
         content:
-          'By shadowing attending physicians during 8-minute consult transitions, we streamlined patient status verification from 14 disparate screens down to a single priority-ranked dashboard.',
+          'Student coding practice was scattered across diverse third-party platforms with zero unified tracking. University mentors and placement coordinators had no visibility into student problem-solving consistency, leading to inaccurate assessment of placement readiness and missed intervention opportunities.',
+      },
+      {
+        title: 'Product architecture & validation',
+        content:
+          'Collaborated closely with faculty, department heads, and students to define requirements for automated scraper integrations, department leaderboards, and personalized skill tracking dashboards. Designed an intuitive verification workflow that eliminated fraudulent profile submissions.',
+      },
+      {
+        title: 'Scale & adoption',
+        content:
+          'Scaled to 8,000+ active student profiles across the university, establishing a measurable benchmark for student coding progress and institutional placement preparation.',
       },
     ],
   },
   4: {
     id: 4,
-    tag: 'Project 4',
-    title: 'Morrow Mobile Finance',
-    subtitle: 'A personal finance app that makes spending, saving, and planning feel understandable without flattening the details.',
+    tag: '0→1 · Productivity · AI',
+    title: 'CareerOS',
+    subtitle: 'Turning a fragmented career journey into one connected product.',
     image: 'https://framerusercontent.com/images/DED09lWyYXoUEEUQjpK6dgT1Pl0.png?width=2312&height=1532',
     meta: [
-      { label: 'Role', value: 'Product manager' },
-      { label: 'Timeline', value: '8 weeks' },
-      { label: 'Team', value: '2 Engineers, 1 PM, 1 Researcher, 1 Product manager' },
-      { label: 'Platform', value: 'iOS & Android' },
+      { label: 'Role', value: '0→1 Product Manager' },
+      { label: 'Timeline', value: '2026' },
+      { label: 'Category', value: 'Productivity · AI Tools' },
+      { label: 'Scope', value: 'Discovery, UX, Execution' },
     ],
     sections: [
       {
         title: 'Overview',
         content:
-          'Morrow is a mobile finance companion designed to help people understand today, prepare for the month ahead, and make steady progress toward personal goals. It connects everyday spending, bills, savings, and shared plans without turning the home screen into a wall of charts. The project included product strategy, customer research, experience design, interaction prototypes, visual design, and a mobile component system for iOS and Android.',
+          'CareerOS is a career operating system connecting planning, learning, projects, skills, and job applications in one place. It replaces disconnected spreadsheets, bookmarks, and notes with a coherent, guided workspace for ambitious professionals.',
       },
       {
         title: 'The challenge',
         content:
-          'Most finance apps showed accurate information but left users to interpret what it meant. Account balances, category charts, upcoming bills, and goals appeared as separate features even though people experienced them as one question: what can I safely do next. The product also needed to support very different financial situations without using judgmental language, false celebration, or simplistic scores that could make an already stressful moment feel worse.',
+          'The modern career journey is deeply fragmented. Aspiring professionals use one tool for roadmap planning, another for skill tutorials, a third for project management, and messy folders for resume tracking. This disconnect causes cognitive overload and prevents individuals from seeing the direct line between daily skill practice and career outcomes.',
       },
       {
-        title: 'Research and insight',
+        title: 'Product strategy & systems design',
         content:
-          'Diary studies and interviews revealed that financial confidence depended more on predictability than perfect budgeting. Participants wanted early notice of a tight week, a clear explanation of why available money changed, and small actions that would improve the outlook. They also distinguished between committed money, flexible spending, and protected savings. That mental model became more useful than conventional categories and shaped both the information architecture and the language system.',
+          'Structured the system around an integrated career graph: connecting targeted career roles to required competencies, proof-of-work project milestones, and live application pipeline stages. Layered AI assistance to provide contextual feedback on resume tailoring and milestone achievements.',
       },
       {
-        title: 'Product strategy',
+        title: 'Outcome & future roadmap',
         content:
-          'We defined the core promise as a clear view of what is safe now and what changes next. Morrow calculates a flexible amount after upcoming commitments and chosen savings protections, then explains every adjustment in plain language. Monthly planning is presented as a living forecast rather than a rigid budget. Goals connect to real cash flow, and recommendations are framed as optional scenarios so users retain control over tradeoffs.',
-      },
-      {
-        title: 'Design execution',
-        content:
-          'The mobile interface uses generous spacing, strong typographic hierarchy, and bright color fields to make financial information feel approachable while remaining precise. Motion explains transitions between current balance, forecast, and goals instead of serving as decoration. Charts always include direct values and readable summaries.',
+          'Engineered an end-to-end prototype and user journey validated with early-career product managers, engineers, and designers, establishing a unified workflow from 0 to career milestone.',
       },
     ],
   },
 };
 
-export default function CaseStudyModal({ projectId = 2, onClose }) {
-  const study = CASE_STUDIES[projectId] || CASE_STUDIES[2];
+export default function CaseStudyModal({ projectId = 1, onClose }) {
+  const study = CASE_STUDIES[projectId] || CASE_STUDIES[1];
 
   useEffect(() => {
     window.scrollTo(0, 0);

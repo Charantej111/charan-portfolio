@@ -4,12 +4,12 @@ import { motion } from 'framer-motion';
 // Authentic 3D isometric illustration assets matching https://affinitty.framer.website/
 const SERVICES = [
   {
-    id: 'interaction-design',
-    title: ['Interaction', 'design'],
+    id: 'product-thinking',
+    title: ['Product', 'thinking'],
     cardColor: '#f4ac28',
     textColor: '#111111',
     imageSrc: 'https://framerusercontent.com/images/PThbyRGjsjFqOgrHW0pM9MFYWg.png?width=1536&height=1024',
-    alt: 'Interaction design 3D cube illustration',
+    alt: 'Product thinking 3D cube illustration',
     // Desktop Framer Fan-out: rotate 2deg, x offset -350px
     desktopRotate: 2,
     desktopX: -350,
@@ -26,23 +26,23 @@ const SERVICES = [
     desktopX: -100,
   },
   {
-    id: 'ai-prototyping',
-    title: ['AI', 'prototyping'],
+    id: 'ai-product',
+    title: ['AI', 'product'],
     cardColor: '#8427de',
     textColor: '#ffffff',
     imageSrc: 'https://framerusercontent.com/images/cQjRhc5LdTED0OKUohD8ZLRh0w.png?width=1536&height=1024',
-    alt: 'AI prototyping 3D isometric capsule illustration',
+    alt: 'AI product 3D isometric capsule illustration',
     // Desktop Framer Fan-out: rotate 2deg, x offset +150px
     desktopRotate: 2,
     desktopX: 150,
   },
   {
-    id: 'motion-design',
-    title: ['Motion', 'design'],
+    id: 'product-execution',
+    title: ['Product', 'execution'],
     cardColor: '#039754',
     textColor: '#ffffff',
     imageSrc: 'https://framerusercontent.com/images/NDCbcFqm7KpnEDqv5T17cjqzw.png?width=1536&height=1024',
-    alt: 'Motion design 3D torus ring illustration',
+    alt: 'Product execution 3D torus ring illustration',
     // Desktop Framer Fan-out: rotate -3deg, x offset +350px
     desktopRotate: -3,
     desktopX: 350,
@@ -55,7 +55,7 @@ export default function WhatIOfferSection() {
       id="services"
       className="relative w-full pt-4 pb-10 sm:py-20 md:py-28 px-4 sm:px-6 flex flex-col items-center select-none z-10 overflow-hidden"
     >
-      {/* Top Header Tag: "What I offer_" */}
+      {/* Top Header Tag: "What I bring" */}
       <div className="flex flex-col items-center gap-2.5 sm:gap-3 mb-6 sm:mb-14 md:mb-20 z-20">
         <div className="relative px-4 py-1.5 rounded-[2px] border-[1.3px] border-[#D68D06] bg-[#FFFCF4]">
           {/* Corner handle dots */}
@@ -65,12 +65,12 @@ export default function WhatIOfferSection() {
           <div className="absolute -bottom-[3px] -right-[3px] w-[5px] h-[5px] bg-[#FFFCF4] border-[1.2px] border-[#D68D06] pointer-events-none" />
 
           <span className="text-[13px] font-mono font-medium text-[#111111] tracking-tight">
-            What I offer_
+            What I bring
           </span>
         </div>
 
         <h2 className="text-[26px] sm:text-[38px] md:text-[44px] font-semibold text-[#111111] tracking-[-0.03em] text-center">
-          How I can help
+          How I work
         </h2>
       </div>
 

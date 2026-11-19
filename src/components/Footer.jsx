@@ -98,7 +98,7 @@ export default function Footer() {
 
       <div className="relative max-w-5xl mx-auto flex flex-col items-center text-center z-10">
 
-        {/* Top Header Tag: "Ready for the work_" with corner anchor handles */}
+        {/* Top Header Tag: "Let's talk" with corner anchor handles */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -113,21 +113,32 @@ export default function Footer() {
             <div className="absolute -bottom-[3px] -right-[3px] w-[5px] h-[5px] bg-neutral-900 border-[1.2px] border-neutral-600 pointer-events-none" />
 
             <span className="text-[13px] font-mono font-medium text-neutral-200 tracking-tight">
-              Ready for the work_
+              Let's talk_
             </span>
           </div>
         </motion.div>
 
-        {/* Huge Hero Text: "Let's talk" */}
+        {/* Huge Heading: "Open to the next opportunity." */}
         <motion.h2
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="mt-3 text-[42px] xs:text-[54px] sm:text-[90px] md:text-[130px] font-bold text-white tracking-[-0.04em] leading-[0.98]"
+          className="mt-3 text-[32px] xs:text-[40px] sm:text-[60px] md:text-[84px] font-bold text-white tracking-[-0.04em] leading-[1.05] max-w-4xl"
         >
-          Let's talk
+          Open to the next opportunity.
         </motion.h2>
+
+        {/* Body Text */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.15 }}
+          className="mt-4 text-[15px] sm:text-[18px] md:text-[20px] text-neutral-300 max-w-2xl leading-[1.6]"
+        >
+          I'm currently looking for Junior Product Manager, Associate Product Manager, Product Operations, and product-focused opportunities
+        </motion.p>
 
         {/* Framer Canvas Selection Box Around Actions */}
         <motion.div
@@ -135,7 +146,7 @@ export default function Footer() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="relative mt-8 sm:mt-14 md:mt-20 w-full max-w-[360px] xs:max-w-[420px] sm:max-w-[800px] rounded-[2px] border border-neutral-700/80 bg-neutral-900/60 backdrop-blur-md p-4 xs:p-6 sm:p-8 md:p-10 shadow-[0_20px_60px_rgba(0,0,0,0.6)]"
+          className="relative mt-8 sm:mt-14 md:mt-16 w-full max-w-[360px] xs:max-w-[420px] sm:max-w-[800px] rounded-[2px] border border-neutral-700/80 bg-neutral-900/60 backdrop-blur-md p-4 xs:p-6 sm:p-8 md:p-10 shadow-[0_20px_60px_rgba(0,0,0,0.6)]"
         >
           {/* Framer Selection Corner Handles */}
           <div className="absolute -top-[4px] -left-[4px] w-[7px] h-[7px] bg-[#050505] border border-neutral-400 pointer-events-none" />
@@ -148,7 +159,7 @@ export default function Footer() {
             {/* Top / Left: Collaboration Status + Email copy input */}
             <div className="flex flex-col items-start text-left w-full sm:w-auto pb-4 sm:pb-0">
               <span className="text-[13px] sm:text-[14px] text-neutral-300 font-medium">
-                Currently open for collaboration
+                Email me directly
               </span>
 
               {/* Framer style input box with email and copy icon */}
@@ -198,20 +209,6 @@ export default function Footer() {
               </span>
 
               <div className="mt-3 flex items-center gap-3">
-                {/* X / Twitter */}
-                <a
-                  href="https://x.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-8 h-8 rounded-[4px] border border-neutral-700/80 hover:border-neutral-500 bg-neutral-800/50 flex items-center justify-center text-neutral-300 hover:text-white transition-colors cursor-pointer"
-                  title="X (Twitter)"
-                  aria-label="X"
-                >
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                  </svg>
-                </a>
-
                 {/* LinkedIn */}
                 <a
                   href="https://www.linkedin.com/in/charan-tej-neelam-bb0a9a302"
@@ -239,11 +236,46 @@ export default function Footer() {
                     <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
                   </svg>
                 </a>
+
+                {/* Email link icon */}
+                <a
+                  href={`mailto:${emailAddress}`}
+                  className="w-8 h-8 rounded-[4px] border border-neutral-700/80 hover:border-neutral-500 bg-neutral-800/50 flex items-center justify-center text-neutral-300 hover:text-white transition-colors cursor-pointer"
+                  title="Send Email"
+                  aria-label="Email"
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect width="20" height="16" x="2" y="4" rx="2" />
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                  </svg>
+                </a>
               </div>
             </div>
 
           </div>
         </motion.div>
+
+        {/* Brand & Navigation Summary Footer */}
+        <div className="mt-16 sm:mt-24 pt-8 border-t border-neutral-800 w-full max-w-5xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 text-left">
+          <div className="flex flex-col">
+            <span className="text-[18px] sm:text-[20px] font-bold text-white tracking-wider uppercase">
+              CHARAN TEJA
+            </span>
+            <p className="text-[13px] sm:text-[14px] text-neutral-400 mt-1 max-w-md leading-normal">
+              Building products across AI, consumer, marketplace, and B2B experiences.
+            </p>
+          </div>
+
+          <div className="flex flex-wrap items-center gap-6 sm:gap-8 text-[13px] sm:text-[14px] font-medium text-neutral-300">
+            <span className="text-neutral-500 font-mono uppercase text-[11px] tracking-wider">Navigation:</span>
+            <a href="#projects" className="hover:text-white transition-colors">Work</a>
+            <a href="#about-snippet" className="hover:text-white transition-colors">About</a>
+            <span className="text-neutral-500 font-mono uppercase text-[11px] tracking-wider ml-2">Links:</span>
+            <a href="https://www.linkedin.com/in/charan-tej-neelam-bb0a9a302" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a>
+            <a href="https://github.com/Charantej111" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">GitHub</a>
+            <a href={`mailto:${emailAddress}`} className="hover:text-white transition-colors">Email</a>
+          </div>
+        </div>
 
 
 

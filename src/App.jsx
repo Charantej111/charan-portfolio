@@ -6,6 +6,8 @@ import HeroCard from './components/HeroCard';
 import AboutSection from './components/AboutSection';
 import ProjectsSection from './components/ProjectsSection';
 import WhatIOfferSection from './components/WhatIOfferSection';
+import TestimonialsSection from './components/TestimonialsSection';
+import SkillsSection from './components/SkillsSection';
 import AboutHeroSection from './components/AboutHeroSection';
 import ByTheNumbersSection from './components/ByTheNumbersSection';
 import CareerCheckpointsSection from './components/CareerCheckpointsSection';
@@ -100,6 +102,8 @@ export default function App() {
             <AboutHeroSection />
             <ByTheNumbersSection />
             <CareerCheckpointsSection />
+            <SkillsSection />
+            <TestimonialsSection />
             <Footer />
           </div>
         ) : currentView === 'projects' ? (
@@ -109,13 +113,13 @@ export default function App() {
               onOpenCaseStudy={handleOpenCaseStudy}
               limit={4}
               showAll={true}
-              title="All Projects"
-              tag="Portfolio_"
+              title="Products I've built and helped shape"
+              tag="Selected work"
             />
             <Footer />
           </div>
         ) : (
-          /* =================== HOME PAGE VIEW (Shows up to 3 Projects) =================== */
+          /* =================== HOME PAGE VIEW =================== */
           <div className="relative w-full flex flex-col items-center">
             {/* 1. Hero Workspace */}
             <div className="relative pt-4 pb-20 sm:py-12 sm:min-h-[calc(100vh-100px)] flex items-center justify-center px-4 sm:px-6 z-10 w-full max-w-7xl mx-auto">
@@ -127,21 +131,33 @@ export default function App() {
               <AboutSection onReadStory={() => handleNavigate('about')} />
             </div>
 
-            {/* 3. Featured projects (Shows up to 3 projects on homepage) */}
+            {/* 3. Featured projects */}
             <div id="projects" className="w-full">
               <ProjectsSection
                 onOpenCaseStudy={handleOpenCaseStudy}
-                limit={3}
-                onViewAll={() => handleNavigate('projects')}
+                limit={4}
+                showAll={true}
+                title="Products I've built and helped shape"
+                tag="Selected work"
               />
             </div>
 
-            {/* 4. What I offer */}
+            {/* 4. What I offer / How I work */}
             <div id="services" className="w-full">
               <WhatIOfferSection />
             </div>
 
-            {/* 5. Contact / Footer */}
+            {/* 5. Lessons from building (Quotes) */}
+            <div id="lessons" className="w-full">
+              <TestimonialsSection />
+            </div>
+
+            {/* 6. Skills & Toolkit */}
+            <div id="skills" className="w-full">
+              <SkillsSection />
+            </div>
+
+            {/* 7. Contact / Footer */}
             <div id="contact" className="w-full">
               <Footer />
             </div>

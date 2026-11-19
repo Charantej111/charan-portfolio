@@ -116,8 +116,8 @@ export default function HeroCard() {
           animate={{ opacity: isContentRevealed ? 1 : 0, y: isContentRevealed ? 0 : 3 }}
           transition={{ duration: 0.35 }}
         >
-          <span className="text-[12px] sm:text-[14px] font-medium text-[#008FF0] tracking-[-0.01em]">
-            Intro
+          <span className="text-[12px] sm:text-[14px] font-mono font-medium text-[#008FF0] tracking-tight uppercase">
+            Early PRODUCT MANAGER
           </span>
         </motion.div>
 
@@ -167,15 +167,13 @@ export default function HeroCard() {
           {/* Heading + Description: Below image on mobile, right column on desktop */}
           <div className="w-full sm:w-[48%] flex flex-col justify-center gap-1.5 sm:gap-3 text-left px-1 sm:px-4 mt-0.5 sm:mt-0">
             {/* Heading */}
-            <h1 className="text-[#111111] font-medium text-[24px] xs:text-[26px] sm:text-[34px] md:text-[40px] leading-[1.12] tracking-[-0.035em]">
-              Hey, I am
-              <br />
-              Charan Tej
+            <h1 className="text-[#111111] font-semibold text-[22px] xs:text-[24px] sm:text-[30px] md:text-[34px] leading-[1.15] tracking-[-0.03em]">
+              I build products from ideas into real experiences.
             </h1>
 
             {/* Subcopy */}
-            <p className="text-[#666666] text-[13px] xs:text-[13px] sm:text-[14px] md:text-[15px] leading-[1.45] sm:leading-[1.5] font-normal tracking-[-0.01em]">
-              I deeply care about polish, craft and interface that make people feel something
+            <p className="text-[#666666] text-[13px] xs:text-[13px] sm:text-[14px] md:text-[14px] leading-[1.45] sm:leading-[1.5] font-normal tracking-[-0.01em]">
+              I work across product, UX, technology, business, and operations to understand problems, shape solutions, and help turn them into products people actually use.
             </p>
           </div>
         </div>
@@ -252,7 +250,7 @@ export default function HeroCard() {
 
         {/* Product manager Pill */}
         <div className="px-3 py-1 rounded-full bg-[#039855] text-white text-[12px] font-medium leading-none tracking-tight shadow-[0_2px_8px_rgba(3,152,85,0.30)] whitespace-nowrap mt-2">
-          Product manager
+          Charan Teja
         </div>
       </motion.div>
 

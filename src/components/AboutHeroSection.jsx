@@ -159,7 +159,7 @@ export default function AboutHeroSection() {
               <span className="text-[8px] text-[#008ff0] font-mono font-bold -rotate-45 leading-none">+</span>
             </div>
             <span className="text-[12px] font-mono text-[#008ff0] font-semibold tracking-tight">
-              Intro
+              My background
             </span>
           </div>
 
@@ -230,13 +230,15 @@ export default function AboutHeroSection() {
             />
 
             {/* Content Heading */}
-            <h1 className="text-[24px] xs:text-[28px] sm:text-[38px] md:text-[44px] font-semibold text-[#111111] leading-[1.15] tracking-[-0.03em] relative z-10">
-              I build the parts of a product that people never think about.
+            <h1 className="text-[24px] xs:text-[28px] sm:text-[36px] md:text-[40px] font-semibold text-[#111111] leading-[1.15] tracking-[-0.03em] relative z-10">
+              From AI and UX to Product.
             </h1>
 
             {/* Content Body */}
-            <p className="mt-3 sm:mt-6 text-[13px] sm:text-[16px] text-neutral-600 leading-[1.6] relative z-10">
-              I’m Charan Tej, a Product manager and Framer creator. Six years of research, interaction models and design systems - then building them for real.
+            <p className="mt-3 sm:mt-6 text-[13.5px] sm:text-[15.5px] text-neutral-600 leading-[1.65] relative z-10">
+              I started with AI and technology, moved into UX, and gradually found myself more interested in the product decisions behind what I was designing.
+              <br /><br />
+              Since then, I've worked across marketplaces, AI, EdTech, and productivity products, learning by researching, designing, building, testing, and shipping.
             </p>
 
             {/* Interactive "Auto-fit Content" Canvas Cursor (100% Transparent, No Box Container) */}
@@ -312,9 +314,9 @@ export default function AboutHeroSection() {
                 </svg>
               </div>
 
-              {/* Clean "Product manager" Badge Pill */}
+              {/* Clean "Charan Teja" Badge Pill */}
               <div className="px-3 py-1 rounded-full bg-[#039855] text-white text-[12px] font-medium leading-none tracking-tight shadow-[0_2px_8px_rgba(3,152,85,0.30)] whitespace-nowrap mt-2">
-                Product manager
+                Charan Teja
               </div>
             </motion.div>
           </motion.div>

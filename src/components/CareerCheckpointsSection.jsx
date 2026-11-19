@@ -5,11 +5,11 @@ const CHECKPOINTS = [
   {
     id: 1,
     number: '01',
-    period: '2020 — 2021',
-    company: 'Spendwise',
-    role: 'Junior Product manager',
-    location: 'AHMEDABAD, INDIA',
-    description: 'Built a strong foundation in visual design, interaction patterns, and user-centered problem solving.',
+    period: '2025 · Present',
+    company: 'Ofzen',
+    role: 'Co-Founder · Product Strategy',
+    location: 'HYDERABAD / REMOTE',
+    description: 'Worked across product discovery, requirements, UX, operations, client communication, and execution within a student-led software startup.',
     borderColor: '#F04438',
     pinFill: '#F04438',
     rotate: -1,
@@ -23,11 +23,11 @@ const CHECKPOINTS = [
   {
     id: 2,
     number: '02',
-    period: '2021 — 2022',
-    company: 'Launcherr',
-    role: 'Product manager',
-    location: 'REMOTE',
-    description: 'Designed conversion-focused SaaS interfaces, design systems, and web apps for early-stage tech startups.',
+    period: '2026 - Present',
+    company: 'Delizoo',
+    role: 'Co-Founder · Product lead & Operations',
+    location: 'DUBAI / REMOTE',
+    description: 'Worked across customer, restaurant, rider, operations, marketing, support, and product experiences for a live food delivery marketplace.',
     borderColor: '#2E90FA',
     pinFill: '#2E90FA',
     rotate: 2,
@@ -45,11 +45,11 @@ const CHECKPOINTS = [
   {
     id: 3,
     number: '03',
-    period: '2022 — Present',
-    company: 'Framer Creator',
-    role: 'Senior Product manager',
-    location: 'SAN FRANCISCO / REMOTE',
-    description: 'Publishing award-winning templates, design engineering systems, and advanced interaction design prototypes.',
+    period: '2025',
+    company: 'Aditya University',
+    role: 'Product Support & Validation Intern',
+    location: 'ANDHRA PRADESH, INDIA',
+    description: 'Worked on product testing, issue identification, validation, and communicating product problems to improve the product experience.',
     borderColor: '#8427DE',
     pinFill: '#8427DE',
     rotate: -2,
@@ -75,12 +75,12 @@ export default function CareerCheckpointsSection() {
           <div className="absolute -bottom-[3px] -right-[3px] w-[5px] h-[5px] bg-[#FFFCF4] border-[1.2px] border-[#039855] pointer-events-none" />
 
           <span className="text-[13px] font-mono font-medium text-[#111111] tracking-tight">
-            Career checkpoints_
+            Experience_
           </span>
         </div>
 
         <h2 className="text-[26px] sm:text-[38px] md:text-[44px] font-semibold text-[#111111] tracking-[-0.03em] text-center">
-          A journey shaped by great teams
+          Where I've built and learned
         </h2>
       </div>
 

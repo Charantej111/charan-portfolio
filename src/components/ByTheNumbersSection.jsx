@@ -5,23 +5,23 @@ const STATS = [
   {
     id: 1,
     number: '01',
-    target: 6,
+    target: 4,
     suffix: '+',
-    label: 'Years of experience',
+    label: 'Products built',
   },
   {
     id: 2,
     number: '02',
-    target: 24,
+    target: 8000,
     suffix: '+',
-    label: 'Projects worked',
+    label: 'Student profiles on CodeTracker',
   },
   {
     id: 3,
     number: '03',
-    target: 8,
+    target: 2000,
     suffix: '+',
-    label: 'Industries served',
+    label: 'Delizoo downloads',
   },
 ];
 
@@ -31,7 +31,7 @@ function RollingDigit({ digit, inView, delay = 0 }) {
   const targetIndex = parseInt(digit, 10) || 0;
 
   return (
-    <div className="relative inline-block h-[46px] xs:h-[54px] sm:h-[76px] overflow-hidden leading-none">
+    <div className="relative inline-block h-[38px] xs:h-[44px] sm:h-[58px] overflow-hidden leading-none">
       <motion.div
         initial={{ y: '0%' }}
         animate={inView ? { y: `-${targetIndex * 10}%` } : { y: '0%' }}
@@ -46,7 +46,7 @@ function RollingDigit({ digit, inView, delay = 0 }) {
         {digits.map((d) => (
           <div
             key={d}
-            className="h-[46px] xs:h-[54px] sm:h-[76px] flex items-center justify-center text-[42px] xs:text-[48px] sm:text-[68px] font-semibold text-[#111111] tracking-[-0.04em]"
+            className="h-[38px] xs:h-[44px] sm:h-[58px] flex items-center justify-center text-[34px] xs:text-[40px] sm:text-[52px] font-semibold text-[#111111] tracking-[-0.04em]"
           >
             {d}
           </div>
@@ -64,7 +64,7 @@ function StatCard({ stat }) {
   return (
     <div
       ref={cardRef}
-      className="relative w-full max-w-[340px] sm:w-[280px] md:w-[310px] h-[175px] xs:h-[190px] sm:h-[230px] rounded-[2px] border-[1.3px] border-[#8427DE] bg-white p-4 xs:p-5 sm:p-7 flex flex-col justify-between shadow-[0_20px_50px_-20px_rgba(132,39,222,0.06)]"
+      className="relative w-full max-w-[340px] sm:w-[280px] md:w-[310px] h-[180px] xs:h-[195px] sm:h-[235px] rounded-[2px] border-[1.3px] border-[#8427DE] bg-white p-4 xs:p-5 sm:p-7 flex flex-col justify-between shadow-[0_20px_50px_-20px_rgba(132,39,222,0.06)]"
     >
       {/* 4 Corner Resize Anchor Handles */}
       <div className="absolute -top-[4px] -left-[4px] w-[7px] h-[7px] bg-white border-[1.3px] border-[#8427DE] pointer-events-none" />
@@ -82,7 +82,7 @@ function StatCard({ stat }) {
 
       {/* Main Rolling Number Counter */}
       <div className="my-auto py-1">
-        <div className="flex items-center">
+        <div className="flex items-center flex-wrap">
           {digitChars.map((digit, i) => (
             <RollingDigit
               key={i}
@@ -91,7 +91,7 @@ function StatCard({ stat }) {
               delay={i * 0.18}
             />
           ))}
-          <span className="text-[42px] xs:text-[48px] sm:text-[68px] font-semibold text-[#111111] tracking-[-0.04em] leading-none ml-0.5">
+          <span className="text-[34px] xs:text-[40px] sm:text-[52px] font-semibold text-[#111111] tracking-[-0.04em] leading-none ml-0.5">
             {stat.suffix}
           </span>
         </div>
@@ -123,15 +123,14 @@ export default function ByTheNumbersSection() {
             <div className="absolute -bottom-[3px] -right-[3px] w-[5px] h-[5px] bg-[#FFFCF4] border-[1.2px] border-[#8427DE] pointer-events-none" />
 
             <span className="text-[13px] font-mono font-medium text-[#111111] tracking-tight">
-              By the numbers_
+              Verified numbers_
             </span>
           </div>
         </div>
 
-        {/* Section Heading: "A snapshot of my journey" with Framer Pill */}
+        {/* Section Heading */}
         <h2 className="text-[26px] sm:text-[38px] md:text-[44px] font-semibold text-[#111111] tracking-[-0.03em] flex items-center gap-2 flex-wrap justify-center text-center">
-          <span>A snapshot</span>
-          <span>of my journey</span>
+          <span>By the numbers</span>
         </h2>
       </div>
 

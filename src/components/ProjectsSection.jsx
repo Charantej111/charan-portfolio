@@ -10,52 +10,53 @@ const PROJECT_4_IMG = "https://framerusercontent.com/images/DED09lWyYXoUEEUQjpK6
 const ALL_PROJECTS = [
   {
     id: 1,
-    tag: "Project 1",
-    subtitle: "SignalFlow • Jul 18, 2026",
-    title: "SignalFlow AI Workspace",
-    description: "A focused AI operations platform that turns complex automations into workflows teams can understand, supervise, and trust.",
+    tag: "Marketplace · Consumer · Product Operations",
+    year: "2026",
+    title: "Delizoo",
+    description: "A hyperlocal food delivery marketplace built around fairer economics for customers and restaurant partners.",
     image: PROJECT_1_IMG,
-    imageAlt: "SignalFlow AI Workspace",
-    linkText: "View case study →",
+    imageAlt: "Delizoo Marketplace",
+    linkText: "View project →",
   },
   {
     id: 2,
-    tag: "Project 2",
-    subtitle: "Wayfinder • Mar 14, 2026",
-    title: "Wayfinder Logistics Command",
-    description: "A real-time operations center that gives logistics teams one calm view of routes, risks, capacity, and exceptions.",
+    tag: "AI Product · Voice UX · Adaptive Systems",
+    year: "2026",
+    title: "InterviewPilot",
+    description: "An AI interview platform that creates personalized interview experiences around the candidate, role, and company.",
     image: PROJECT_2_IMG,
-    imageAlt: "Wayfinder Logistics Command",
-    linkText: "View case study →",
+    imageAlt: "InterviewPilot AI Platform",
+    linkText: "View project →",
   },
   {
     id: 3,
-    tag: "Project 3",
-    subtitle: "Pulse Health • May 22, 2026",
-    title: "Pulse Clinical Intelligence",
-    description: "A clinical decision workspace that helps care teams prioritize patient risk, unblock care pathways, and track critical outcomes.",
+    tag: "B2B · EdTech · Product Design",
+    year: "2025",
+    title: "CodeTracker",
+    description: "A university platform that brings competitive programming activity from multiple coding platforms into one place.",
     image: PROJECT_3_IMG,
-    imageAlt: "Pulse Clinical Intelligence",
-    linkText: "View case study →",
+    imageAlt: "CodeTracker University Platform",
+    linkText: "View project →",
   },
   {
     id: 4,
-    tag: "Project 4",
-    subtitle: "Morrow • Jan 28, 2026",
-    title: "Morrow Mobile Finance",
-    description: "A personal finance app that makes spending, saving, and planning feel understandable without flattening the details.",
+    tag: "0→1 · Productivity · AI",
+    year: "2026",
+    title: "CareerOS",
+    description: "A career operating system connecting planning, learning, projects, skills, and job applications in one place.",
     image: PROJECT_4_IMG,
-    imageAlt: "Morrow Mobile Finance",
-    linkText: "View case study →",
+    imageAlt: "CareerOS Career System",
+    linkText: "View project →",
   },
 ];
 
 export default function ProjectsSection({
   onOpenCaseStudy,
-  limit = 3,
-  showAll = false,
-  title = "Work I am proud of",
-  tag = "Featured projects_",
+  limit = 4,
+  showAll = true,
+  title = "Products I've built and helped shape",
+  tag = "Selected work",
+  supportingText = "A selection of products where I've worked across product thinking, UX, technology, research, and execution.",
   onViewAll,
 }) {
   const { triggerLoading } = useGlobalLoading();
@@ -85,7 +86,7 @@ export default function ProjectsSection({
       </div>
 
       {/* Top Header Tag */}
-      <div className="flex flex-col items-center gap-2.5 sm:gap-4 mb-6 sm:mb-12 md:mb-16 z-10 text-center">
+      <div className="flex flex-col items-center gap-2.5 sm:gap-4 mb-6 sm:mb-12 md:mb-16 z-10 text-center max-w-2xl mx-auto">
         <div className="relative px-4 py-1.5 rounded-[2px] border-[1.3px] border-[#8427DE] bg-[#FFFCF4]">
           {/* Corner handle dots */}
           <div className="absolute -top-[3px] -left-[3px] w-[5px] h-[5px] bg-[#FFFCF4] border-[1.2px] border-[#8427DE] pointer-events-none" />
@@ -102,6 +103,13 @@ export default function ProjectsSection({
         <h2 className="text-[26px] sm:text-[38px] md:text-[44px] font-semibold text-[#111111] tracking-[-0.03em] text-center">
           {title}
         </h2>
+
+        {/* Supporting text */}
+        {supportingText && (
+          <p className="text-[14px] sm:text-[16px] text-neutral-600 leading-[1.6] max-w-xl text-center">
+            {supportingText}
+          </p>
+        )}
       </div>
 
       {/* Projects List */}
@@ -109,12 +117,9 @@ export default function ProjectsSection({
         {displayedProjects.map((project) => (
           <div key={project.id} className="relative w-full flex flex-col items-start">
 
-            {/* Top-Left Tag: "Project X" */}
+            {/* Top-Left Tag: Category */}
             <div className="mb-2 sm:mb-3 z-20">
               <div className="relative inline-flex items-center gap-1.5 px-2.5 py-1 rounded-[2px] bg-[#8427DE] text-[11px] xs:text-[12px] font-medium text-white shadow-xs">
-                <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor">
-                  <path d="M4.5 2a2.5 2.5 0 0 0-2.5 2.5v1a2.5 2.5 0 0 0 2.5 2.5h1A2.5 2.5 0 0 0 8 5.5v-1A2.5 2.5 0 0 0 5.5 2h-1zm7 0a2.5 2.5 0 0 0-2.5 2.5v1a2.5 2.5 0 0 0 2.5 2.5h1A2.5 2.5 0 0 0 14 5.5v-1A2.5 2.5 0 0 0 11.5 2h-1zm-7 7a2.5 2.5 0 0 0-2.5 2.5v1a2.5 2.5 0 0 0 2.5 2.5h1A2.5 2.5 0 0 0 8 12.5v-1A2.5 2.5 0 0 0 5.5 9h-1zm7 0a2.5 2.5 0 0 0-2.5 2.5v1a2.5 2.5 0 0 0 2.5 2.5h1a2.5 2.5 0 0 0 2.5-2.5v-1a2.5 2.5 0 0 0-2.5-2.5h-1z" />
-                </svg>
                 <span>{project.tag}</span>
               </div>
             </div>
@@ -146,8 +151,8 @@ export default function ProjectsSection({
               {/* Left Column / Mobile Bottom: Details & CTA */}
               <div className="flex-1 flex flex-col justify-between text-left h-full w-full md:order-1 pt-1 md:pt-0">
                 <div>
-                  <span className="text-[12px] sm:text-[13px] font-medium text-[#777777] flex items-center gap-1.5">
-                    {project.subtitle}
+                  <span className="text-[12px] sm:text-[13px] font-mono font-medium text-[#777777] flex items-center gap-1.5">
+                    {project.year}
                   </span>
 
                   <h3 className="mt-1.5 sm:mt-4 text-[22px] xs:text-[24px] sm:text-[28px] md:text-[32px] font-semibold text-[#111111] leading-[1.2] tracking-[-0.025em]">
@@ -168,7 +173,7 @@ export default function ProjectsSection({
                     type="button"
                     className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2 rounded-[2px] border border-[#8427DE] hover:bg-[#8427DE] hover:text-white text-[13px] font-medium text-[#111111] transition-colors bg-white cursor-pointer shadow-xs"
                   >
-                    <span>View case study</span>
+                    <span>View project</span>
                     <span>→</span>
                   </motion.button>
                 </div>
@@ -180,7 +185,7 @@ export default function ProjectsSection({
         ))}
       </div>
 
-      {/* On Homepage: "View all projects" button */}
+      {/* Optional view more button */}
       {!showAll && onViewAll && (
         <div className="mt-8 sm:mt-14 flex items-center justify-center z-10">
           <motion.button
@@ -190,7 +195,6 @@ export default function ProjectsSection({
             type="button"
             className="group relative inline-flex items-center gap-2 px-5 py-2 rounded-[2px] border-[1.3px] border-[#8427DE] bg-[#FFFCF4] hover:bg-[#8427DE] text-[13px] sm:text-[14px] font-mono font-medium text-[#111111] hover:text-white shadow-xs transition-colors duration-200 cursor-pointer"
           >
-            {/* Tag corner handles matching Framer design system */}
             <div className="absolute -top-[3px] -left-[3px] w-[5px] h-[5px] bg-[#FFFCF4] border-[1.2px] border-[#8427DE] pointer-events-none group-hover:bg-[#8427DE]" />
             <div className="absolute -top-[3px] -right-[3px] w-[5px] h-[5px] bg-[#FFFCF4] border-[1.2px] border-[#8427DE] pointer-events-none group-hover:bg-[#8427DE]" />
             <div className="absolute -bottom-[3px] -left-[3px] w-[5px] h-[5px] bg-[#FFFCF4] border-[1.2px] border-[#8427DE] pointer-events-none group-hover:bg-[#8427DE]" />

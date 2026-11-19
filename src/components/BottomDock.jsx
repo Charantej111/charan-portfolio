@@ -6,10 +6,10 @@ import { useGlobalLoading } from './LoadingContext';
 export default function BottomDock({ currentView = 'home', onNavigate }) {
   const { triggerLoading } = useGlobalLoading();
 
-  // Navigation Items requested: Home, About me, Projects, Download resume
+  // Navigation Items requested: home, about, projects, download resume
   const navItems = [
     { id: 'home', label: 'Home', icon: Home, isAction: false },
-    { id: 'about', label: 'About me', icon: User, isAction: false },
+    { id: 'about', label: 'About', icon: User, isAction: false },
     { id: 'projects', label: 'Projects', icon: List, isAction: false },
     { id: 'resume', label: 'Download resume', icon: FileDown, isAction: true },
   ];

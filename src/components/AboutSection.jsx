@@ -7,7 +7,7 @@ export default function AboutSection({ onReadStory }) {
   return (
     <section className="relative w-full pt-4 pb-6 sm:py-16 md:py-24 px-4 sm:px-6 flex flex-col items-center justify-center select-none z-10">
       
-      {/* Top Section Tag: "More about me_" with 4 corner anchor dots and solid green border */}
+      {/* Top Section Tag: "A little about me" with 4 corner anchor dots and solid green border */}
       <div className="mb-4 sm:mb-10 flex items-center justify-center">
         <div className="relative px-4 py-1.5 rounded-[2px] border-[1.3px] border-[#039754] bg-[#FFFCF4]">
           {/* Tag corner handles */}
@@ -16,13 +16,13 @@ export default function AboutSection({ onReadStory }) {
           <div className="absolute -bottom-[3px] -left-[3px] w-[5px] h-[5px] bg-[#FFFCF4] border-[1.2px] border-[#039754] pointer-events-none" />
           <div className="absolute -bottom-[3px] -right-[3px] w-[5px] h-[5px] bg-[#FFFCF4] border-[1.2px] border-[#039754] pointer-events-none" />
           <span className="text-[13px] font-mono font-medium text-[#111111] tracking-tight">
-            More about me_
+            A little about me
           </span>
         </div>
       </div>
 
       {/* Main Focus Card Frame: max-w-[700px], border: 1.2px solid #039754 */}
-      <div className="relative w-full max-w-[340px] xs:max-w-[380px] sm:max-w-[700px] bg-white rounded-[1px] border-[1.2px] border-[#039754] p-5 xs:p-6 sm:p-10 md:p-[60px] shadow-[0_20px_50px_-15px_rgba(3,151,84,0.06)] overflow-visible">
+      <div className="relative w-full max-w-[340px] xs:max-w-[380px] sm:max-w-[700px] bg-white rounded-[1px] border-[1.2px] border-[#039754] p-5 xs:p-6 sm:p-10 md:p-[50px] shadow-[0_20px_50px_-15px_rgba(3,151,84,0.06)] overflow-visible">
         
         {/* 4 Corner Anchor Handles (exact Framer 9x9 #039754 border) */}
         <div className="absolute -top-[4px] -left-[4px] w-[8px] sm:w-[9px] h-[8px] sm:h-[9px] bg-white border-[1.3px] border-[#039754] z-20 pointer-events-none" />
@@ -40,11 +40,16 @@ export default function AboutSection({ onReadStory }) {
           <BrainSticker className="absolute -bottom-[26px] -right-[22px] sm:-bottom-[54px] sm:-right-[54px] md:-bottom-[64px] md:-right-[64px] w-[62px] xs:w-[72px] sm:w-[125px] md:w-[150px] aspect-square z-20 select-none pointer-events-none cursor-default" />
         </div>
 
+        {/* Heading */}
+        <h3 className="text-[24px] sm:text-[32px] md:text-[36px] font-semibold text-[#111111] leading-[1.2] tracking-[-0.03em] mb-4 sm:mb-6">
+          I like turning ideas into real products.
+        </h3>
+
         {/* High-Craft Progressive Character-by-Character Smooth Reveal Typography */}
         <SmoothRevealText
-          content="I’m a product designer and Framer creator with a strong focus on building intuitive, scalable, and user-centered digital experiences."
-          accentOneText="product designer"
-          accentTwoText="building"
+          content="I'm Charan, an AI & Machine Learning graduate who moved from technology and UX into product. I've worked more than 1½ marketplaces, AI tools, and EdTech products, learning product by building, testing, and shipping real things."
+          accentOneText="AI & Machine Learning"
+          accentTwoText="building, testing, and shipping"
           accentColor="#039754"
           textColor="#000000"
           dimColor="rgba(0, 0, 0, 0.08)"
@@ -55,7 +60,7 @@ export default function AboutSection({ onReadStory }) {
 
       </div>
 
-      {/* "Read my full story ->" Button navigating to detailed About page */}
+      {/* Button navigating to detailed About page */}
       <div className="mt-6 sm:mt-10 flex items-center justify-center">
         <button
           onClick={onReadStory}
@@ -68,7 +73,7 @@ export default function AboutSection({ onReadStory }) {
           <div className="absolute -bottom-[3px] -left-[3px] w-[5px] h-[5px] bg-[#FFFCF4] border-[1.2px] border-[#8427DE] pointer-events-none group-hover:bg-[#8427DE]" />
           <div className="absolute -bottom-[3px] -right-[3px] w-[5px] h-[5px] bg-[#FFFCF4] border-[1.2px] border-[#8427DE] pointer-events-none group-hover:bg-[#8427DE]" />
 
-          <span>Read my full story</span>
+          <span>Read my story</span>
           <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
         </button>
       </div>
