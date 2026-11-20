@@ -43,7 +43,7 @@ export default function AvailableForWorkBadge() {
 
       {/* Location / Availability text */}
       <span className="order-2 text-[10px] xs:text-[11px] sm:text-[14px] font-medium text-[#060606]/75 tracking-[-0.01em] whitespace-nowrap leading-[1.4em]">
-        Dubai, UAE · Available immediately
+        <span className="hidden sm:inline">Dubai, UAE · </span>Available immediately
       </span>
 
       {/* 3x3 Animated Matrix Loader (order 0 in desktop/final state, 20x20 container) */}

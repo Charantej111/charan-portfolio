@@ -57,9 +57,10 @@ export default function HeroCard() {
   const isContentRevealed = stage >= 2;
 
   return (
-    <div className="relative mx-auto w-full max-w-[340px] xs:max-w-[380px] sm:max-w-[650px] min-h-[500px] xs:min-h-[515px] sm:min-h-[400px] select-none flex items-center justify-center">
+    <div className="relative mx-auto w-full max-w-[340px] xs:max-w-[375px] sm:max-w-[650px] min-h-[500px] xs:min-h-[520px] sm:min-h-[400px] select-none flex items-center justify-center">
       
       {/* ================= CORNER DECOR STICKERS ================= */}
+      {/* On desktop/tablet, decor stickers give personality without cluttering. On compact mobile screens, they are hidden to keep layout clean & minimalist. */}
       <motion.div
         animate={{ opacity: isContentRevealed ? 1 : 0 }}
         transition={{ duration: 0.4 }}
@@ -111,19 +112,19 @@ export default function HeroCard() {
       >
         {/* --- Top Selection Labels --- */}
         <motion.div
-          className="absolute -top-[25px] sm:-top-[28px] left-0 flex items-center select-none pointer-events-none"
+          className="absolute -top-[22px] sm:-top-[28px] left-0 flex items-center select-none pointer-events-none"
           initial={{ opacity: 0, y: 3 }}
           animate={{ opacity: isContentRevealed ? 1 : 0, y: isContentRevealed ? 0 : 3 }}
           transition={{ duration: 0.35 }}
         >
-          <span className="text-[11px] sm:text-[14px] font-mono font-medium text-[#008FF0] tracking-tight uppercase">
-            Early PRODUCT MANAGER
+          <span className="text-[10.5px] sm:text-[14px] font-mono font-medium text-[#008FF0] tracking-tight uppercase">
+            PRODUCT MANAGER
           </span>
         </motion.div>
 
         {/* "Available for work" badge at top-right */}
         <motion.div
-          className="absolute -top-[25px] sm:-top-[28px] right-0 flex items-center select-none pointer-events-none"
+          className="absolute -top-[22px] sm:-top-[28px] right-0 flex items-center select-none pointer-events-none"
           initial={{ opacity: 0, y: 3 }}
           animate={{ opacity: isContentRevealed ? 1 : 0, y: isContentRevealed ? 0 : 3 }}
           transition={{ duration: 0.35 }}
@@ -148,8 +149,8 @@ export default function HeroCard() {
         )}
 
         {/* ================= CARD INTERIOR CONTENT ================= */}
-        <div className="relative w-full h-full flex flex-col sm:flex-row items-center justify-between p-3.5 sm:p-4 pb-4 sm:pb-4 gap-3 sm:gap-0">
-          {/* Image Container: Full square on mobile matching Framer card proportion, 45% side column on desktop */}
+        <div className="relative w-full h-full flex flex-col sm:flex-row items-center justify-between p-3.5 sm:p-5 pb-4 sm:pb-5 gap-3.5 sm:gap-0">
+          {/* Image Container: 1:1 square on mobile, 45% side column on desktop */}
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{
@@ -167,7 +168,7 @@ export default function HeroCard() {
               src="/profile-hero.jpg.jpg"
               alt="Charan Tej Portrait"
               className="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.02]"
-              style={{ objectPosition: 'center 20%' }}
+              style={{ objectPosition: 'center 75%' }}
               loading="eager"
             />
             {/* Subtle vintage film grain overlay */}
@@ -180,7 +181,7 @@ export default function HeroCard() {
           </motion.div>
 
           {/* Heading + Description: Below image on mobile, right column on desktop */}
-          <div className="w-full sm:w-[48%] flex flex-col justify-center gap-1.5 sm:gap-2 text-left px-1 sm:px-4 mt-1 sm:mt-0">
+          <div className="w-full sm:w-[48%] flex flex-col justify-center gap-2.5 sm:gap-3 text-left px-1.5 sm:px-4 mt-2 sm:mt-0">
             {/* Title 1 */}
             <motion.h1
               initial={{ opacity: 0, y: 10 }}
@@ -193,7 +194,7 @@ export default function HeroCard() {
                 delay: stage >= 2 ? 0.35 : 0,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="text-[#111111] font-semibold text-[20px] xs:text-[22px] sm:text-[28px] md:text-[32px] leading-[1.15] tracking-[-0.03em]"
+              className="text-[#111111] font-semibold text-[20px] xs:text-[22px] sm:text-[28px] md:text-[32px] leading-[1.2] tracking-[-0.03em]"
             >
               Hey, I am Charan
             </motion.h1>
@@ -210,9 +211,9 @@ export default function HeroCard() {
                 delay: stage >= 2 ? 0.48 : 0,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="text-[#111111] font-medium text-[14px] xs:text-[15px] sm:text-[18px] md:text-[20px] leading-[1.25] tracking-[-0.02em] text-neutral-800"
+              className="text-[#111111] font-medium text-[14px] xs:text-[15px] sm:text-[18px] md:text-[20px] leading-[1.38] tracking-[-0.02em] text-neutral-800"
             >
-              I build products from ideas into real experiences.
+              Early-stage PM bridging technical AI and user-first execution.
             </motion.h2>
 
             {/* Content */}
@@ -227,9 +228,9 @@ export default function HeroCard() {
                 delay: stage >= 2 ? 0.6 : 0,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="text-[#666666] text-[12px] xs:text-[12.5px] sm:text-[13px] md:text-[13.5px] leading-[1.42] sm:leading-[1.5] font-normal tracking-[-0.01em]"
+              className="text-[#555555] text-[12px] xs:text-[12.5px] sm:text-[13px] md:text-[13.5px] leading-[1.6] sm:leading-[1.6] font-normal tracking-[-0.01em] mt-0.5"
             >
-              I work across product, UX, technology, business, and operations to understand problems, shape solutions, and help turn them into products people actually use.
+              Orchestrating multi-sided marketplaces, consumer apps, and AI workflows from 0 to 1 with a focus on real unit economics.
             </motion.p>
           </div>
         </div>
@@ -237,7 +238,7 @@ export default function HeroCard() {
 
       {/* ================= COLLABORATIVE POINTER: DRAGS OPEN THE FRAME ================= */}
       <motion.div
-        className="absolute z-40 pointer-events-none select-none flex items-start gap-1 bg-transparent origin-top-left"
+        className="absolute z-40 pointer-events-none select-none hidden xs:flex items-start gap-1 bg-transparent origin-top-left"
         style={{
           x: isContentRevealed ? cursorParallaxX : 0,
           y: isContentRevealed ? cursorParallaxY : 0,

@@ -10,10 +10,10 @@ const PROJECT_4_IMG = "https://framerusercontent.com/images/DED09lWyYXoUEEUQjpK6
 const ALL_PROJECTS = [
   {
     id: 1,
-    tag: "Marketplace · Consumer · Product Operations",
+    tag: "Marketplace · Consumer · Operations",
     year: "2026",
     title: "Delizoo",
-    description: "A hyperlocal food delivery marketplace built around fairer economics for customers and restaurant partners.",
+    description: "Building a hyperlocal food delivery marketplace where every side of the ecosystem works.",
     image: "/project-delizoo.jpg.png",
     imageAlt: "Delizoo Marketplace",
     linkText: "View project →",
@@ -74,8 +74,8 @@ export default function ProjectsSection({
   return (
     <section id="projects" className="relative w-full pt-4 pb-20 sm:pb-16 md:pb-24 sm:py-16 md:py-24 px-3 xs:px-4 sm:px-6 flex flex-col items-center select-none z-10">
 
-      {/* Background Animated Fluid Ribbons (Desktop / Tablet only) */}
-      <div className="hidden sm:block absolute inset-0 pointer-events-none overflow-hidden z-0">
+      {/* Background Animated Fluid Ribbons */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
         <AnimatedRibbons
           lineCount={2}
           strokeWidth={14}

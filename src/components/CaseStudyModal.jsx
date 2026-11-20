@@ -5,13 +5,13 @@ import { ArrowLeft } from 'lucide-react';
 const CASE_STUDIES = {
   1: {
     id: 1,
-    tag: 'Marketplace · Consumer · Product Operations · 0→1',
+    tag: 'Marketplace · Consumer · Operations',
     title: 'Delizoo',
-    subtitle: 'Building a food delivery marketplace where every side of the marketplace has to work.',
+    subtitle: 'Building a hyperlocal food delivery marketplace where every side of the ecosystem works.',
     image: '/project-delizoo.jpg.png',
     meta: [
-      { label: 'Role', value: 'Co-Founder · Product lead & Operations' },
-      { label: 'Timeline', value: '2026 - Present' },
+      { label: 'Role', value: 'Co-Founder · Product & Operations (Ofzen)' },
+      { label: 'Timeline', value: 'Jun 2026 – Present' },
       { label: 'Category', value: 'Marketplace · Consumer · Operations' },
       { label: 'Stage', value: '0→1 Live Product' },
     ],
@@ -19,22 +19,22 @@ const CASE_STUDIES = {
       {
         title: 'Overview',
         content:
-          'Delizoo is a hyperlocal food delivery marketplace built around fairer economics for customers and restaurant partners. The product orchestrates real-time experiences across customer ordering, restaurant partner order management, rider fulfillment, and dispatch operations.',
+          'Delizoo is an India-based hyperlocal food delivery marketplace ("Less Markup, More Yum") built around fairer unit economics for customers and local restaurant partners. Operating under Ofzen, the product orchestrates real-time experiences across four distinct surfaces: a customer ordering app, a restaurant partner portal, a rider fulfillment app, and a central admin dispatch panel.',
       },
       {
-        title: 'The challenge',
+        title: 'The Challenge',
         content:
-          'A marketplace is not one product—it is several interdependent systems that have to operate in lockstep. High platform commissions, poor operational visibility, and rider routing inefficiencies squeeze restaurant margins while creating unpredictable customer wait times. The core challenge was aligning customer value, merchant unit economics, and operational efficiency into a sustainable 0→1 marketplace model.',
+          'A multi-sided marketplace cannot succeed if only one user group wins. Incumbent food delivery platforms charge up to 37% in commissions, squeezing local kitchen margins and inflating menu prices for customers. Simultaneously, poor operational visibility and rider routing bottlenecks lead to unpredictable wait times and broken trust across the local ecosystem. The core challenge was designing a sustainable 0→1 model that aligned customer affordability, merchant profitability, and reliable fulfillment.',
       },
       {
-        title: 'Product discovery & operations strategy',
+        title: 'Product Discovery & Operations Strategy',
         content:
-          'We conducted field research with local restaurant partners, dispatch operators, and delivery riders. The insights revealed that transparent pricing and predictable turnaround times mattered far more to restaurant retention than discount promotions. We designed operational workflows that reduced order prep bottlenecks and balanced demand during peak meal windows.',
+          'Before writing production code, we conducted on-ground field research with 40+ restaurant partners and 30+ delivery riders to map out real pain points around payouts, trust, and peak-hour bottlenecks.\n\n• Pricing & Commission Model: Research revealed that transparent pricing and predictable payouts mattered far more to kitchen retention than temporary discount promotions. We replaced the industry-standard 37% commission with a 5% commission model, giving restaurants sustainable unit economics while keeping customer markups low.\n\n• End-to-End Prototyping: Using Figma wireframes and iterative usability testing with local vendors and riders, we streamlined order acceptance, prep-time estimation, and dispatch workflows to minimize kitchen delays during peak meal windows.',
       },
       {
-        title: 'Execution & impact',
+        title: 'Execution & Impact',
         content:
-          'Shipped comprehensive apps and operational tools covering customer ordering, restaurant vendor portal, and rider tracking. Surpassed 2,000+ app downloads while establishing reliable unit economics and partner trust across the local ecosystem.',
+          '• 15-Week 0→1 Launch: Planned, scoped, and shipped the full MVP across 4 integrated product experiences (Customer App, Restaurant App, Rider App, and Admin Panel) in 15 weeks.\n\n• Supply & Logistics Onboarding: Built initial marketplace liquidity by onboarding 40+ kitchen partners and 40+ delivery riders.\n\n• Early Traction: Surpassed 2,000+ app downloads, 1,600+ registered customer profiles, and 300+ completed orders post-launch while proving viable local unit economics.',
       },
     ],
   },

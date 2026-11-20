@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 export default function PenToolSticker() {
   return (
     <motion.div
-      className="absolute -top-[140px] sm:-top-[190px] md:-top-[250px] -right-[30px] sm:-right-[110px] md:-right-[180px] w-[120px] sm:w-[160px] md:w-[200px] h-[120px] sm:h-[160px] md:h-[200px] z-20 select-none pointer-events-none cursor-default"
+      className="absolute -top-[55px] xs:-top-[70px] sm:-top-[190px] md:-top-[250px] -right-[15px] xs:-right-[25px] sm:-right-[110px] md:-right-[180px] w-[75px] xs:w-[90px] sm:w-[160px] md:w-[200px] h-[75px] xs:h-[90px] sm:h-[160px] md:h-[200px] z-20 select-none pointer-events-none cursor-default"
       initial={{ opacity: 0.001, scale: 0, rotate: 0 }}
       animate={{
         opacity: 1,

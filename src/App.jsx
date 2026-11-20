@@ -69,9 +69,9 @@ export default function App() {
         {/* Canvas Grid Background */}
         <BackgroundGrid />
 
-        {/* Top-Level Animated Fluid Ribbons (Hero) - Hidden on mobile */}
+        {/* Top-Level Animated Fluid Ribbons (Hero) */}
         {currentView !== 'case-study' && (
-          <div className="hidden sm:block absolute top-0 left-0 right-0 h-[100vh] pointer-events-none overflow-hidden z-0">
+          <div className="absolute top-0 left-0 right-0 h-[100vh] pointer-events-none overflow-hidden z-0">
             <AnimatedRibbons
               lineCount={2}
               strokeWidth={13}
@@ -121,18 +121,18 @@ export default function App() {
         ) : (
           /* =================== HOME PAGE VIEW =================== */
           <div className="relative w-full flex flex-col items-center">
-            {/* 1. Hero Workspace */}
-            <div className="relative pt-4 pb-20 sm:py-12 sm:min-h-[calc(100vh-100px)] flex items-center justify-center px-4 sm:px-6 z-10 w-full max-w-7xl mx-auto">
+            {/* 1. Hero Workspace - Perfectly centered in viewport */}
+            <div className="relative pt-1 pb-16 sm:py-12 min-h-[calc(100vh-60px)] sm:min-h-[calc(100vh-100px)] flex items-center justify-center px-4 sm:px-6 z-10 w-full max-w-7xl mx-auto">
               <HeroCard />
             </div>
 
-            {/* 2. More about me snippet */}
-            <div id="about-snippet" className="w-full">
+            {/* 2. More about me snippet - Generous vertical separation */}
+            <div id="about-snippet" className="w-full pt-10 sm:pt-0">
               <AboutSection onReadStory={() => handleNavigate('about')} />
             </div>
 
-            {/* 3. Featured projects (3 on Home page, 4th visible when clicking View all or in Projects page) */}
-            <div id="projects" className="w-full">
+            {/* 3. Featured projects - Full screen presence */}
+            <div id="projects" className="w-full pt-8 sm:pt-0">
               <ProjectsSection
                 onOpenCaseStudy={handleOpenCaseStudy}
                 limit={3}

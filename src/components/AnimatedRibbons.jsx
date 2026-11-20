@@ -382,10 +382,10 @@ export default function AnimatedRibbons({
     >
       <style>{`
         @keyframes ${drawName} {
-          from {
+          0% {
             stroke-dashoffset: 1;
           }
-          to {
+          100% {
             stroke-dashoffset: 0;
           }
         }
@@ -492,6 +492,9 @@ export default function AnimatedRibbons({
                   shouldAnimate
                     ? {
                         animation: `${drawName} ${duration}s ${easingValue} ${
+                          startDelay + index * stagger
+                        }s 1 forwards`,
+                        WebkitAnimation: `${drawName} ${duration}s ${easingValue} ${
                           startDelay + index * stagger
                         }s 1 forwards`,
                       }

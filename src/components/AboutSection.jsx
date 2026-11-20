@@ -5,7 +5,7 @@ import SmoothRevealText from './SmoothRevealText';
 
 export default function AboutSection({ onReadStory }) {
   return (
-    <section className="relative w-full pt-4 pb-6 sm:py-16 md:py-24 px-4 sm:px-6 flex flex-col items-center justify-center select-none z-10">
+    <section className="relative w-full min-h-[92vh] sm:min-h-0 pt-8 pb-16 sm:py-16 md:py-24 px-4 sm:px-6 flex flex-col items-center justify-center select-none z-10">
       
       {/* Top Section Tag: "A little about me" with 4 corner anchor dots and solid green border */}
       <div className="mb-4 sm:mb-10 flex items-center justify-center">
@@ -42,17 +42,17 @@ export default function AboutSection({ onReadStory }) {
 
         {/* Heading */}
         <h3 className="text-[20px] sm:text-[26px] md:text-[28px] font-semibold text-[#111111] leading-[1.25] tracking-[-0.03em] mb-3 sm:mb-5">
-          I like turning ideas into real products.
+          Background & Product Thinking
         </h3>
 
         {/* High-Craft Progressive Character-by-Character Smooth Reveal Typography */}
         <SmoothRevealText
-          content="I'm Charan, an AI & Machine Learning graduate who moved from technology and UX into product. I've worked more than 1½ years in marketplaces, AI tools, and EdTech products, learning product by building, testing, and shipping real things."
+          content="I'm Charan, an AI & Machine Learning graduate who moved from engineering and UX into product management. Over the past 1½+ years across marketplaces, AI tools, and EdTech, I've honed my craft by shipping end-to-end products with measurable outcomes."
           accentOneText="AI & Machine Learning"
-          accentTwoText="building, testing, and shipping"
+          accentTwoText="engineering and UX into product management"
           accentColor="#039754"
-          textColor="#000000"
-          dimColor="rgba(0, 0, 0, 0.08)"
+          textColor="#111111"
+          dimColor="rgba(0, 0, 0, 0.42)"
           scrollStart={15}
           scrollEnd={72}
           revealSpread={8}

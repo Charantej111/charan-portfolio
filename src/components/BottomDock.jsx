@@ -50,7 +50,7 @@ export default function BottomDock({ currentView = 'home', onNavigate }) {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.6 }}
     >
-      <div className="bg-[#18181B]/95 backdrop-blur-xl border border-neutral-700/60 rounded-2xl p-1 sm:p-1.5 flex items-center gap-1 sm:gap-1.5 shadow-[0_12px_36px_rgba(0,0,0,0.35)]">
+      <div className="bg-[#18181B]/95 backdrop-blur-xl border border-neutral-700/60 rounded-2xl p-1.5 sm:p-2 flex items-center gap-1.5 sm:gap-2 shadow-[0_12px_36px_rgba(0,0,0,0.4)]">
         {navItems.map((item) => {
           const Icon = item.icon;
           const isActive = currentView === item.id;
@@ -62,13 +62,13 @@ export default function BottomDock({ currentView = 'home', onNavigate }) {
               whileHover={{ scale: 1.08 }}
               whileTap={{ scale: 0.94 }}
               title={item.label}
-              className={`relative p-2 sm:p-2.5 rounded-xl transition-colors duration-200 cursor-pointer ${
+              className={`relative p-2.5 sm:p-3 rounded-xl transition-colors duration-200 cursor-pointer ${
                 isActive
                   ? 'bg-[#2B2B30] text-emerald-400 shadow-inner'
                   : 'text-neutral-400 hover:text-white hover:bg-neutral-800/50'
               }`}
             >
-              <Icon size={18} strokeWidth={isActive ? 2.4 : 2} className="sm:w-[19px] sm:h-[19px]" />
+              <Icon size={20} strokeWidth={isActive ? 2.4 : 2} className="w-5 h-5 sm:w-[22px] sm:h-[22px]" />
               
               {/* Active Dot Indicator */}
               {isActive && (
