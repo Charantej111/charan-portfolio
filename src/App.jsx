@@ -69,9 +69,9 @@ export default function App() {
         {/* Canvas Grid Background */}
         <BackgroundGrid />
 
-        {/* Top-Level Animated Fluid Ribbons (Hero) */}
+        {/* Top-Level Animated Fluid Ribbons (Hero) - Hidden on mobile */}
         {currentView !== 'case-study' && (
-          <div className="absolute top-0 left-0 right-0 h-[100vh] pointer-events-none overflow-hidden z-0">
+          <div className="hidden sm:block absolute top-0 left-0 right-0 h-[100vh] pointer-events-none overflow-hidden z-0">
             <AnimatedRibbons
               lineCount={2}
               strokeWidth={13}
