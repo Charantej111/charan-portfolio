@@ -38,11 +38,11 @@ export default function AboutHeroSection() {
     setCards((prev) => [prev[1], prev[2], prev[0]]);
   };
 
-  // Auto-cycle photos every 4.5s
+  // Auto-cycle photos every 2s
   useEffect(() => {
     const timer = setInterval(() => {
       sendToBack();
-    }, 4500);
+    }, 2000);
     return () => clearInterval(timer);
   }, []);
 
